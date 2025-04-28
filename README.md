@@ -1,1 +1,1 @@
-# TSSR-2503-P3-G2-BuildYourInfra-Ekoloclast
+# TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions
