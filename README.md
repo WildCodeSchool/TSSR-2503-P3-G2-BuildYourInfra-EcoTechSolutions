@@ -25,7 +25,7 @@ L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 dépa
 
 # 2. Le groupe de projet  
 
-WildCoderz est une société prestataire de services. Fort de ses 2 mois d'expériences et mandatée par EcoTech Solutions, nous mettons toutes nos compétences et ressources pour accomplir notre objectif final : la mise en place d' une nouvelle infrastructure réseau.
+La Casa De Coding est une société prestataire de services. Fort de ses 2 mois d'expériences et mandatée par EcoTech Solutions, nous mettons toutes nos compétences et ressources pour accomplir notre objectif final : la mise en place d' une nouvelle infrastructure réseau.
 DSI de cette société : Dominique Colleville dit "le Professeur" 
   
   
