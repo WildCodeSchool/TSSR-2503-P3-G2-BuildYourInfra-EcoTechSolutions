@@ -18,12 +18,12 @@
 
 ### Présentation   
 
-# 1. L'entreprise cliente  
+# L'entreprise cliente  
 
 **EcoTech Solutions**, implantée à Bordeaux, est un acteur innovant dans le domaine des solutions IoT dédiées à la gestion intelligente de l’énergie et des ressources. En collaborant étroitement avec le gouvernement et les leaders du secteur énergétique, elle conçoit et déploie des systèmes de surveillance avancés pour optimiser la consommation, réduire les émissions carbone et accompagner activement la transition écologique. Forte de son expertise technologique et de son esprit d'innovation, **EcoTech Solutions** s’impose comme un moteur essentiel de l’économie verte.  
 L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 départements spécialisés, et s’enrichit régulièrement de compétences extérieures, intervenant sur des missions ponctuelles ou à temps plein.  
 
-# 2. Le groupe de projet  
+# Le groupe de projet  
 
 La Casa De Coding est une société prestataire de services. Fort de ses 2 mois d'expériences et mandatée par EcoTech Solutions, nous mettons toutes nos compétences et ressources pour accomplir notre objectif final : la mise en place d' une nouvelle infrastructure réseau.  
 DSI de cette société : Dominique Colleville dit "le Professeur".  
@@ -46,9 +46,7 @@ DSI de cette société : Dominique Colleville dit "le Professeur".
 **Véritable identité** : Jonathan Gorine  
 
 
-   
   
-
 ### Objectifs finaux  
 
 - Mettre en place une architecture réseau structurée, claire, complète et fonctionnelle   
@@ -70,7 +68,7 @@ Chez La Casa de Coding, nous avons troqué les masques de Dali pour des firewall
 À l’image du Professeur, nous élaborons des solutions sur mesure, avec précision, stratégie… et un soupçon de malice. Chaque projet est abordé avec rigueur, créativité et une vraie passion pour la cybersécurité. Ici, pas de braquage, mais un vrai casse-tête technique que nous adorons résoudre.
   
 La Casa de Coding, c’est l’alliance de l’expertise technique et de l’esprit d’équipe. Parce qu’un bon réseau, c’est comme une bonne équipe : ça communique bien, c’est bien structuré, et surtout, c’est imprenable.  
-
+  
 ## 👥 Les rôles par sprint  
 <span id="membres-du-groupe-par-sprint"></span>  
 
