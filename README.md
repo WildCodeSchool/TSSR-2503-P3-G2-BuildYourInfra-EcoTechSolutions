@@ -81,7 +81,7 @@ A venir
 - Configuration des machines pour que celles-ci soient accessibles à distance
 
   Les logiciels utilisés:
-  > Proxmox
+  > Proxmox  
   > VirtualBox
   >
   >   
