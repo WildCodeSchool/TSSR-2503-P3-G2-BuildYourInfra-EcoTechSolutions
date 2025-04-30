@@ -39,11 +39,11 @@ DSI de cette société : Dominique Colleville dit "le Professeur"
 **Nom de code** : La Rochelle     
 **Véritable identité** : Alan  
     
-**Nom de code** : Bordeaux    
-**Véritable identité** : Jonathan Gorine   
-
 **Nom de code** :     
 **Véritable identité** : Sheldon Thurm    
+
+**Nom de code** : Bordeaux    
+**Véritable identité** : Jonathan Gorine  
 
 
    
