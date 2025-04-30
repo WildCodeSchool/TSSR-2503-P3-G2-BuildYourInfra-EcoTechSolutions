@@ -44,7 +44,7 @@ DSI de cette société : Dominique Colleville dit "le Professeur"
 Vous êtes une entreprise toute jeune voir déjà leader dans votre domaine? Mais problème : votre infrastructure réseau à besoin d'amélioration?
 Vous êtes au bon endroit !
 
-Bienvenue à La Casa de Coding
+Bienvenue à La Casa de Coding  
 « On ne braque pas des banques, on sécurise vos réseaux. »
 
 Chez La Casa de Coding, nous avons troqué les masques de Dali pour des firewalls, et les plans d’attaque pour des plans d’architecture réseau solides et durables. Notre mission ? Aider les entreprises à repenser leur infrastructure informatique pour renforcer leur sécurité, améliorer leurs performances et anticiper les menaces de demain.
