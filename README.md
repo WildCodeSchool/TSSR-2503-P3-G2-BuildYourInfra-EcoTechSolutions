@@ -37,7 +37,7 @@ DSI de cette société : Dominique Colleville dit "le Professeur".
 **Véritable identité** : Lloyd Morlet     
   
 **Nom de code** : La Rochelle     
-**Véritable identité** : Alan  
+**Véritable identité** : Alan Coeurjoly    
     
 **Nom de code** :     
 **Véritable identité** : Sheldon Thurm    
