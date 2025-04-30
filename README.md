@@ -121,7 +121,7 @@ La Casa de Coding, c’est l’alliance de l’expertise technique et de l’esp
 
 |  [🧗Difficultés rencontrées](#difficultes-rencontrees)|[💡Solutions trouvées](#solutions-trouvees)|  
 | --------------------------------------- | --------------------------------------- |
-| Découverte de l'entreprise EcoTech'     | Recherche et Réflexion à huit-clos      |
+|   Découverte de l'entreprise EcoTech'   |         Recherche et Réflexion          |
 |                                         |                                         |
 |                                         |                                         |
 |                                         |                                         |
