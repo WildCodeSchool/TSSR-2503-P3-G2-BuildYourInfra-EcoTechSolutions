@@ -28,20 +28,22 @@ L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 dépa
 La Casa De Coding est une société prestataire de services. Fort de ses 2 mois d'expériences et mandatée par EcoTech Solutions, nous mettons toutes nos compétences et ressources pour accomplir notre objectif final : la mise en place d' une nouvelle infrastructure réseau.  
 DSI de cette société : Dominique Colleville dit "le Professeur"  
 
-Les techniciens :  
+## Les techniciens :  
   
-Nom de code : Perpignan  
-Véritable identité : Florian Cheron    
+**Nom de code** : Perpignan  
+**Véritable identité** : Florian Cheron    
   
-Nom de code : Montpellier  
-Véritable identité : Lloyd Morlet     
+**Nom de code** : Montpellier  
+**Véritable identité** : Lloyd Morlet     
   
-Nom de code : La Rochelle     
-Véritable identité : Alan  
+**Nom de code** : La Rochelle     
+**Véritable identité** : Alan  
     
-Nom de code : Bordeaux    
-Véritable identité : Jonathan Gorine   
+**Nom de code** : Bordeaux    
+**Véritable identité** : Jonathan Gorine   
 
+**Nom de code** :     
+**Véritable identité** : Sheldon Thurm    
 
 
    
