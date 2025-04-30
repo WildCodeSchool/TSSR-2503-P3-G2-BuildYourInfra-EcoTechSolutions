@@ -26,9 +26,9 @@ L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 dépa
 # 2. Le groupe de projet  
 
 La Casa De Coding est une société prestataire de services. Fort de ses 2 mois d'expériences et mandatée par EcoTech Solutions, nous mettons toutes nos compétences et ressources pour accomplir notre objectif final : la mise en place d' une nouvelle infrastructure réseau.  
-DSI de cette société : Dominique Colleville dit "le Professeur"  
+DSI de cette société : Dominique Colleville dit "le Professeur".  
 
-## Les techniciens :  
+## L'équipe technique :  
   
 **Nom de code** : Perpignan  
 **Véritable identité** : Florian Cheron    
@@ -71,7 +71,7 @@ Chez La Casa de Coding, nous avons troqué les masques de Dali pour des firewall
   
 La Casa de Coding, c’est l’alliance de l’expertise technique et de l’esprit d’équipe. Parce qu’un bon réseau, c’est comme une bonne équipe : ça communique bien, c’est bien structuré, et surtout, c’est imprenable.  
 
-## 👥 Membres du groupe par sprint  
+## 👥 Les rôles par sprint  
 <span id="membres-du-groupe-par-sprint"></span>  
 
 
