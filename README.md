@@ -15,16 +15,16 @@
 
 ## 🎯 Présentation générale du projet  
 <span id="presentation-du-projet"></span>  
+  
+  
 
-### Présentation   
-
-# L'entreprise cliente  
+## L'entreprise cliente  
 
 **EcoTech Solutions**, implantée à Bordeaux, est un acteur innovant dans le domaine des solutions IoT dédiées à la gestion intelligente de l’énergie et des ressources. En collaborant étroitement avec le gouvernement et les leaders du secteur énergétique, elle conçoit et déploie des systèmes de surveillance avancés pour optimiser la consommation, réduire les émissions carbone et accompagner activement la transition écologique.  
 Forte de son expertise technologique et de son esprit d'innovation, **EcoTech Solutions** s’impose comme un moteur essentiel de l’économie verte.  
 L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 départements spécialisés, et s’enrichit régulièrement de compétences extérieures, intervenant sur des missions ponctuelles ou à temps plein.  
 
-# Le groupe de projet  
+## Le groupe de projet  
 
 **Wilderz** est une société fictive et prestataire de services. Elle est mandatée par EcoTech Solutions afin de mettre en place une nouvelle infrastructure réseau.  
 Nous allons réunir toutes nos compétences et ressources acquises durant la formation TSSR pour mener à bien ce projet.     
@@ -62,13 +62,13 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
   
 ### Sprint 1
 
-| Membre         | Rôle          |  Missions                               |
-| -------------- | ------------- | --------------------------------------- |
-|   Sheldon      | Product Owner |  Gestion de la relation commercial inter-entreprise ; Préparation de la présentation sur slide   |
-|   Lloyd        | Scrum Master  |  Management d'équipe et veille organisationnelle ; Préparation du schéma réseau  |
-|   Alan         | Technicien    |  Planification des objectifs par sprints  |
-|   Florian      | Technicien    |  Nomenclature et convention de nommage |
-|   John         | Technicien    |  Documentation technique sur Git-Hub |
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Product Owner   |  Gestion de la relation commercial inter-entreprise ; Préparation de la présentation sur slide     |
+|   Lloyd        | Scrum Master    |  Management d'équipe et veille organisationnelle ; Préparation du schéma réseau  |
+|   Alan         | Technicien      |  Planification des objectifs par sprints  |
+|   Florian      | Technicien      |  Nomenclature et convention de nommage    |
+|   John         | Technicien      |  Documentation technique sur Git-Hub      |
   
   
   
