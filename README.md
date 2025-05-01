@@ -20,17 +20,19 @@
 
 # L'entreprise cliente  
 
-**EcoTech Solutions**, implantée à Bordeaux, est un acteur innovant dans le domaine des solutions IoT dédiées à la gestion intelligente de l’énergie et des ressources. En collaborant étroitement avec le gouvernement et les leaders du secteur énergétique, elle conçoit et déploie des systèmes de surveillance avancés pour optimiser la consommation, réduire les émissions carbone et accompagner activement la transition écologique. Forte de son expertise technologique et de son esprit d'innovation, **EcoTech Solutions** s’impose comme un moteur essentiel de l’économie verte.  
+**EcoTech Solutions**, implantée à Bordeaux, est un acteur innovant dans le domaine des solutions IoT dédiées à la gestion intelligente de l’énergie et des ressources. En collaborant étroitement avec le gouvernement et les leaders du secteur énergétique, elle conçoit et déploie des systèmes de surveillance avancés pour optimiser la consommation, réduire les émissions carbone et accompagner activement la transition écologique.  
+Forte de son expertise technologique et de son esprit d'innovation, **EcoTech Solutions** s’impose comme un moteur essentiel de l’économie verte.  
 L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 départements spécialisés, et s’enrichit régulièrement de compétences extérieures, intervenant sur des missions ponctuelles ou à temps plein.  
 
 # Le groupe de projet  
 
-Wilderz est une société fictive et prestataire de services. Elle est mandatée par EcoTech Solutions afin de mettre en place une nouvelle infrastructure réseau.  
+**Wilderz** est une société fictive et prestataire de services. Elle est mandatée par EcoTech Solutions afin de mettre en place une nouvelle infrastructure réseau.  
 Nous allons réunir toutes nos compétences et ressources acquises durant la formation TSSR pour mener à bien ce projet.     
-DSI de cette société : Dominique Colleville.  
+**DSI de cette société** : Dominique Colleville.  
 
 ## L'équipe technique :  
   
+Voici les 5 membres qui composent le groupe :  
 Florian Cheron ; Lloyd Morlet ; Alan Coeurjoly ; Sheldon Thurm ; Jonathan Gorine
   
   
@@ -82,9 +84,9 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 
 - Configuration des machines pour que celles-ci soient accessibles à distance
 
-  Les logiciels utilisés:
+- Les logiciels utilisés:
   > Proxmox  
-  > VirtualBox
+  > VirtualBox  
   > à venir
   >   
 
