@@ -1,0 +1,144 @@
+Plusieurs possibilités s'offrent à nous.  
+Après s'être conserté et après mûrs réflexions, le choix s'est porté vers la proposition N°2  
+  
+# Proposition N°1 :
+
+- Chaque service a son réseau
+- Chaque sous-service a son sous-réseau
+- Pas de VLAN
+
+|              Service              |        Sous-Service         |    Adresse     |
+| :-------------------------------: | :-------------------------: | :------------: |
+|           Communication           |          ////////           | 172.40.0.0/24  |
+|           Communication           |    Communication externe    | 172.40.1.0/24  |
+|           Communication           |    Communication interne    | 172.40.2.0/24  |
+|           Communication           |        Événementiel         | 172.40.3.0/24  |
+|           Communication           | Gestion des réseaux sociaux | 172.40.4.0/24  |
+|           Communication           |       Relation Médias       | 172.40.5.0/24  |
+|             ////////              |          ////////           |    ////////    |
+|           Développement           |          ////////           | 172.50.0.0/24  |
+|           Développement           |    Analyse et conception    | 172.50.1.0/24  |
+|           Développement           |    Développement backend    | 172.50.2.0/24  |
+|           Développement           |   Développement frontend    | 172.50.3.0/24  |
+|           Développement           |    Développement mobile     | 172.50.4.0/24  |
+|           Développement           |   Recherche et prototype    | 172.50.5.0/24  |
+|           Développement           |      Tests et qualité       | 172.50.6.0/24  |
+|             ////////              |          ////////           |    ////////    |
+|             Direction             |          ////////           | 172.60.0.0/24  |
+|             ////////              |          ////////           |    ////////    |
+| Direction des Ressources Humaines |          ////////           | 172.70.0.0/24  |
+|                DRH                | Administration du personnel | 172.70.1.0/24  |
+|                DRH                |          Formation          | 172.70.2.0/24  |
+|                DRH                |    Gestion des carrières    | 172.70.3.0/24  |
+|                DRH                |         Recrutement         | 172.70.4.0/24  |
+|             ////////              |          ////////           |    ////////    |
+|                DSI                |          ////////           | 172.80.0.0/24  |
+|                DSI                |        Exploitation         | 172.80.1.0/24  |
+|             ////////              |          ////////           |    ////////    |
+|      Finance et Comptabilité      |          ////////           | 172.90.0.0/24  |
+|      Finance et Comptabilité      |           Finance           | 172.90.1.0/24  |
+|      Finance et Comptabilité      |          Fiscalité          | 172.90.2.0/24  |
+|      Finance et Comptabilité      |    Service Comptabilité     | 172.90.2.0/24  |
+|             ////////              |          ////////           |    ////////    |
+|        Service Commercial         |          ////////           | 172.100.0.0/24 |
+|        Service Commercial         |             ADV             | 172.100.1.0/24 |
+|        Service Commercial         |             B2B             | 172.100.2.0/24 |
+|        Service Commercial         |     Gestion des comptes     | 172.100.3.0/24 |
+|        Service Commercial         |         Prospection         | 172.100.4.0/24 |
+|        Service Commercial         |        Service achat        | 172.100.5.0/24 |
+|        Service Commercial         |       Service client        | 172.100.6.0/24 |
+
+# Proposition N°2 :
+
+- Chaque service a son réseau
+- Chaque sous service dans un VLAN
+- Pas de sous-réseau
+
+|              Service              |        Sous-Service         |     Adresse     |   VLAN    |
+| :-------------------------------: | :-------------------------: | :-------------: | :-------: |
+|           Communication           |          ////////           | 172.16.40.0/24  | ////////  |
+|           Communication           |    Communication externe    | 172.16.40.0/24  |  VLAN01   |
+|           Communication           |    Communication interne    | 172.16.40.0/24  |  VLAN02   |
+|           Communication           |        Événementiel         | 172.16.40.0/24  |  VLAN03   |
+|           Communication           | Gestion des réseaux sociaux | 172.16.40.0/24  |  VLAN04   |
+|           Communication           |       Relation Médias       | 172.16.40.0/24  |  VLAN05   |
+|             ////////              |          ////////           |    ////////     | ////////  |
+|           Développement           |          ////////           | 172.16.50.0/24  | ////////  |
+|           Développement           |    Analyse et conception    | 172.16.50.0/24  |  VLAN01   |
+|           Développement           |    Développement backend    | 172.16.50.0/24  |  VLAN02   |
+|           Développement           |   Développement frontend    | 172.16.50.0/24  |  VLAN03   |
+|           Développement           |    Développement mobile     | 172.16.50.0/24  |  VLAN04   |
+|           Développement           |   Recherche et prototype    | 172.16.50.0/24  |  VLAN05   |
+|           Développement           |      Tests et qualité       | 172.16.50.0/24  |  VLAN06   |
+|             ////////              |          ////////           |    ////////     | ////////  |
+|             Direction             |          ////////           | 172.16.60.0/24  | ////////  |
+|             ////////              |          ////////           |    ////////     | ////////  |
+| Direction des Ressources Humaines |          ////////           | 172.16.70.0/24  | ////////  |
+|                DRH                | Administration du personnel | 172.16.70.0/24  |  VLAN01   |
+|                DRH                |          Formation          | 172.16.70.0/24  |  VLAN02   |
+|                DRH                |    Gestion des carrières    | 172.16.70.0/24  |  VLAN03   |
+|                DRH                |         Recrutement         | 172.16.70.0/24  |  VLAN04   |
+|             ////////              |          ////////           |    ////////     | ////////  |
+|                DSI                |          ////////           | 172.16.80.0/24  | ///////// |
+|                DSI                |        Exploitation         | 172.16.80.0/24  |  VLAN01   |
+|             ////////              |          ////////           |    ////////     | ////////  |
+|      Finance et Comptabilité      |          ////////           | 172.16.90.0/24  | ////////  |
+|      Finance et Comptabilité      |           Finance           | 172.16.90.0/24  |  VLAN01   |
+|      Finance et Comptabilité      |          Fiscalité          | 172.16.90.0/24  |  VLAN02   |
+|      Finance et Comptabilité      |    Service Comptabilité     | 172.16.90.0/24  |  VLAN03   |
+|             ////////              |          ////////           |    ////////     | ////////  |
+|        Service Commercial         |          ////////           | 172.16.100.0/24 | ////////  |
+|        Service Commercial         |             ADV             | 172.16.100.0/24 |  VLAN01   |
+|        Service Commercial         |             B2B             | 172.16.100.0/24 |  VLAN02   |
+|        Service Commercial         |     Gestion des comptes     | 172.16.100.0/24 |  VLAN03   |
+|        Service Commercial         |         Prospection         | 172.16.100.0/24 |  VLAN04   |
+|        Service Commercial         |        Service achat        | 172.16.100.0/24 |  VLAN05   |
+|        Service Commercial         |       Service client        | 172.16.100.0/24 |  VLAN06   |
+
+# Proposition N°3 :
+
+- Chaque service a son réseau
+- Chaque sous service à son découpage précis du réseau de service
+- Pas de sous-réseau
+- Pas de VLAN
+
+|              Service              |        Sous-Service         |     Adresse      |
+| :-------------------------------: | :-------------------------: | :--------------: |
+|           Communication           |          ////////           |     ////////     |
+|           Communication           |    Communication externe    |  172.16.40.0/28  |
+|           Communication           |    Communication interne    | 172.16.40.32/29  |
+|           Communication           |        Événementiel         | 172.16.40.40/29  |
+|           Communication           | Gestion des réseaux sociaux | 172.16.40.48/29  |
+|           Communication           |       Relation Médias       | 172.16.40.16/28  |
+|             ////////              |          ////////           |     ////////     |
+|           Développement           |          ////////           |     ////////     |
+|           Développement           |    Analyse et conception    | 172.16.50.160/28 |
+|           Développement           |    Développement backend    | 172.16.50.128/27 |
+|           Développement           |   Développement frontend    |  172.16.50.0/25  |
+|           Développement           |    Développement mobile     | 172.16.50.208/29 |
+|           Développement           |   Recherche et prototype    | 172.16.50.176/28 |
+|           Développement           |      Tests et qualité       | 172.16.50.192/28 |
+|             ////////              |          ////////           |     ////////     |
+|             Direction             |          ////////           |  172.16.60.0/28  |
+|             ////////              |          ////////           |     ////////     |
+| Direction des Ressources Humaines |          ////////           |     ////////     |
+|                DRH                | Administration du personnel |  172.16.70.0/28  |
+|                DRH                |          Formation          | 172.16.70.16/28  |
+|                DRH                |    Gestion des carrières    | 172.16.70.32/29  |
+|                DRH                |         Recrutement         | 172.16.70.40/29  |
+|             ////////              |          ////////           |     ////////     |
+|                DSI                |          ////////           |     ////////     |
+|                DSI                |        Exploitation         |  172.16.80.0/28  |
+|             ////////              |          ////////           |     ////////     |
+|      Finance et Comptabilité      |          ////////           |     ////////     |
+|      Finance et Comptabilité      |           Finance           |  172.16.90.0/28  |
+|      Finance et Comptabilité      |          Fiscalité          | 172.16.90.32/29  |
+|      Finance et Comptabilité      |    Service Comptabilité     | 172.16.90.16/28  |
+|             ////////              |          ////////           |     ////////     |
+|        Service Commercial         |          ////////           |     ////////     |
+|        Service Commercial         |             ADV             | 172.16.100.48/29 |
+|        Service Commercial         |             B2B             | 172.16.100.0/28  |
+|        Service Commercial         |     Gestion des comptes     | 172.16.100.16/28 |
+|        Service Commercial         |         Prospection         | 172.16.100.32/28 |
+|        Service Commercial         |        Service achat        | 172.16.100.56/29 |
+|        Service Commercial         |       Service client        | 172.16.100.64/29 |
