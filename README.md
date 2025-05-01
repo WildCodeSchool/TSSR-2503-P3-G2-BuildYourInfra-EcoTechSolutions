@@ -30,9 +30,10 @@ L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 dépa
 Nous allons réunir toutes nos compétences et ressources acquises durant la formation TSSR pour mener à bien ce projet.     
 **DSI de cette société** : Dominique Colleville.  
 
-## L'équipe technique :  
+## L'équipe technique   
   
-Voici les 5 membres qui composent le groupe :  
+Voici les 5 membres qui composent le groupe : 
+   
 Florian Cheron ; Lloyd Morlet ; Alan Coeurjoly ; Sheldon Thurm ; Jonathan Gorine
   
   
