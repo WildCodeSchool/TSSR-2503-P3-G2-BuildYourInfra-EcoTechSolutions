@@ -1,13 +1,13 @@
 ## 👥 Les rôles du sprint 1    
   
   
-| Membre         | Rôle          | Missions                                |
-|-------------------------------------------------------------------------- |
-|   Sheldon      | Product Owner |  Gestion de la relation commercial inter-entreprise ; Préparation de la présentation sur slide   |
-|   Lloyd        | Scrum Master  |  Management d'équipe et veille organisationnelle ; Préparation du schéma réseau  |
-|   Alan         | Technicien    |  Planification des objectifs par sprints  |
-|   Florian      | Technicien    |  Nomenclature et convention de nommage |
-|   John         | Technicien    |  Documentation technique sur Git-Hub |
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Product Owner   |  Gestion de la relation commercial inter-entreprise ; Préparation de la présentation sur slide     |
+|   Lloyd        | Scrum Master    |  Management d'équipe et veille organisationnelle ; Préparation du schéma réseau  |
+|   Alan         | Technicien      |  Planification des objectifs par sprints  |
+|   Florian      | Technicien      |  Nomenclature et convention de nommage    |
+|   John         | Technicien      |  Documentation technique sur Git-Hub      |
 
 
 ## Tâches et Progressions      
