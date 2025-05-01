@@ -17,6 +17,6 @@
 |   Principal    | Schéma de réseau CISCO        |  Terminé 100%                     |
 |   Principal    | Planification des 13 Sprints  |  En cours 75%                     |
 |   Principal    | Documentation                 |  En cours 100%                     |
-|   Secondaire   | Plan Adressage Réseaux        |  En cours 75%                     |
-|   Secondaire   | Convention de Nommage         |  En cours 75%                     |  
+|   Secondaire   | Plan Adressage Réseaux        |  En cours 100%                     |
+|   Secondaire   | Convention de Nommage         |  En cours 50%                     |  
 
