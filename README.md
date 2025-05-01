@@ -39,7 +39,7 @@ DSI de cette société : Dominique Colleville dit "le Professeur".
 **Nom de code** : La Rochelle     
 **Véritable identité** : Alan Coeurjoly    
     
-**Nom de code** :     
+**Nom de code** : La Calmette     
 **Véritable identité** : Sheldon Thurm    
 
 **Nom de code** : Bordeaux    
