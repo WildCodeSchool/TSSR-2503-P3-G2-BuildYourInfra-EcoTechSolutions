@@ -25,82 +25,57 @@ L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 dépa
 
 # Le groupe de projet  
 
-La Casa Del Shell est une société prestataire de services. Fort de ses 2 mois d'expériences et mandatée par EcoTech Solutions, nous mettons toutes nos compétences et ressources pour accomplir notre objectif final : la mise en place d' une nouvelle infrastructure réseau.  
-DSI de cette société : Dominique Colleville dit "le Professeur".  
+Wilderz est une société fictive et prestataire de services. Elle est mandatée par EcoTech Solutions afin de mettre en place une nouvelle infrastructure réseau.  
+Nous allons réunir toutes nos compétences et ressources acquises durant la formation TSSR pour mener à bien ce projet.     
+DSI de cette société : Dominique Colleville.  
 
 ## L'équipe technique :  
   
-**Nom de code** : Perpignan  
-**Véritable identité** : Florian Cheron    
+Florian Cheron ; Lloyd Morlet ; Alan Coeurjoly ; Sheldon Thurm ; Jonathan Gorine
   
-**Nom de code** : Montpellier  
-**Véritable identité** : Lloyd Morlet     
-  
-**Nom de code** : La Rochelle     
-**Véritable identité** : Alan Coeurjoly    
-    
-**Nom de code** : La Calmette     
-**Véritable identité** : Sheldon Thurm    
-
-**Nom de code** : Bordeaux    
-**Véritable identité** : Jonathan Gorine  
-
-
   
 ### Objectifs finaux  
-
-- Mettre en place une architecture réseau structurée, claire, complète et fonctionnelle   
+  
+- Mettre en place une architecture réseau structurée, complète et fonctionnelle   
 - 
 - 
-
-
+  
+  
 ## 📜 Introduction  
 <span id="introduction"></span>  
 
 Vous êtes une entreprise toute jeune voir déjà leader dans votre domaine? Mais problème : votre infrastructure réseau à besoin d'améliorations ?  
 Vous êtes au bon endroit !  
   
-Bienvenue à La Casa de Coding  
-« On ne braque pas des banques, on sécurise vos réseaux. »  
+Wilderz est une entreprise française spécialisée dans les systèmes et réseaux informatiques.  
+Notre mission : concevoir et déployer des infrastructures réseau innovantes, performantes et sécurisées, afin de garantir une meilleure visibilité et une protection renforcée des données.  
   
-Chez La Casa de Coding, nous avons troqué les masques de Dali pour des firewalls, et les plans d’attaque pour des plans d’architecture réseau solides et durables. Notre mission ? Aider les entreprises à repenser leur infrastructure informatique pour renforcer leur sécurité, améliorer leurs performances et anticiper les menaces de demain.
-  
-À l’image du Professeur, nous élaborons des solutions sur mesure, avec précision, stratégie… et un soupçon de malice. Chaque projet est abordé avec rigueur, créativité et une vraie passion pour la cybersécurité. Ici, pas de braquage, mais un vrai casse-tête technique que nous adorons résoudre.
-  
-La Casa de Coding, c’est l’alliance de l’expertise technique et de l’esprit d’équipe. Parce qu’un bon réseau, c’est comme une bonne équipe : ça communique bien, c’est bien structuré, et surtout, c’est imprenable.  
+Nous accompagnons aussi bien les particuliers que les entreprises et les institutions publiques, en leur proposant des solutions sur mesure adaptées à leurs besoins et à l’évolution constante des technologies numériques.  
+Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécurité et la transparence au cœur de chacun de ses projets.  
   
 ## 👥 Les rôles par sprint  
 <span id="membres-du-groupe-par-sprint"></span>  
-
-
-
+  
+  
+  
 ### Sprint 1
 
-| Membre         | Rôle          | Missions                                                                   |
-| -------------- | ------------- | -------------------------------------------------------------------------- |
+| Membre         | Rôle          |  Missions                               |
+| -------------- | ------------- | --------------------------------------- |
 |   Sheldon      | Product Owner |  Gestion de la relation commercial inter-entreprise ; Préparation de la présentation sur slide   |
 |   Lloyd        | Scrum Master  |  Management d'équipe et veille organisationnelle ; Préparation du schéma réseau  |
 |   Alan         | Technicien    |  Planification des objectifs par sprints  |
-|   Florian      | Technicien    |  Support émotionel ; Nomenclature et convention de nommage |
+|   Florian      | Technicien    |  Nomenclature et convention de nommage |
 |   John         | Technicien    |  Documentation technique sur Git-Hub |
-
-### Sprint 2
-
-| Membre         | Rôle          | Missions                                                                   |
-| -------------- | ------------- | -------------------------------------------------------------------------- |
-|                | Product Owner |  A venir |
-|                | Scrum Master  |  A venir |
-|                | Technicien    |  A venir |
-|                | Technicien    | A venir  |
-|                | Technicien    |  A venir |
-
+  
+  
   
 ## ⚙️ Prérequis
 <span id="Prérequis"></span>
 
 - Compte Promox  
 - Machines Virtuelles:  
-  >   
+  > à venir  
   >   
   >   
   >   
@@ -110,7 +85,7 @@ La Casa de Coding, c’est l’alliance de l’expertise technique et de l’esp
   Les logiciels utilisés:
   > Proxmox  
   > VirtualBox
-  >
+  > à venir
   >   
 
 ## 🧗 Difficultés rencontrées et 💡 Solutions trouvées
@@ -120,14 +95,12 @@ La Casa de Coding, c’est l’alliance de l’expertise technique et de l’esp
 |  [🧗Difficultés rencontrées](#difficultes-rencontrees)|[💡Solutions trouvées](#solutions-trouvees)|  
 | --------------------------------------- | --------------------------------------- |
 |   Découverte de l'entreprise EcoTech'   |         Recherche et Réflexion          |
-|                                         |                                         |
-|                                         |                                         |
-|                                         |                                         |
-|                                         |                                         |
+|   Besoin matériel                       |         Recherche et Réflexion          |
+|   Compétences manquantes                | Recherche et gestion planning en fonction des cours |
 
   
 ## 🚀 Améliorations possibles
 <span id="ameliorations-possibles"></span>
 
--   
+- à venir  
 -   
