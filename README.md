@@ -1,7 +1,5 @@
 # TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions
 
-![](Ressources/EcoTechLogo.png)
-
   ## Sommaire 
 
 - [🎯 Présentation générale du projet](#presentation-du-projet)  
@@ -20,13 +18,15 @@
 
 ## L'entreprise cliente  
 
+![](Ressources/EcoTechLogo.png)
+
 **EcoTech Solutions**, implantée à Bordeaux, est un acteur innovant dans le domaine des solutions IoT dédiées à la gestion intelligente de l’énergie et des ressources. En collaborant étroitement avec le gouvernement et les leaders du secteur énergétique, elle conçoit et déploie des systèmes de surveillance avancés pour optimiser la consommation, réduire les émissions carbone et accompagner activement la transition écologique.  
 Forte de son expertise technologique et de son esprit d'innovation, **EcoTech Solutions** s’impose comme un moteur essentiel de l’économie verte.  
 L’entreprise rassemble aujourd’hui 251 talents, répartis au sein de 7 départements spécialisés, et s’enrichit régulièrement de compétences extérieures, intervenant sur des missions ponctuelles ou à temps plein.  
 
 ## Le groupe de projet  
 
-**Wilderz** est une société fictive et prestataire de services. Elle est mandatée par EcoTech Solutions afin de mettre en place une nouvelle infrastructure réseau.  
+_**Wilderz**_ est une société fictive et prestataire de services. Elle est mandatée par EcoTech Solutions afin de mettre en place une nouvelle infrastructure réseau.  
 Nous allons réunir toutes nos compétences et ressources acquises durant la formation TSSR pour mener à bien ce projet.     
 **DSI de cette société** : Dominique Colleville.  
 
@@ -49,9 +49,11 @@ Florian Cheron ; Lloyd Morlet ; Alan Coeurjoly ; Sheldon Thurm ; Jonathan Gorine
 
 Vous êtes une entreprise toute jeune voir déjà leader dans votre domaine? Mais problème : votre infrastructure réseau à besoin d'améliorations ?  
 Vous êtes au bon endroit !  
+
+<img src="https://github.com/user-attachments/assets/7d9bd1c3-a10d-43fc-ba69-f814ac47dcee" width="600" height="400">  
   
-Wilderz est une entreprise française spécialisée dans les systèmes et réseaux informatiques.  
-Notre mission : concevoir et déployer des infrastructures réseau innovantes, performantes et sécurisées, afin de garantir une meilleure visibilité et une protection renforcée des données.  
+_**Wilderz**_ est une entreprise française spécialisée dans les systèmes et réseaux informatiques.  
+_Notre mission_ : concevoir et déployer des infrastructures réseau innovantes, performantes et sécurisées, afin de garantir une meilleure visibilité et une protection renforcée des données.  
   
 Nous accompagnons aussi bien les particuliers que les entreprises et les institutions publiques, en leur proposant des solutions sur mesure adaptées à leurs besoins et à l’évolution constante des technologies numériques.  
 Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécurité et la transparence au cœur de chacun de ses projets.  
