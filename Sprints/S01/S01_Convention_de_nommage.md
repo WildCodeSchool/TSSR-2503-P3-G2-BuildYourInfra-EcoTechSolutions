@@ -49,7 +49,8 @@
 		- Direction => ``DIR``  
 		- Direction des Ressources Humaines => ``DRH``  
 		- Finances et Comptabilité => ``FINC``  
-		- Service Commercial => ``SERCO``  
+		- Service Commercial => ``SERCO``
+  		- Direction Service Informatique => ``DSI`` 
 	- **Type**  
 		- Desktops => ``DT``  
 		- Laptops (Si on en garde) => ``LT``  
