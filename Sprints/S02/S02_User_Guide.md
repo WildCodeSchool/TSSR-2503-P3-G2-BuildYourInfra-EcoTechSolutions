@@ -29,7 +29,7 @@
 #### Étape 2 : Assistant d’ajout de rôles
 - Type d'installation : Installation basée sur un rôle ou une fonctionnalité
 
-![Installation ADDS](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/890a3ce449f92501d97790662f6df70b87351a42/Ressources/Médiathèque/Captures%20d'écran%20déploiement%20ADDS%20DHCP%20DNS/Capture%20d'écran%201%20-%20installation%20adds.png)
+![Installation ADDS](Ressources/Médiathèque/Captures d'écran déploiement ADDS DHCP DNS/ScreenShot1_installation_adds.png)
 
 - Sélection du serveur : WINSRV-AD-DHCP-DNS
 
