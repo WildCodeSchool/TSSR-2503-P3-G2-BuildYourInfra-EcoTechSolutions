@@ -116,7 +116,38 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 ...
 
 ## Installation de Windows Server Core – WINCORESRV-ADDS
-...
+
+# 1° | Installation et configuration de notre Windows Serveur 2022 core :
+-------------------------------
+## - Configuration initiale du serveur core -
+##### **Changer le nom du serveur :** 
+- Aller dans **Computer name** et suivre les menus pour modifier le nom du serveur. Dans notre cas nous l'avons nommer selon notre convention de nommage soit => ``WINCORESRV-ADDS``
+
+##### **Configuration Réseau du serveur core :**
+- Allez dans **Network settings** puis suivre les menus pour modifier l'adresse IP de la carte réseau ainsi que l'adresse IP du DNS. Ou bien on peut aussi effectuer la configuration en Powershell avec les commandes suivantes :
+**NB : Les adresses sont à adapter à votre réseau**
+```
+1 New-NetIPAddress -IPAddress "172.16.10.20" -PrefixLength "24" -InterfaceIndex (Get-NetAdapter).ifIndex
+2 Set-DnsClientServerAddress -InterfaceIndex (Get-NetAdapter).ifIndex -ServerAddresses ("127.0.0.1")
+```
+- Vérifier votre configuration avec la commande ``Get-NetIPAdress`` permettant d'afficher les détails de votre interface réseau.
+
+# 2° | Installation des rôles :
+-------------------
+##### **Fonctionnalités nécéssaire en tant que controleur de domaine :**
+Nous allons ces différents outils :
+- **RSAT-AD-Tools**
+- **AD-Domain-Services**
+- **DNS**
+
+Pour cela, executer successivement ces 3 lignes de commandes PowerShell : 
+```
+1 Add-WindowsFeature -Name "RSAT-AD-Tools" -IncludeManagementTools -IncludeAllSubFeature
+2 Add-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
+3 Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature
+
+
+
 
 ## Installation de Debian avec GLPI – DEBSRV-GLPI
 ...
