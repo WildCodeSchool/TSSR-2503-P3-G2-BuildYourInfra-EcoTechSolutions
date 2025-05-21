@@ -17,7 +17,7 @@
 #### Forêt : ecotechsolutions.lan
 #### IP Statique : 172.16.40.1
 #### Masque Réseau : 255.255.0.0
-#### Passerelle : 172.16.40.254
+#### Passerelle : 172.16.255.254
 ---
 
 ### PARTIE 1 – Installation des rôles
