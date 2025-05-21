@@ -1,4 +1,4 @@
-# Guide d’installation – Infrastructure Active Directory
+# Guide d’installation et configuration – Serveurs et clients - Ecotech Solutions
 
 ## Sommaire
 
@@ -12,12 +12,12 @@
 4. [Installation d’un poste client d'administration Ubuntu – CLIENT "DT-DSI-Admin"](#installation-dun-client-ubuntu--dt-dsi-admin)
 
 
-## Installation et configuration des rôles ADDS, DHCP et DNS
-### Serveur : WINSRV-AD-DHCP-DNS  
-### Forêt : ecotechsolutions.lan
-### IP Statique : 172.16.40.1
-### Masque Réseau : 255.255.0.0
-### Passerelle : 172.16.40.254
+### Installation et configuration des rôles ADDS, DHCP et DNS
+#### Serveur : WINSRV-AD-DHCP-DNS  
+#### Forêt : ecotechsolutions.lan
+#### IP Statique : 172.16.40.1
+#### Masque Réseau : 255.255.0.0
+#### Passerelle : 172.16.40.254
 ---
 
 ### PARTIE 1 – Installation des rôles
