@@ -145,6 +145,7 @@ Pour cela, executer successivement ces 3 lignes de commandes PowerShell :
 1 Add-WindowsFeature -Name "RSAT-AD-Tools" -IncludeManagementTools -IncludeAllSubFeature
 2 Add-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
 3 Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature
+```
 
 
 
