@@ -4,7 +4,7 @@
 
 1. [Installation des rôles ADDS, DHCP, DNS – SERVEUR "WINSRV-ADDS-DHCP-DNS"](#installation-des-rôles-adds-dhcp-dns--winsrv-adds-dhcp-dns)
    - [Partie 1 – Installation des rôles](#partie-1--installation-des-rôles)
-   - [Partie 2 – Installation du DC Active Directory (ADDS)](#partie-2--installationDC-dactive-directory-adds)
+   - [Partie 2 – Installation du DC Active Directory (ADDS)](#partie-2--installation-du-dc-active-directory-adds)
    - [Partie 3 – Configuration du DHCP](#partie-3--configuration-du-dhcp)
    - [Partie 4 – Configuration du DNS](#partie-4--configuration-du-dns)
 2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
