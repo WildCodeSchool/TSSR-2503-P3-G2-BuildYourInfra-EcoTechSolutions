@@ -119,10 +119,10 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 - Serveur DHCP prêt à être configuré
 
 
-## Configuration des rôles DHCP et DNS – WINSRV-ADDS-DHCP-DNS
+# Configuration des rôles DHCP et DNS – WINSRV-ADDS-DHCP-DNS
 ...
 
-# A - Installation de Windows Server Core – WINCORESRV-ADDS
+## A - Installation de Windows Server Core – WINCORESRV-ADDS
 
 ## 1° | Installation et configuration de notre Windows Serveur 2022 core :
 -------------------------------
@@ -154,7 +154,7 @@ Pour cela, executer successivement ces 3 lignes de commandes PowerShell :
 3 Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature
 ```
 
-# B - Rejoindre le domaine EcoTechSolution  
+## B - Rejoindre le domaine EcoTechSolution  
 
  #### Étape 1 :   
  - Dans le menu principal, sélectionner PowerShell avec l’option 15  
