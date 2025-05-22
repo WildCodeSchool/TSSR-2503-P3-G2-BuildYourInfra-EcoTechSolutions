@@ -29,11 +29,14 @@
 #### Étape 2 : Assistant d’ajout de rôles
 - Type d'installation : Installation basée sur un rôle ou une fonctionnalité
 
-![Installation ADDS](Ressources/Médiathèque/Captures d'écran déploiement ADDS DHCP DNS/ScreenShot1_installation_adds.png)
+![Installation ADDS](https://github.com/user-attachments/assets/f2d59266-fe89-4548-a7ef-0b7931ac5c84)
+
 
 - Sélection du serveur : WINSRV-AD-DHCP-DNS
 
-![Choix du serveur](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%202%20-%20choix%20serveur%20adds.png)
+![Choix du serveur](https://github.com/user-attachments/assets/18cef3c2-7bb7-41f7-881a-8a1fa066904e)
+
+
 
 #### Étape 3 : Sélection des rôles
 Cocher les rôles suivants :
@@ -42,13 +45,15 @@ Cocher les rôles suivants :
 - Serveur DNS  
 Valider les fonctionnalités supplémentaires si demandé.
 
-![Cocher les rôles](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%203%20-%20ajout%20des%203%20roles.png)
+![Cocher les rôles](https://github.com/user-attachments/assets/43dc02c0-cea4-4b78-9acc-462e596eae87)
+
 
 #### Étape 4 : Confirmation
 - Lancer l'installation
 - L'installateur doit indiqué "Installation succeeded". Les rôles correcetement installés sont visibles en vert dans le server manager.
 
-![Installation succeeded](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%204%20-%20fin%20installation%20des%20roles.png)
+![Installation succeeded](https://github.com/user-attachments/assets/d21ac8f9-e449-4cfe-a884-939a6b647f94)
+
 
 
 
@@ -59,13 +64,15 @@ Valider les fonctionnalités supplémentaires si demandé.
 #### Étape 1 : Promouvoir le serveur en contrôleur de domaine
 - Après l'installation, cliquer sur l'alerte "Promouvoir ce serveur en contrôleur de domaine"
 
-![Promotion DC](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%205%20-%20%20configuration%20DC.png)
+![Promotion DC](https://github.com/user-attachments/assets/cc6768ae-dce7-4f34-8663-136bba7390ff)
+
 
 #### Étape 2 : Configuration du déploiement
 - Choisir "Ajouter une nouvelle forêt"
 - Nom du domaine racine : ecotechsolutions.lan
 
-![Root domain name](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%206%20-%20foret%20deploiement.png)
+![Root domain name](https://github.com/user-attachments/assets/40793380-011f-45cc-ac5f-313072cc4b66)
+
 
 #### Étape 3 : Options du contrôleur de domaine
 - Niveau fonctionnel de forêt/domaine : Windows Server 2016 ou 2022
