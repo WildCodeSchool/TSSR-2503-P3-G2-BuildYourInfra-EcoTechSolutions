@@ -8,13 +8,15 @@
    - [Partie 3 – Configuration du DHCP](#partie-3--configuration-du-dhcp)
    - [Partie 4 – Configuration du DNS](#partie-4--configuration-du-dns)
 2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
-   - [Partie A - Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
-   - [Partie B - Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
+   - [Partie 1 - Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
+   - [Partie 2 - Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
 3. [Installation de Debian avec GLPI – SERVEUR "DEBSRV-GLPI"](#installation-de-debian-avec-glpi--debsrv-glpi)
 4. [Installation d’un poste client d'administration Ubuntu – CLIENT "DT-DSI-Admin"](#installation-dun-client-ubuntu--dt-dsi-admin)
 
 
 ### Installation et configuration des rôles ADDS, DHCP et DNS
+<span id="installation-des-rôles-adds-dhcp-dns--winsrv-adds-dhcp-dns"></span>   
+
 #### Serveur : WINSRV-AD-DHCP-DNS  
 #### Forêt : ecotechsolutions.lan
 #### IP Statique : 172.16.40.1
@@ -128,7 +130,10 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 # Configuration des rôles DHCP et DNS – WINSRV-ADDS-DHCP-DNS
 ...
 
-## A - Installation de Windows Server Core – WINCORESRV-ADDS  
+### Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS  
+<span id="installation-de-windows-server-core--wincoresrv-adds"></span>  
+
+## Partie 1 - Installation de Windows Server Core – WINCORESRV-ADDS  
 <span id="installation_windows_server_core"></span> 
   
 ## 1° | Installation et configuration de notre Windows Serveur 2022 core :
@@ -161,7 +166,7 @@ Pour cela, executer successivement ces 3 lignes de commandes PowerShell :
 3 Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature
 ```
 
-## B - Rejoindre le domaine EcoTechSolution  
+## Partie 2 - Rejoindre le domaine EcoTechSolution  
 <span id="rejoindre-le-domaine-ecotechsolution"></span>  
   
  #### Étape 1 :   
