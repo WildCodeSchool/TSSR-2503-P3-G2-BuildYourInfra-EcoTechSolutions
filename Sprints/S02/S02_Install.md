@@ -1,0 +1,204 @@
+# Guide d’installation et configuration – Serveurs et clients - Ecotech Solutions
+
+## Sommaire
+
+1. [Installation des rôles ADDS, DHCP, DNS – SERVEUR "WINSRV-ADDS-DHCP-DNS"](#installation-des-rôles-adds-dhcp-dns--winsrv-adds-dhcp-dns)
+   - [Partie 1 – Installation des rôles](#partie-1--installation-des-rôles)
+   - [Partie 2 – Installation du DC Active Directory (ADDS)](#partie-2--installation-du-dc-active-directory-adds)
+   - [Partie 3 – Configuration du DHCP](#partie-3--configuration-du-dhcp)
+   - [Partie 4 – Configuration du DNS](#partie-4--configuration-du-dns)
+2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
+3. [Installation de Debian avec GLPI – SERVEUR "DEBSRV-GLPI"](#installation-de-debian-avec-glpi--debsrv-glpi)
+4. [Installation d’un poste client d'administration Ubuntu – CLIENT "DT-DSI-Admin"](#installation-dun-client-ubuntu--dt-dsi-admin)
+
+
+### Installation et configuration des rôles ADDS, DHCP et DNS
+#### Serveur : WINSRV-AD-DHCP-DNS  
+#### Forêt : ecotechsolutions.lan
+#### IP Statique : 172.16.40.1
+#### Masque Réseau : 255.255.0.0
+#### Passerelle : 172.16.255.254
+---
+
+### PARTIE 1 – Installation des rôles
+
+#### Étape 1 : Ouvrir le Gestionnaire de serveur
+- Lancer "Gestionnaire de serveur"
+- Cliquer sur "Ajouter des rôles et fonctionnalités"
+
+#### Étape 2 : Assistant d’ajout de rôles
+- Type d'installation : Installation basée sur un rôle ou une fonctionnalité
+
+![Installation ADDS](Ressources/Médiathèque/Captures d'écran déploiement ADDS DHCP DNS/ScreenShot1_installation_adds.png)
+
+- Sélection du serveur : WINSRV-AD-DHCP-DNS
+
+![Choix du serveur](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%202%20-%20choix%20serveur%20adds.png)
+
+#### Étape 3 : Sélection des rôles
+Cocher les rôles suivants :
+- Services de domaine Active Directory (ADDS)
+- Serveur DHCP
+- Serveur DNS  
+Valider les fonctionnalités supplémentaires si demandé.
+
+![Cocher les rôles](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%203%20-%20ajout%20des%203%20roles.png)
+
+#### Étape 4 : Confirmation
+- Lancer l'installation
+- L'installateur doit indiqué "Installation succeeded". Les rôles correcetement installés sont visibles en vert dans le server manager.
+
+![Installation succeeded](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%204%20-%20fin%20installation%20des%20roles.png)
+
+
+
+---
+
+## PARTIE 2 – Installation du DC Active Directory (ADDS)
+
+#### Étape 1 : Promouvoir le serveur en contrôleur de domaine
+- Après l'installation, cliquer sur l'alerte "Promouvoir ce serveur en contrôleur de domaine"
+
+![Promotion DC](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%205%20-%20%20configuration%20DC.png)
+
+#### Étape 2 : Configuration du déploiement
+- Choisir "Ajouter une nouvelle forêt"
+- Nom du domaine racine : ecotechsolutions.lan
+
+![Root domain name](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%206%20-%20foret%20deploiement.png)
+
+#### Étape 3 : Options du contrôleur de domaine
+- Niveau fonctionnel de forêt/domaine : Windows Server 2016 ou 2022
+- Cochez :
+  - Serveur DNS
+  - Catalogue global
+- Définir un mot de passe DSRM (récupération d'urgence)
+
+#### Étape 4 : Configuration DNS
+- Laisser les options par défaut
+- Ignorer les avertissements sur la délégation si présents
+
+#### Étape 5 : Nom NetBIOS 
+- Nom généré automatiquement : ECOTECHSOLUTIONS
+
+#### Étape 6 : Chemins des bases AD
+Laisser les chemins par défaut :
+- Base de données : C:\Windows\NTDS
+- Fichiers journaux : C:\Windows\NTDS
+- SYSVOL : C:\Windows\SYSVOL
+
+#### Étape 7 : Vérification & Installation
+- Vérifier le résumé
+- Laisser l’analyse de prérequis se terminer
+- Cliquer sur "Installer"
+
+![Fin configuration DC](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%207%20-%20validation%20installation.png)
+
+- Le serveur redémarrera automatiquement
+
+...
+
+### Partie 3 – Configuration du DHCP
+...
+
+### Partie 4 – Configuration du DNS
+
+---
+
+## Résultat attendu
+Le serveur WINSRV-AD-DHCP-DNS devient :
+- Contrôleur de domaine pour la forêt ecotechsolutions.lan
+- Serveur DNS intégré
+- Serveur DHCP prêt à être configuré
+
+
+## Configuration des rôles DHCP et DNS – WINSRV-ADDS-DHCP-DNS
+...
+
+## A - Installation de Windows Server Core – WINCORESRV-ADDS
+
+# 1° | Installation et configuration de notre Windows Serveur 2022 core :
+-------------------------------
+## - Configuration initiale du serveur core -
+##### **Changer le nom du serveur :** 
+- Aller dans **Computer name** et suivre les menus pour modifier le nom du serveur. Dans notre cas nous l'avons nommer selon notre convention de nommage soit => ``WINCORESRV-ADDS``
+
+##### **Configuration Réseau du serveur core :**
+- Allez dans **Network settings** puis suivre les menus pour modifier l'adresse IP de la carte réseau ainsi que l'adresse IP du DNS. Ou bien on peut aussi effectuer la configuration en Powershell avec les commandes suivantes :
+**NB : Les adresses sont à adapter à votre réseau**
+```
+1 New-NetIPAddress -IPAddress "172.16.10.20" -PrefixLength "24" -InterfaceIndex (Get-NetAdapter).ifIndex
+2 Set-DnsClientServerAddress -InterfaceIndex (Get-NetAdapter).ifIndex -ServerAddresses ("127.0.0.1")
+```
+- Vérifier votre configuration avec la commande ``Get-NetIPAdress`` permettant d'afficher les détails de votre interface réseau.
+
+# 2° | Installation des rôles :
+-------------------
+##### **Fonctionnalités nécéssaire en tant que controleur de domaine :**
+Nous avons besoin de ces différents outils :
+- **RSAT-AD-Tools**
+- **AD-Domain-Services**
+- **DNS**
+
+Pour cela, executer successivement ces 3 lignes de commandes PowerShell : 
+```
+1 Add-WindowsFeature -Name "RSAT-AD-Tools" -IncludeManagementTools -IncludeAllSubFeature
+2 Add-WindowsFeature -Name "AD-Domain-Services" -IncludeManagementTools -IncludeAllSubFeature
+3 Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature
+```
+
+## B - Rejoindre le domaine EcoTechSolution
+
+ - Dans le menu principal, sélectionner PowerShell avec l’option 15
+
+
+- Entrer la commande suivante :
+> Add-Computer -DomainName "EcoTechSolution.lan" -Credential "EcoTechSolution\Administrator" -Restart
+
+
+- Une fenêtre s’ouvre, vous invitant à entrer le mot de passe. Entrer le mot de passe : Azerty1*
+Après cela, la machine va redémarrer.
+
+
+- Une fois redémarrer, vous pouvez observer sur la ligne Domain/workgroup, que vous êtes passez de « Workgroup » à « EcoTechSolution.lan ». Cela signifie que votre machine à bien été ajouté au  domain.
+
+
+- Redémarrer la machine, lors du déverrouillage du clavier, appuyer 2 fois sur la touche ESC (echap) pour changer de compte.
+
+
+
+- Sélectionner « Other user »
+
+
+- Dans « User name » entrer : ECOTECHSOLUTION\Administrator
+Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mot de passe (Password) et entrer le mot de passe : Azerty1* , puis Entrée.
+
+
+- Une fois dans le menu, sélectionner l’option 15 (PowerShell)
+
+
+- Vérifier que vous êtes bien connecté au compte Administrator du domain avec la commande : whoami
+
+
+- Vérification que le serveur apparaît bien comme membre du domaine dans la console Active Directory :
+
+  Dans la barre de recherche du menu démarrer, taper : dsa.msc, une fenêtre (Active Directory Users and Computers) s’ouvre
+
+
+
+- Dans l’arborescence du domaine (EcoTechSolution), dérouler le menu
+
+
+- Cliquer sur « Computer », vous verrez apparaître dans la fenêtre centrale la machine server core
+
+
+
+
+
+
+## Installation de Debian avec GLPI – DEBSRV-GLPI
+...
+
+## Installation d’un client Ubuntu – DT-DSI-Admin
+...
+
