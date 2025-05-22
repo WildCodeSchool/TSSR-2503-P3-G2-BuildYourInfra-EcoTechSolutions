@@ -8,6 +8,8 @@
    - [Partie 3 – Configuration du DHCP](#partie-3--configuration-du-dhcp)
    - [Partie 4 – Configuration du DNS](#partie-4--configuration-du-dns)
 2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
+   - [Partie A - Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
+   - [Partie B - Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
 3. [Installation de Debian avec GLPI – SERVEUR "DEBSRV-GLPI"](#installation-de-debian-avec-glpi--debsrv-glpi)
 4. [Installation d’un poste client d'administration Ubuntu – CLIENT "DT-DSI-Admin"](#installation-dun-client-ubuntu--dt-dsi-admin)
 
@@ -20,7 +22,8 @@
 #### Passerelle : 172.16.255.254
 ---
 
-### PARTIE 1 – Installation des rôles
+### PARTIE 1 – Installation des rôles  
+<span id="partie-1--installation-des-rôles"></span>  
 
 #### Étape 1 : Ouvrir le Gestionnaire de serveur
 - Lancer "Gestionnaire de serveur"
@@ -59,7 +62,8 @@ Valider les fonctionnalités supplémentaires si demandé.
 
 ---
 
-## PARTIE 2 – Installation du DC Active Directory (ADDS)
+## PARTIE 2 – Installation du DC Active Directory (ADDS)  
+<span id="partie-2--installation-du-dc-active-directory-adds"></span>
 
 #### Étape 1 : Promouvoir le serveur en contrôleur de domaine
 - Après l'installation, cliquer sur l'alerte "Promouvoir ce serveur en contrôleur de domaine"
@@ -105,10 +109,12 @@ Laisser les chemins par défaut :
 
 ...
 
-### Partie 3 – Configuration du DHCP
+### Partie 3 – Configuration du DHCP  
+<span id="partie-3--configuration-du-dhcp"></span>  
 ...
 
-### Partie 4 – Configuration du DNS
+### Partie 4 – Configuration du DNS  
+<span id="partie-4--configuration-du-dns"></span>  
 
 ---
 
@@ -122,8 +128,9 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 # Configuration des rôles DHCP et DNS – WINSRV-ADDS-DHCP-DNS
 ...
 
-## A - Installation de Windows Server Core – WINCORESRV-ADDS
-
+## A - Installation de Windows Server Core – WINCORESRV-ADDS  
+<span id="installation_windows_server_core"></span> 
+  
 ## 1° | Installation et configuration de notre Windows Serveur 2022 core :
 -------------------------------
 ## - Configuration initiale du serveur core -
@@ -155,7 +162,8 @@ Pour cela, executer successivement ces 3 lignes de commandes PowerShell :
 ```
 
 ## B - Rejoindre le domaine EcoTechSolution  
-
+<span id="rejoindre-le-domaine-ecotechsolution"></span>  
+  
  #### Étape 1 :   
  - Dans le menu principal, sélectionner PowerShell avec l’option 15  
 ![main_menu](https://github.com/user-attachments/assets/09c2daf3-d7da-4525-b8f1-908aa40163ae)  
@@ -212,12 +220,13 @@ Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mo
 
 
 
+## Installation de Debian avec GLPI – DEBSRV-GLPI  
+<span id="installation-de-debian-avec-glpi--debsrv-glpi"></span>  
 
-
-
-## Installation de Debian avec GLPI – DEBSRV-GLPI
 ...
 
-## Installation d’un client Ubuntu – DT-DSI-Admin
+## Installation d’un client Ubuntu – DT-DSI-Admin  
+<span id="installation-dun-client-ubuntu--dt-dsi-admin"></span>  
+
 ...
 
