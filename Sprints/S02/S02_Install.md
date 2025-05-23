@@ -77,7 +77,8 @@ Valider les fonctionnalités supplémentaires si demandé.
 - Choisir "Ajouter une nouvelle forêt"
 - Nom du domaine racine : ecotechsolutions.lan
 
-![Root domain name](https://github.com/user-attachments/assets/40793380-011f-45cc-ac5f-313072cc4b66)
+![Root domain name]!(https://github.com/user-attachments/assets/429c7e76-19f8-41bb-942a-5e03c10f65b2)
+
 
 
 #### Étape 3 : Options du contrôleur de domaine
@@ -105,7 +106,8 @@ Laisser les chemins par défaut :
 - Laisser l’analyse de prérequis se terminer
 - Cliquer sur "Installer"
 
-![Fin configuration DC](https://raw.githubusercontent.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/refs/heads/main/Ressources/M%C3%A9diath%C3%A8que/Captures%20d'%C3%A9cran%20d%C3%A9ploiement%20ADDS%20DHCP%20DNS/Capture%20d'%C3%A9cran%207%20-%20validation%20installation.png)
+![Fin configuration DC]!(https://github.com/user-attachments/assets/06c5c95d-9101-4077-a8f0-c4f0756ab892)
+
 
 - Le serveur redémarrera automatiquement
 
