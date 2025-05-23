@@ -77,7 +77,7 @@ Valider les fonctionnalités supplémentaires si demandé.
 - Choisir "Ajouter une nouvelle forêt"
 - Nom du domaine racine : ecotechsolutions.lan
 
-![Root domain name]!(https://github.com/user-attachments/assets/429c7e76-19f8-41bb-942a-5e03c10f65b2)
+![Root domain name](https://github.com/user-attachments/assets/429c7e76-19f8-41bb-942a-5e03c10f65b2)
 
 
 
@@ -106,7 +106,7 @@ Laisser les chemins par défaut :
 - Laisser l’analyse de prérequis se terminer
 - Cliquer sur "Installer"
 
-![Fin configuration DC]!(https://github.com/user-attachments/assets/06c5c95d-9101-4077-a8f0-c4f0756ab892)
+![Fin configuration DC](https://github.com/user-attachments/assets/06c5c95d-9101-4077-a8f0-c4f0756ab892)
 
 
 - Le serveur redémarrera automatiquement
