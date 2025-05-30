@@ -7,6 +7,7 @@
    - [Partie 2 – Installation du DC Active Directory (ADDS)](#partie-2--installation-du-dc-active-directory-adds)
    - [Partie 3 – Configuration du DHCP](#partie-3--configuration-du-dhcp)
    - [Partie 4 – Configuration du DNS](#partie-4--configuration-du-dns)
+   - [Partie 5 – Réplication complète](#partie-5--Réplication-complète)
 2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
    - [Partie 1 - Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
    - [Partie 2 - Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
@@ -224,7 +225,8 @@ Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mo
 - Cliquer sur « Computer », vous verrez apparaître dans la fenêtre centrale la machine server core  
 ![verification_domain_member_part_3](https://github.com/user-attachments/assets/cb5b955d-6465-426f-8aaa-ceb9ce85d252)
 
-
+### Partie 5 – Réplication complète
+<span id="partie-5--Réplication-complète"></span> 
 
 
 ## Installation de Debian avec GLPI – DEBSRV-GLPI  
