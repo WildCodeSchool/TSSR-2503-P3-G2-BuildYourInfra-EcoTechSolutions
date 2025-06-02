@@ -1,8 +1,14 @@
+# Sommaire
+
+- [Trippy](#trippy)
+- [SSH](#ssh)
+- [WireShark](#wireshark)
+- [Cockpit](#cockpit)
+- [NetData](#netdata)
+
 # Trippy
-
+<span id="trippy"></span>
 Trippy est un outil de diagnostique réseaux sous licence Apache 2 combinant les fonctionnalités de traceroute et de ping dans le terminal (CLI) afin d’aider les administrateurs systèmes et réseaux.
-
-## Utilisation de Trippy
 
 - Commande de base :
 
@@ -30,28 +36,25 @@ Trippy est un outil de diagnostique réseaux sous licence Apache 2 combinant les
  	
  Pour d'autre exemple, consultez la documentation officiel [ici](https://trippy.rs/guides/usage/) 
 
-#### SSH
-
+# SSH
+<span id="ssh"></span>
 SSH, ou Secure Shell, est un protocole utilisé pour se connecter en toute sécurité à des systèmes distants. C’est le moyen le plus courant d’accéder à des serveurs Linux distants.
-Pour l'utiliser nous allons utiliser la commande suivante :
 
+Pour vous connecter a une machine distante, utilisez la commande :
 ```bash
-ssh <adresse ip ou nom de la machine>
+ssh <ip_de_la_machine_cible> 
 ```
-
 ![image illustration utilisation ssh](/Ressources/Emplacement_libre_2/ssh.png)
 
-Une fois que vous vous êtes connecté au serveur, il peut vous être demandé de vérifier votre identité en fournissant un mot de passe. Plus tard, nous verrons comment générer des clés à utiliser à la place des mots de passe.
+Un mot de passe vous sera demandé pour vous connecter. (il est possible de paramétrer ssh pour générer des clés pour ne plus avoir besoin de mot de passe)
 
-Pour quitter la session ssh et revenir dans votre session shell locale, tapez :
+Pour quitter la session ssh et vous déconnecter de la machine distante, utilisez la commande :
 ```bash
 exit
 ```
 
-
-
-#### WireShark
-
+# Wireshark
+<span id="wireshark"></span>
 Lorsque vous ouvrez Wireshark, un écran vous présente la liste de toutes les connexions réseau que vous pouvez surveiller. Vous disposez également d’un champ de filtre de capture vous permettant de capturer uniquement le trafic réseau qui vous intéresse.
 
 ![image ouverture de wireshark](/Ressources/Emplacement_libre_2/wireshark_home.png)
@@ -61,19 +64,15 @@ Une fois que vous avez capturé tous les paquets dont vous avez besoin, utilisez
 
 ![image sur fin de capture réseau](/Ressources/Emplacement_libre_2/wireshark_lecture_paquets.png)
 
-
-
-
-
-#### Cockpit
-
+# Cockpit
+<span id="cockpit"></span>
 Pour utiliser Cockpit il faut tout d'abord que notre PC client et notre serveur soit sur le même réseau.
-Ensuite nous pouvons acceder a l'interface Cockpit en saissisnat l'adresse IP de notre serveur suivie du port "9090" (port par defaut).
+Ensuite nous pouvons accéder a l'interface Cockpit en saisissant l'adresse IP de notre serveur suivie du port "9090" (port par défaut) dans votre navigateur web.
 
 ```bash
-172.20.16.6:9090
+http://ip_du_serveur:9090
 ```
-Nous devons maintenant nous autentifier pour pouvoir accéder au logiciel.
+Nous devons maintenant nous authentifier pour pouvoir accéder au logiciel.
 
 ![image interface web Cockpit](/Ressources/Emplacement_libre_2/Cockpit_login.png)
 
@@ -108,7 +107,8 @@ Enfin, l'onglet "Terminal" vous permet d'ouvrir un Terminal en mode Web pour adm
 ![terminal cockpit](/Ressources/Emplacement_libre_2/cockpit_terminal.png)
 
 
-#### NetData
+# Netdata
+<span id="netdata"></span>
 
 C’est une solution de monitoring très légère qui affiche via un dashboard l’ensemble des informations sur l’usage des ressources de votre serveur. On y retrouve l’usage CPU, RAM, des disques avec chaque partitions mais également le détail des applications comme memcached, postfix ou redis.
 
@@ -118,26 +118,24 @@ Pour pouvoir utiliser NetData, il faut aller sur cette adresse via un navigateur
 https://www.netdata.cloud
 ```
 
-
-
 Puis remplir les champs disponible avec l'adresse mail __ecotechsolution.wcs@gmail.fr__ pour se connecter.
 
-Nous arrivons sur le **home** du site. D'ici nous avons un apercu globale de l'ensemble de nos "__nodes__" (dans **Netdata**, un node est une machine)
+Nous arrivons sur le **home** du site. D'ici nous avons un aperçu globale de l'ensemble de nos "__nodes__" (dans **Netdata**, un "node" = une machine)
 
 ![image netdata site avec entour en haut a droite](/Ressources/Emplacement_libre_2/home_netdata.png)
 
-Pour avoir plus de détails sur un node en particulier, il suffit de cliquer sur le node qui nous interesse.
+Pour avoir plus de détails sur un node en particulier, il suffit de cliquer sur le node qui nous intéresse.
 
-[image ou on voit les nodes](/Ressources/Emplacement_libre_2/ensemble_nodes_netdata.png)
+![image ou on voit les nodes](/Ressources/Emplacement_libre_2/ensemble_nodes_netdata.png)
 
 Ensuite il suffit de défiler pour avoir l'ensemble des informations relative au fonctionnement du node.
 
 ![image netdata avec les serveurs](/Ressources/Emplacement_libre_2/node_detaille.png)
 
-Nous pouvons également nous connecter sur NetData sur la machine que nous utilisons. Il suffit de se connecter via un navigateur web a l'adresse suivante :
+Nous pouvons également nous connecter sur NetData en local (sur la machine que nous utilisons), pour afficher uniquement ses information. Il suffit de se connecter via un navigateur web a l'adresse suivante :
 
 ```
 http://localhost:19999
 ```
 
-[image interface web](/Ressources/Emplacement_libre_2/netdata_localhost.png)
+![image interface web](/Ressources/Emplacement_libre_2/netdata_localhost.png)
