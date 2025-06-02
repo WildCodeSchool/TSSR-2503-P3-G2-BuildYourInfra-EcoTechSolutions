@@ -1,8 +1,8 @@
-Trippy
+# Trippy
 
 Trippy est un outil de diagnostique réseaux sous licence Apache 2 combinant les fonctionnalités de traceroute et de ping dans le terminal (CLI) afin d’aider les administrateurs systèmes et réseaux.
 
-# Utilisation de Trippy
+## Utilisation de Trippy
 
 - Commande de base :
 
