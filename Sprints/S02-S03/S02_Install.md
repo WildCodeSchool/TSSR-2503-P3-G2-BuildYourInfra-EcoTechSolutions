@@ -234,8 +234,8 @@ Nous avons fait le choix d'interdir avec un GPO l'acces au panneau de configurat
 #### Étape 3 – Application des GPO
 
 - Forcer l’application via la commande :
-```powershell
-gpupdate /force
+_powershell_
+`gpupdate /force`
 
 ---
 
