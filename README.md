@@ -101,7 +101,7 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
   - Adresse IP de réseau : ``172.16.20.0/24`` 
   - Adresse de passerelle : ``172.16.20.254`` 
 
-- Les logiciels utilisés :
+- 📱 Les logiciels utilisés :
   - **OpenSSH** => Serveur et client SSH
   - **VirtualBox** => Lab avant migration finale sur Proxmox  
   - **NetData** => Monitoring en temps réel
