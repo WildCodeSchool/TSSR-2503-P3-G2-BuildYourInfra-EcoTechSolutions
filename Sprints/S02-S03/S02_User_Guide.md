@@ -1,27 +1,34 @@
-#### Trippy
+Trippy
 
-Trippy est un outil de diadnostique réseaux sous licence Apache 2 combinant les fonctionnalités de traceroute et de ping dans une interface en mode texte (TUI) afin d’aider les administrateurs systèmes et réseaux.
+Trippy est un outil de diagnostique réseaux sous licence Apache 2 combinant les fonctionnalités de traceroute et de ping dans le terminal (CLI) afin d’aider les administrateurs systèmes et réseaux.
 
-Pour utiliser Trippy sur une config Ubuntu :
+# Utilisation de Trippy
 
-```bash
-sudo trip <adresse IP de la cible ou nom DNS>
-```
+- Commande de base :
 
+	Par exemple, pour tracer la route jusqu’à google.com :
+	> trip google.com
 
-![capture ecran trippy](/Ressources/Emplacement_libre_2/trippy.png)
+(Ont peux utiliser aussi l'adresse IP de l’hôte cible)
 
+![screen_trippy.gif](/Ressources/Emplacement_libre_2/trippy.png)
 
+- Tracer avec des option personnalisées :
+	- Changer le protocole utilisé pour le traçage :
+		(Par défaut, Trippy utilise le protocole ICMP.)
+		- UDP :
+		> 	trip --protocol udp google.com
+		- TCP :
+		>	trip --protocel tcp google.com
 
-Trippy propose plusieurs options personnalisables pour l’analyse réseau :
-Mode interactif avec une carte et des graphiques :
-Trippy affiche un aperçu visuel dans le terminal. Cela inclut les sauts réseau et leurs temps de réponse.
-Personnalisation des paramètres de traçage :
-Définir le nombre de paquets envoyés.
-Ajuster l’intervalle entre les requêtes.
-Statistiques de confidentialité des sauts : il est possible d’anonymiser certaines informations des sauts pour protéger la confidentialité des adresses IP.
-Génération de rapports : Trippy peut exporter des résultats pour analyse ultérieure.
+- Limiter le nombre de sauts (TTL) :
+	Pour définir le nombre maximal de sauts que Trippy explorera :
+	> 	trip --max-flows 15 exemple.com
 
+- Utiliser un port spécifique (exemple port 80 en TCP):
+ 	> trip --protocol tcp --target-port 80 exemple.com
+ 	
+ Pour d'autre exemple, consultez la documentation officiel [ici](https://trippy.rs/guides/usage/) 
 
 #### SSH
 
