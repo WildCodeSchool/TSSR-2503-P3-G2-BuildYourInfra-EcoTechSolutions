@@ -117,10 +117,97 @@ Laisser les chemins par défaut :
 
 ### Partie 3 – Configuration du DHCP  
 <span id="partie-3--configuration-du-dhcp"></span>  
+
+### Ajouter un nouveau Scope DHCP
+
+1. Ouvrir la console **DHCP** (`dhcpmgmt.msc`) ou **Server Manager** > **Tools** > **DHCP**
+2. Clic droit sur **IPv4** > **New Scope**
+3. Assistant **New Scope Wizard** :
+   - **Name** : Donner un nom explicite (ex. : "R&D", "Salle de réunion", etc.)
+   - **Description** : Par exemple, scope pour tel service etc
+   - **IP Address Range** :
+     - Start IP : `172.16.x.10`  
+     - End IP : `172.16.x.200`
+     - Subnet Mask : `255.255.255.0`
+   - **Add Exclusions** : Ajouter des IP réservées (ex. : serveurs, imprimantes,etc)
+   - **Lease Duration** : 21 jours (modifiable)
+   - **Configure DHCP Options now** : Yes
+     - Router (Default Gateway) : `172.16.x.254` (la passerelle de l'ADDS)
+     - DNS Servers : `172.16.20.3` (Le server ADDS)
+     - DNS Domain Name : `ecotechsolution.lan` (Notre nom de domaine)
+   - Finir l'assistant
+   - Le scope est bien crée
+
+### Serveur DHCP : `winsrv-ad-dhcp-dns.ecotechsolution.lan`
+Le rôle **DHCP** est installé sur le serveur principal, qui possède une **IP statique : `172.16.20.3`**.
+
+### Plages d'adresses (Scopes)
+
+Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâce à une configuration multi-scopes :
+
+| Scope             | Plage        | Service                                 |
+|-------------------|--------------|-----------------------------------------|
+| 172.16.20.0/24    | 172.16.20.1 – 172.16.20.254     | Serveurs                                |
+| 172.16.50.0/24    | 172.16.50.1 – 172.16.50.254      | Communication                           |
+| 172.16.60.0/24    | 172.16.60.1 – 172.16.60.254      | Développement                           |
+| 172.16.70.0/24    | 172.16.70.1 – 172.16.70.254      | Direction                               |
+| 172.16.80.0/24    | 172.16.80.1 – 172.16.80.254      | Ressources Humaines                     |
+| 172.16.90.0/24    | 172.16.90.1 – 172.16.90.254      | Direction des Services d'Information    |
+| 172.16.100.0/24   | 172.16.100.1 – 172.16.100.254      | Finance et Comptabilité                 |
+| 172.16.110.0/24   | 172.16.110.1 – 172.16.110.254      | Commercial                              |
+| 172.16.120.0/24   | 172.16.120.1 – 172.16.120.254      | Extérieur (visiteurs, partenaires, etc.)|
+
+### Paramètres DHCP communs
+
+- **Masque de sous-réseau :** `255.255.255.0`
+- **Passerelle par défaut :** `172.16.20.254`
+- **Serveur DNS :** `172.16.20.3` (serveur local AD/DNS)
+- **Durée du bail :** 21 jours
+
+### Avantages de la configuration
+
+- Segmentation réseau claire
+- Administration centralisée
+
 ...
 
 ### Partie 4 – Configuration du DNS  
-<span id="partie-4--configuration-du-dns"></span>  
+<span id="partie-4--configuration-du-dns"></span> 
+
+### Ajouter un nouvel enregistrement DNS (Host A)
+
+1. Ouvrir la console **DNS** (`dnsmgmt.msc`) ou **Server Manager** > **Tools** > **DNS**
+2. Cliquer sur **Forward Lookup Zones** dans la zone EcoTechSolution.lan
+3. Clic droit sur la zone → **New Host (A or AAAA)**
+4. Remplir les champs :
+   - **Name** : Nom de la machine
+   - **IP address** : Adresse IP de la machine
+   - Cocher si besoin : *Create associated PTR record* (pour reverse lookup) pour créer automatiquement la résolution inversée.
+5. Cliquer sur **Add Host**
+6. Une confirmation s'affiche, cliquer sur OK
+
+### Domaine Active Directory : `EcoTechSolution.lan`
+
+Le serveur `WINSRV-AD-DHCP-DNS` assure les rôles :
+- **Contrôleur de domaine**
+- **Serveur DNS**
+- **Serveur DHCP**
+
+### Zones DNS configurées
+
+- `EcoTechSolution.lan` (zone de recherche directe)
+
+### Principaux enregistrements DNS Host A
+
+| Nom                  | Type    | Adresse IP     | Observations                          |
+|----------------------|---------|----------------|----------------------------------------|
+| (same as parent folder)  | A       | 172.16.20.3    | Serveur DNS principal                  |
+| (same as parent folder)  | A       | 172.16.20.5    | Serveur secondaire (ADDS)(wincore)     |
+| DT-DSI-Admin         | A       | 172.16.20.7    | Poste Admin DSI                        |
+| WINCORESRV-ADDS      | A       | 172.16.20.5    | Serveur membre, rôle ADDS              |
+| winsrv-ad-dhcp-dns   | A       | 172.16.20.3    | Serveur principal (AD, DNS, DHCP)      |
+| (same as parent folder) | SOA     | winsrv-ad-dhcp-dns | Serveur d'autorité (SOA)         |
+
 
 ---
 
