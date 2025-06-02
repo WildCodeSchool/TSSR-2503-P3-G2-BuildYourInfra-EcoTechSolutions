@@ -9,7 +9,7 @@ sudo trip <adresse IP de la cible ou nom DNS>
 ```
 
 
-![capture ecran trippy](https://github.com/WildCodeSchool/TSSR-2503-P3-G2-BuildYourInfra-EcoTechSolutions/blob/532817180f73cd5e276d2289407c51d9a3b906e1/Ressources/Emplacement_libre_2/trippy.png)
+![capture ecran trippy](/Ressources/Emplacement_libre_2/trippy.png)
 
 
 
