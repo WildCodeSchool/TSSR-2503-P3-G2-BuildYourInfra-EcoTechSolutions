@@ -12,7 +12,7 @@ sudo trip <adresse IP de la cible ou nom DNS>
 ```
 
 
-[!capture ecran trippy](Ressources/Emplacement_libre_2/trippy.gif)
+![capture ecran trippy](Ressources/Emplacement_libre_2/trippy.gif)
 
 
 Trippy propose plusieurs options personnalisables pour l’analyse réseau :
