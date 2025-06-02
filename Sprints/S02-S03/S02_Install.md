@@ -137,16 +137,24 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 
 #### Etape 1 : Création des UO
 - Ouvrir Active Directory Users & Computers sur notre serveur Windows ADDS
-- Notre domaine `EcoTechSolution.lan` existe déjà. Clique droit sur celui-ci > **New** > **Organizational Unit**
+
+- Notre domaine `EcoTechSolution.lan` existe déjà. Clique droit sur celui-ci > **New** > **Organizational Unit**  
 
 ![creation_OU](/Ressources/GPO/ou_01_creation.png)
 
+---
+
 - On peut ensuite créer les OU que nous souhaitons en indiquant le nom, cliquer ensuite sur **OK** pour valider.
+
 - Selon le service une arborescence d'OU fini par apparaitre comme sur la photo ci-dessous. Par exemple, Site > Services > Sous-services > Salarié
+
+---
 
 ![creation_ou2](/Ressources/GPO/ou_03_arborescence.png)
 
 ####  _Astuce : Activer **l’option "Protéger contre la suppression accidentelle"** lors de la création des OU._
+
+---
 
 #### Etape 2 : Création des GPO
 
