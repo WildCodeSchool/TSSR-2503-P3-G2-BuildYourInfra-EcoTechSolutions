@@ -18,7 +18,7 @@
 
 ### 🏢 L'entreprise cliente  
 
-![](/Ressources/EcoTechLogo.png)
+![](/Ressources/Logos/EcoTechSolution_Logo.png)
 
 **EcoTechSolutions**, implantée à Bordeaux, est un acteur innovant dans le domaine des solutions IoT dédiées à la gestion intelligente de l’énergie et des ressources. En collaborant étroitement avec le gouvernement et les leaders du secteur énergétique, elle conçoit et déploie des systèmes de surveillance avancés pour optimiser la consommation, réduire les émissions carbone et accompagner activement la transition écologique.  
 Forte de son expertise technologique et de son esprit d'innovation, **EcoTechSolutions** s’impose comme un moteur essentiel de l’économie verte.  
@@ -39,9 +39,9 @@ Florian Cheron ; Lloyd Morlet ; Alan Coeurjoly ; Sheldon Thurm ; Jonathan Gorine
   
 ### Objectif final  
   
-- Mettre en place une architecture réseau structurée, complète et fonctionnelle   
+- Mettre en place une architecture réseau structurée, complète et fonctionnelle
 
-  
+-------------  
   
 ## 📜 Introduction  
 <span id="introduction"></span>  
