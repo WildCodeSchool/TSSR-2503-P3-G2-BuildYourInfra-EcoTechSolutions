@@ -139,7 +139,7 @@ Laisser les chemins par défaut :
    - Le scope est bien crée
 
 ### Serveur DHCP : `winsrv-ad-dhcp-dns.ecotechsolution.lan`
-Le rôle **DHCP** est installé sur le serveur principal, qui possède une **IP statique : `172.16.20.3`**.
+Le rôle **DHCP** est installé sur le serveur principal, qui possède l'**IP statique : `172.16.20.3`**.
 
 ### Plages d'adresses (Scopes)
 
@@ -162,12 +162,7 @@ Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâ
 - **Masque de sous-réseau :** `255.255.255.0`
 - **Passerelle par défaut :** `172.16.20.254`
 - **Serveur DNS :** `172.16.20.3` (serveur local AD/DNS)
-- **Durée du bail :** 21 jours
-
-### Avantages de la configuration
-
-- Segmentation réseau claire
-- Administration centralisée
+- **Durée du bail :** `21 jours`
 
 ...
 
@@ -178,7 +173,7 @@ Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâ
 
 1. Ouvrir la console **DNS** (`dnsmgmt.msc`) ou **Server Manager** > **Tools** > **DNS**
 2. Cliquer sur **Forward Lookup Zones** dans la zone EcoTechSolution.lan
-3. Clic droit sur la zone → **New Host (A or AAAA)**
+3. Clic droit sur la zone > **New Host (A or AAAA)**
 4. Remplir les champs :
    - **Name** : Nom de la machine
    - **IP address** : Adresse IP de la machine
