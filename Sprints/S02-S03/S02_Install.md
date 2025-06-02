@@ -430,7 +430,7 @@ B) - Configurer le déploiement en sélectionnant **Ajouter un contrôleur de do
 
 **NB** : Les permissions administrateurs sont nécessaires pour réaliser cette opération via le bouton **Modifier**.
 
-![](Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-1.png)
+![ajout](Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-1.png)
 
 C) - A l'étape suivante :
 - Cochez **Serveur DNS** afin qu'il soit aussi serveur DNS, ce qui permettra de redonder ce service au niveau de l'infrastructure
