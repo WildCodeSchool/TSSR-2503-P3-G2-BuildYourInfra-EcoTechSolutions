@@ -469,7 +469,172 @@ Ces commandes donne des détails sur la réplication entre les contrôleurs de d
 ## Installation de Debian avec GLPI – DEBSRV-GLPI  
 <span id="installation-de-debian-avec-glpi--debsrv-glpi"></span>  
 
-...
+### Installation des pré-requis
+
+Faisons une mise-à-jour :
+
+>sudo apt update && sudo apt upgrade
+
+Installation d'Apache :
+
+>sudo apt install apache2 -y
+
+Activation d'Apache au démarrage de la machine :
+
+>sudo systemctl enable apache2
+
+Installation de la base de donnée. Ici nous installons MariaDB :
+
+>sudo apt install mariadb-server -y
+
+Installation des modules annexes :
+
+>sudo apt install php-commun libapache2-mod-php -y
+sudo apt install php-{ldap,imap,apcu,xmlrpc,curl,common,gd,json,mbstring,mysql,xml,intl,zip,bz2}
+
+### Configuration de MariaDB
+
+La commande ci-dessous va lancer le processus d'initialisation de la base de données :
+
+>sudo mysql_secure_installation
+
+Répondre Y à toutes les questions qui seront posées pendant l'initialisation.
+
+Suite à la question "Change the root password?" il faudra entrer le mot de passe de la base de données (ici ont à choisi : Azerty1*)
+
+Attention : retenez bien ce mot de passe car il te sera demandé plus tard dans l'installation
+
+Connexion à la base de données :
+
+>mysql -u root -p
+
+Suite à cette commande, tu vas devoir rentrer le mot de passe root.
+
+On va configurer ceci :
+
+- Un nom de base de données : glpidb
+- Un compte avec des droits d'accès élevé : glpi (il faudra choisir un mot de passe)
+
+Cela va se faire avec les commandes ci-dessous :
+
+
+>create database glpidb character set utf8 collate utf8_bin;
+
+puis :
+
+>grant all privileges on glpidb.* to glpi@localhost identified by 'Azerty1*';
+
+puis :
+
+>flush privileges;
+
+et enfin :
+
+>quit
+
+### Récupération des sources Glpi
+
+On récupère la source :
+
+>wget https://github.com/glpi-project/glpi/releases/download/10.0.10/glpi-10.0.10.tgz
+
+On va mettre le contenu téléchargé dans un autre emplacement :
+
+/!\ Si on veut lier ce serveur Glpi à un domaine, il faut mettre le nom du domaine dans les commandes ci-dessous (dans notre cas : ecotechsolution).
+Sinon, on peut créer un nouveau domaine.
+
+>sudo mkdir /var/www/glpi.ecotechsolution
+>sudo tar -xzvf glpi-10.0.10.tgz
+>sudo cp -R glpi/* /var/www/glpi.ecotechsolution/
+
+On va modifier les droits :
+
+>sudo chown -R www-data:www-data /var/www/glpi.ecotechsolution/
+>sudo chmod -R 775 /var/www/glpi.ecotechsolution/
+
+### Configuration du site
+
+Faite la commande :
+
+>sudo  nano /etc/apache2/sites-available/000-default.conf
+
+et modifier la ligne "documentroot" pour quelle correspond à :
+DocumentRoot /var/www/glpi.ecotechsolution
+
+### Configuration de PHP
+
+faite la commande :
+
+>sudo nano /etc/php/8.2/apache2/php.ini 
+
+et modifier les paramètres suivants :
+
+- memory_limit = 64M
+- file_uploads = on
+- max_execution_time = 600
+-  session.auto_start = 0
+-  session.use_trans_sid = 0
+
+Fermer le fichier et redémarrer la machine.
+
+### Configuration initial de GLPI
+
+Pour faire l’installation et la configuration initial de GLPI, nous devons le faire à partir d'un navigateur web, il faut donc utiliser une autre machine sur le même réseau que le serveur Debian disposant d'un navigateur web.
+
+Pour vous connecter, aller à cette adresse : 
+```
+http://adresse IP du serveur debian/
+```
+
+Choisissez la langue pour GLPI (dans notre cas : Français)
+
+![glpi_init_1](/Ressources/Emplacement_libre_2/glpi_init_1.png)
+
+Cliquez sur "Continuer"
+
+![glpi_init_2](/Ressources/Emplacement_libre_2/glpi_init_2.png)
+
+Cliquer sur installer
+
+![glpi_init_3](/Ressources/Emplacement_libre_2/glpi_init_3.png)
+
+- Vérifier que tous les éléments requis soit validé et cliquez sur "Continuer" (Si il vous manque des éléments : recommencer la manipulation "Installation des modules annexes" de la partie "Installation des pré-requis" de cette section ou referez vous à la documentation officiel [ici](https://glpi-project.org/fr/glpi-documentation/) )
+
+![glpi_init_4](/Ressources/Emplacement_libre_2/glpi_init_4.png)
+
+- Rentrez les information demander :  
+	- Serveur SQL : 127.0.0.1
+	- Utilisateur SQL : glpi
+	- Mot de passe SQL : Azerty1*
+
+![glpi_init_5](/Ressources/Emplacement_libre_2/glpi_init_5.png)
+
+Choisissez la base de données que l'ont a créé plus tôt : glpidb
+Et cliquez sur "Continuer"
+
+![glpi_init_6](/Ressources/Emplacement_libre_2/glpi_init_6.png)
+
+La base de donner va s'initialisée (cela peux prendre plusieurs minute)
+
+![glpi_init_7](/Ressources/Emplacement_libre_2/glpi_init_7.png)
+
+Lorsque la base de données à fini de s'initialisée, cliquez sur "Continuer"
+
+![glpi_init_8](/Ressources/Emplacement_libre_2/glpi_init_8.png)
+
+Décochez "Envoyer statistique d'usage" et cliquez sur "Continuer"
+
+![glpi_init_9](/Ressources/Emplacement_libre_2/glpi_init_9.png)
+
+Cliquez sur "Continuer"
+
+![glpi_init_10](/Ressources/Emplacement_libre_2/glpi_init_10.png)
+
+Cliquez sur "Utiliser GLPI"
+
+![glpi_init_11](/Ressources/Emplacement_libre_2/glpi_init_11.png)
+
+La configuration initial de GLPI est maintenant terminer.
 
 ## Installation d’un client Ubuntu – DT-DSI-Admin  
 <span id="installation-dun-client-ubuntu--dt-dsi-admin"></span>  
