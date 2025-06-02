@@ -390,5 +390,56 @@ ces commandes donne des détails sur la réplication entre les contrôleurs de d
 ## Installation d’un client Ubuntu – DT-DSI-Admin  
 <span id="installation-dun-client-ubuntu--dt-dsi-admin"></span>  
 
-...
+Install 
+ 
+
+
+# Trippy
+
+Pour installer Trippy sur Ubuntu, il suffit de taper ceci en ligne de commande :
+
+```bash
+sudo add-apt-repository ppa:fujiapple/trippy
+sudo apt update && sudo apt install trippy
+```
+
+
+# WireShark
+
+Pour installer Wireshark sur Ubuntu il suffit de taper cette commande sur le terminal :
+
+```bash
+sudo apt install wireshark
+```
+    
+# Cockpit
+
+Pour fonctionner, Cockpit doit être installer sur toutes les machines (Linux uniquement) que l'on souhaite administrer. 
+    
+```bash 
+sudo apt-get update
+sudo apt install -t <codename de la version de l'OS>-backports cockpit
+```
+
+Une fois installer nous allons activer le démarrage automatique de Cockpit : 
+
+```bash
+sudo systemctl enable cockpit.socket
+```
+
+Pour vérifier que le service Cockpit est actif, vous pouvez utiliser la commande suivante :
+
+```bash
+systemctl status cockpit
+```
+
+![image status cockpit]()
+
+    
+# NetData
+
+Pour ce logiciel, nous avons besoin d'installer le service **NetData Agent** sur toutes les machines que l'ont souhaitent monitorer. 
+
+![image netdata agent]()
+
 
