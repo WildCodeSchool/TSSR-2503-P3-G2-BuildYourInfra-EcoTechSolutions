@@ -81,7 +81,7 @@ Sur la gauche, on retrouve le menu permettant d'accéder aux différentes sectio
 
 Au centre, un tableau de bord avec différents widgets, ainsi que la date de dernière connexion, ainsi qu'un message "The programs included with the Debian...". En fait, ce sont des informations que l'on retrouve lors d'une connexion en SSH et ce message n'est autre que le contenu du fichier "/etc/motd" : vous pouvez donc le personnaliser.
 
-![home Cockpit]()
+![home Cockpit](/Ressources/Emplacement_libre_2/cockpit_home.png)
 
 Le nom d'hôte du serveur est modifiable à cet endroit, en cliquant sur le bouton "modifier" au sein du widget "Configuration".
 
@@ -89,17 +89,26 @@ En cliquant sur l'onglet "Voir les détails et l'historique" du widget "Utilisat
 
 Dans la partie "Journaux", vous avez accès aux différents logs de votre serveur. Il est possible de filtrer selon une période, les types d'erreurs (info, avertissements, erreurs, alertes, etc.), mais aussi de créer ses propres filtres de recherche. En cliquant sur une entrée, vous avez accès à différentes propriétés.
 
+![log cockpit](/Ressources/Emplacement_libre_2/cockpit_log.png)
+
 La section "Stockage" permet de visualiser des graphiques de performances (lecture et écriture), de visualiser les volumes, les points de montage NFS et les journaux liés au stockage. Sur la droite, on a également une visibilité sur les périphériques physiques (disques physiques, lecteur DVD...).
+
+![stockage cockpit](/Ressources/Emplacement_libre_2/cockpit_stockage.png)
 
 La partie "Réseau" permet de visualiser les journaux liés au réseau, d'ajouter une interface, de déclarer un VLAN ou encore de voir l'utilisation de vos cartes réseau.
 
+![reseau cockpit](/Ressources/Emplacement_libre_2/cockpit_reseau.png)
+
 Ensuite, la section "Comptes" liste les comptes utilisateurs présents sur la machine. On peut créer un nouveau compte ou modifier un compte existant (nom complet, verrouiller le compte, modifier le mot de passe, etc.).
+
+![comptes cockpit](/Ressources/Emplacement_libre_2/cockpit_utilisateurs.png)
 
 Enfin, l'onglet "Terminal" vous permet d'ouvrir un Terminal en mode Web pour administrer votre serveur
 
+![terminal cockpit](/Ressources/Emplacement_libre_2/cockpit_terminal.png)
 
 
-    NetData
+#### NetData
 
 C’est une solution de monitoring très légère qui affiche via un dashboard l’ensemble des informations sur l’usage des ressources de votre serveur. On y retrouve l’usage CPU, RAM, des disques avec chaque partitions mais également le détail des applications comme memcached, postfix ou redis.
 
