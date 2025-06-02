@@ -39,7 +39,7 @@ Pour l'utiliser nous allons utiliser la commande suivante :
 ssh <adresse ip ou nom de la machine>
 ```
 
-[image illustration utilisation ssh](/Ressources/Emplacement_libre_2/ssh.png)
+![image illustration utilisation ssh](/Ressources/Emplacement_libre_2/ssh.png)
 
 Une fois que vous vous êtes connecté au serveur, il peut vous être demandé de vérifier votre identité en fournissant un mot de passe. Plus tard, nous verrons comment générer des clés à utiliser à la place des mots de passe.
 
