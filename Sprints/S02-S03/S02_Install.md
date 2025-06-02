@@ -334,6 +334,53 @@ Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mo
 ### Partie 5 – Réplication complète
 <span id="partie-5--Réplication-complète"></span> 
 
+Nos deux serveur Windows GUI et Core ont tout deux une **réplication intrasite** pour permettre lors d'une modification effectuer qu'elle soit automatiquement réaliser sur le/les autres DC du domaine.
+
+Pour ce faire il existe différents moyens, l'une d'entre elle serai depuis l'installation du **rôle ADDS**. Si vous avez déjà votre serveur en tant que contrôleur de domaine sur un ActiveDirectory déjà en place, il vous suffit lors de l'installation du rôles sur votre nouveau serveur de lui attribuer le domaine déjà existant lors de la promotion de votre nouveau serveur en contrôleur de domaine.
+
+A) - Installer le rôle ADDS puis cliquer sur **Promouvoir ce serveur en contrôleur de domaine**.
+
+![Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine](Replication-DC/Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine.png)
+
+B) - Configurer le déploiement en sélectionnant **Ajouter un contrôleur de domaine à un domaine existant** et spécifiez le nom du domaine, ici **EcoTechSolutions.lan**.
+
+**NB** : Les permissions administrateurs sont nécessaires pour réaliser cette opération via le bouton **Modifier**.
+
+![Promouvoir-serveur-en-DC-Windows-Server-2022-1]
+
+C) - A l'étape suivante :
+- Cochez **Serveur DNS** afin qu'il soit aussi serveur DNS, ce qui permettra de redonder ce service au niveau de l'infrastructure
+- Cochez **Catalogue global (GC)** afin d'avoir deux catalogues globaux
+- Ne cochez pas **Contrôleur de domaine en lecture seule**, car nous avons besoin d'un DC en lecture et écriture
+- **Laissez le nom du site par défaut**, sauf si votre infrastructure se situe sur plusieurs sites et que vous avez déjà fait la déclaration de vos sites AD
+- **Indiquez un mot de passe complexe** pour la restauration des services d'annuaire (qui n'a rien à voir avec le mot de passe pour se connecter au serveur)
+
+![[Promouvoir-serveur-en-DC-Windows-Server-2022-2 1.png]]
+
+D) - Passez l'étape **DNS** pour arriver aux **options supplémentaires**, ici vous pouvez spécifier d'utiliser un DC spécifique pour la réplication. Dans notre situation nous en avons qu'un seul donc on peut laisser par défaut sur **Tout contrôleur de domaine** sinon choisissez votre nom de domaine.
+
+![[Promouvoir-serveur-en-DC-Windows-Server-2022-4.png]]
+
+E) - Conservez les chemins par défaut et faite **Suivant**
+
+![[Promouvoir-serveur-en-DC-Windows-Server-2022-5.png]]
+
+F) - Attendez l'étape de vérifications. Si tout est OK, cliquer sur **installer**.
+Une fois l'opération effectuer le serveur **redémarre automatiquement**
+
+G) - Vérifier l'opération soit directement en GUI : Dans l'onglet **Active Directory Users and Computers** sous **Domain Controllers**, vous devriez voir vos différents serveurs affiliés.
+
+![[Capture d’écran 2025-06-02 165209.png]]
+
+- Soit en ligne de commande PowerShell (indispensable pour vérifier sur le server Core) avec :
+``Get-ADDomainController -Identity <NomDuServeur>``
+
+- Vous pouvez aussi utiliser les commandes de diagnostics => 
+``repadmin /showrepl *
+``repadmin /replsummary``
+
+ces commandes donne des détails sur la réplication entre les contrôleurs de domaine : s'il y a une erreur de réplication, elle apparaîtra ici.
+![[Capture d’écran 2025-06-02 165209 1.png]]
 
 ## Installation de Debian avec GLPI – DEBSRV-GLPI  
 <span id="installation-de-debian-avec-glpi--debsrv-glpi"></span>  
