@@ -1,7 +1,4 @@
-User_guide
-
-
-    Trippy
+#### Trippy
 
 Trippy est un outil de diadnostique réseaux sous licence Apache 2 combinant les fonctionnalités de traceroute et de ping dans une interface en mode texte (TUI) afin d’aider les administrateurs systèmes et réseaux.
 
@@ -12,7 +9,7 @@ sudo trip <adresse IP de la cible ou nom DNS>
 ```
 
 
-![capture ecran trippy](Ressources/Emplacement_libre_2/trippy.gif)
+![capture ecran trippy](Ressources/Emplacement_libre_2/trippy.png)
 
 
 Trippy propose plusieurs options personnalisables pour l’analyse réseau :
@@ -25,11 +22,7 @@ Statistiques de confidentialité des sauts : il est possible d’anonymiser cert
 Génération de rapports : Trippy peut exporter des résultats pour analyse ultérieure.
 
 
-https://memo-linux.com/trippy-outil-de-diagnostique-reseaux/
-
-
-
-    SSH
+#### SSH
 
 SSH, ou Secure Shell, est un protocole utilisé pour se connecter en toute sécurité à des systèmes distants. C’est le moyen le plus courant d’accéder à des serveurs Linux distants.
 Pour l'utiliser nous allons utiliser la commande suivante :
@@ -38,7 +31,7 @@ Pour l'utiliser nous allons utiliser la commande suivante :
 ssh <adresse ip ou nom de la machine>
 ```
 
-[image illustration utilisation ssh]
+[image illustration utilisation ssh](Ressources/Emplacement_libre_2/ssh.png)
 
 Une fois que vous vous êtes connecté au serveur, il peut vous être demandé de vérifier votre identité en fournissant un mot de passe. Plus tard, nous verrons comment générer des clés à utiliser à la place des mots de passe.
 
@@ -49,22 +42,22 @@ exit
 
 
 
-    WireShark
+#### WireShark
 
 Lorsque vous ouvrez Wireshark, un écran vous présente la liste de toutes les connexions réseau que vous pouvez surveiller. Vous disposez également d’un champ de filtre de capture vous permettant de capturer uniquement le trafic réseau qui vous intéresse.
 
-[image ouverture de wireshark]
+![image ouverture de wireshark](Ressources/Emplacement_libre_2/wireshark_home.png)
 
 Vous pouvez sélectionner plusieurs interfaces en maintenant la touche Majuscule enfoncée. Une fois votre interface réseau sélectionnée, vous pouvez démarrer la capture. Plusieurs possibilités s’offrent à vous. Cliquez sur le premier bouton de la barre d’outils intitulé Start Capturing Packets (en haut a gauche).
 Une fois que vous avez capturé tous les paquets dont vous avez besoin, utilisez les mêmes boutons ou options de menu pour mettre un terme à l’opération. Il est recommandé d’interrompre la capture de paquets avant de procéder à l’analyse.
 
-[image sur fin de capture réseau]
+![image sur fin de capture réseau](Ressources/Emplacement_libre_2/wireshark_lecture_paquets.png)
 
 
 
 
 
-    Cockpit
+#### Cockpit
 
 Pour utiliser Cockpit il faut tout d'abord que notre PC client et notre serveur soit sur le même réseau.
 Ensuite nous pouvons acceder a l'interface Cockpit en saissisnat l'adresse IP de notre serveur suivie du port "9090" (port par defaut).
@@ -74,11 +67,13 @@ Ensuite nous pouvons acceder a l'interface Cockpit en saissisnat l'adresse IP de
 ```
 Nous devons maintenant nous autentifier pour pouvoir accéder au logiciel.
 
-[image interface web Cockpit]
+![image interface web Cockpit](Ressources/Emplacement_libre_2/Cockpit_login.png)
 
 Sur la gauche, on retrouve le menu permettant d'accéder aux différentes sections.
 
 Au centre, un tableau de bord avec différents widgets, ainsi que la date de dernière connexion, ainsi qu'un message "The programs included with the Debian...". En fait, ce sont des informations que l'on retrouve lors d'une connexion en SSH et ce message n'est autre que le contenu du fichier "/etc/motd" : vous pouvez donc le personnaliser.
+
+![home Cockpit]()
 
 Le nom d'hôte du serveur est modifiable à cet endroit, en cliquant sur le bouton "modifier" au sein du widget "Configuration".
 
