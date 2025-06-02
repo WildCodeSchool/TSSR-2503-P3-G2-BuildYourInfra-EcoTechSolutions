@@ -472,11 +472,7 @@ ces commandes donne des détails sur la réplication entre les contrôleurs de d
 ## Installation d’un client Ubuntu – DT-DSI-Admin  
 <span id="installation-dun-client-ubuntu--dt-dsi-admin"></span>  
 
-Install 
- 
-
-
-# Trippy
+### Trippy
 
 Pour installer Trippy sur Ubuntu, il suffit de taper ceci en ligne de commande :
 
@@ -486,7 +482,7 @@ sudo apt update && sudo apt install trippy
 ```
 
 
-# WireShark
+### WireShark
 
 Pour installer Wireshark sur Ubuntu il suffit de taper cette commande sur le terminal :
 
@@ -494,7 +490,7 @@ Pour installer Wireshark sur Ubuntu il suffit de taper cette commande sur le ter
 sudo apt install wireshark
 ```
     
-# Cockpit
+### Cockpit
 
 Pour fonctionner, Cockpit doit être installer sur toutes les machines (Linux uniquement) que l'on souhaite administrer. 
     
@@ -515,13 +511,43 @@ Pour vérifier que le service Cockpit est actif, vous pouvez utiliser la command
 systemctl status cockpit
 ```
 
-![image status cockpit]()
+![image status cockpit](/Ressources/Emplacement_libre_2/cockpit_status.png)
 
     
-# NetData
+### NetData
 
 Pour ce logiciel, nous avons besoin d'installer le service **NetData Agent** sur toutes les machines que l'ont souhaitent monitorer. 
 
-![image netdata agent]()
+#### Installation du 1er Node
 
+Pour commencer, vous devez crée un compte et vous connecter sur le site : 
 
+```
+https://www.netdata.cloud
+```
+
+Vous arriverez sur votre espace de monitoring ("Space" dans NetData)
+
+![Netdata_empty_space](/Ressources/Emplacement_libre_2/netdata_empty_space.png)
+
+Pour ajouter un machine ("Node" dans NetData) cliquez au centre de la fenêtre sur le bouton "Connect a node to start" pour ouvrir la fenêtre d'ajout d'un "Node".
+
+![Netdata_first_node_addition](/Ressources/Emplacement_libre_2/netdata_first_node_addition.png)
+
+Suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez monitorer pour installer le service **NetData Agent**.
+
+Un fois l'Agent installer, votre "Space" devrais s'actualiser automatiquement, sinon actualiser vous même votre navigateur web.
+
+![Netdata_first_node](/Ressources/Emplacement_libre_2/netdata_first_node.png)
+
+#### Installation de Node supplémentaire
+
+Pour ajouter un nouveau "Node" à votre "Space", cliquez sur l'icone d'hexagone "+" et suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
+
+![Netdata_add_node_1](/Ressources/Emplacement_libre_2/netdata_add_node_1.png)
+
+Ou cliquez sur le bouton "Live" en haut à droite, pour ouvrir la fenêtre d'affichage de tous les "Nodes", puis cliquez sur le bouton "Add Nodes". Suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
+
+![Netdata_add_node_2](/Ressources/Emplacement_libre_2/netdata_add_node_2.png)
+
+Répétez cette opération à chaque fois que vous voulez ajouter un nouveau Node à votre Space.
