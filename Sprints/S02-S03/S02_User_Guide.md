@@ -118,21 +118,21 @@ Pour pouvoir utiliser NetData, il faut aller sur cette adresse via un navigateur
 https://www.netdata.cloud
 ```
 
-![image netdata site avec entour en haut a droite](/Ressources/Emplacement_libre_2/home_netdata.png)
+
 
 Puis remplir les champs disponible avec l'adresse mail __ecotechsolution.wcs@gmail.fr__ pour se connecter.
 
-![image netdata avec les serveurs](/Ressources/Emplacement_libre_2/node_detaille.png)
-
 Nous arrivons sur le **home** du site. D'ici nous avons un apercu globale de l'ensemble de nos "__nodes__" (dans **Netdata**, un node est une machine)
+
+![image netdata site avec entour en haut a droite](/Ressources/Emplacement_libre_2/home_netdata.png)
 
 Pour avoir plus de détails sur un node en particulier, il suffit de cliquer sur le node qui nous interesse.
 
-[image ou on voit les nodes]
+[image ou on voit les nodes](/Ressources/Emplacement_libre_2/ensemble_nodes_netdata.png)
 
 Ensuite il suffit de défiler pour avoir l'ensemble des informations relative au fonctionnement du node.
 
-[image détaillé d'un node]
+![image netdata avec les serveurs](/Ressources/Emplacement_libre_2/node_detaille.png)
 
 Nous pouvons également nous connecter sur NetData sur la machine que nous utilisons. Il suffit de se connecter via un navigateur web a l'adresse suivante :
 
@@ -140,4 +140,4 @@ Nous pouvons également nous connecter sur NetData sur la machine que nous utili
 http://localhost:19999
 ```
 
-[image interface web]
+[image interface web](/Ressources/Emplacement_libre_2/netdata_localhost.png)
