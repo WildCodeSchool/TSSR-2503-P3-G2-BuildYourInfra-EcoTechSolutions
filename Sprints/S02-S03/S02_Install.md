@@ -416,13 +416,15 @@ Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mo
 ### Partie 5 – Réplication complète
 <span id="partie-5--Réplication-complète"></span> 
 
-Nos deux serveur Windows GUI et Core ont tout deux une **réplication intrasite** pour permettre lors d'une modification effectuer qu'elle soit automatiquement réaliser sur le/les autres DC du domaine.
+-------------------
 
-Pour ce faire il existe différents moyens, l'une d'entre elle serai depuis l'installation du **rôle ADDS**. Si vous avez déjà votre serveur en tant que contrôleur de domaine sur un ActiveDirectory déjà en place, il vous suffit lors de l'installation du rôles sur votre nouveau serveur de lui attribuer le domaine déjà existant lors de la promotion de votre nouveau serveur en contrôleur de domaine.
+>Nos deux serveur Windows GUI et Core ont tout deux une **réplication intrasite** pour permettre lors d'une modification effectuer qu'elle soit automatiquement réaliser sur le/les autres DC du domaine.
+>
+>Pour ce faire il existe différents moyens, l'une d'entre elle serai depuis l'installation du **rôle ADDS**. Si vous avez déjà votre serveur en tant que contrôleur de domaine sur un ActiveDirectory déjà en place, il vous >suffit lors de l'installation du rôles sur votre nouveau serveur de lui attribuer le domaine déjà existant lors de la promotion de votre nouveau serveur en contrôleur de domaine.
 
 A) - Installer le rôle ADDS puis cliquer sur **Promouvoir ce serveur en contrôleur de domaine**.
 
-![Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine](Replication-DC/Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine.png)
+![Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine](/Ressources/Replication-DC/Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine.png)
 
 B) - Configurer le déploiement en sélectionnant **Ajouter un contrôleur de domaine à un domaine existant** et spécifiez le nom du domaine, ici **EcoTechSolutions.lan**.
 
