@@ -32,7 +32,7 @@ Pour l'utiliser nous allons utiliser la commande suivante :
 ssh <adresse ip ou nom de la machine>
 ```
 
-[image illustration utilisation ssh](Ressources/Emplacement_libre_2/ssh.png)
+[image illustration utilisation ssh](/Ressources/Emplacement_libre_2/ssh.png)
 
 Une fois que vous vous êtes connecté au serveur, il peut vous être demandé de vérifier votre identité en fournissant un mot de passe. Plus tard, nous verrons comment générer des clés à utiliser à la place des mots de passe.
 
@@ -47,12 +47,12 @@ exit
 
 Lorsque vous ouvrez Wireshark, un écran vous présente la liste de toutes les connexions réseau que vous pouvez surveiller. Vous disposez également d’un champ de filtre de capture vous permettant de capturer uniquement le trafic réseau qui vous intéresse.
 
-![image ouverture de wireshark](Ressources/Emplacement_libre_2/wireshark_home.png)
+![image ouverture de wireshark](/Ressources/Emplacement_libre_2/wireshark_home.png)
 
 Vous pouvez sélectionner plusieurs interfaces en maintenant la touche Majuscule enfoncée. Une fois votre interface réseau sélectionnée, vous pouvez démarrer la capture. Plusieurs possibilités s’offrent à vous. Cliquez sur le premier bouton de la barre d’outils intitulé Start Capturing Packets (en haut a gauche).
 Une fois que vous avez capturé tous les paquets dont vous avez besoin, utilisez les mêmes boutons ou options de menu pour mettre un terme à l’opération. Il est recommandé d’interrompre la capture de paquets avant de procéder à l’analyse.
 
-![image sur fin de capture réseau](Ressources/Emplacement_libre_2/wireshark_lecture_paquets.png)
+![image sur fin de capture réseau](/Ressources/Emplacement_libre_2/wireshark_lecture_paquets.png)
 
 
 
@@ -68,7 +68,7 @@ Ensuite nous pouvons acceder a l'interface Cockpit en saissisnat l'adresse IP de
 ```
 Nous devons maintenant nous autentifier pour pouvoir accéder au logiciel.
 
-![image interface web Cockpit](Ressources/Emplacement_libre_2/Cockpit_login.png)
+![image interface web Cockpit](/Ressources/Emplacement_libre_2/Cockpit_login.png)
 
 Sur la gauche, on retrouve le menu permettant d'accéder aux différentes sections.
 
@@ -102,11 +102,11 @@ Pour pouvoir utiliser NetData, il faut aller sur cette adresse via un navigateur
 https://www.netdata.cloud
 ```
 
-[image netdata site avec entour en haut a droite]
+![image netdata site avec entour en haut a droite](/Ressources/Emplacement_libre_2/home_netdata.png)
 
 Puis remplir les champs disponible avec l'adresse mail __ecotechsolution.wcs@gmail.fr__ pour se connecter.
 
-[image netdata avec les serveurs]
+![image netdata avec les serveurs](/Ressources/Emplacement_libre_2/node_detaille.png)
 
 Nous arrivons sur le **home** du site. D'ici nous avons un apercu globale de l'ensemble de nos "__nodes__" (dans **Netdata**, un node est une machine)
 
