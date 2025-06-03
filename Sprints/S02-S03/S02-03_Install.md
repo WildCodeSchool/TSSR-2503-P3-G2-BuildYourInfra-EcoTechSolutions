@@ -590,7 +590,7 @@ http://adresse IP du serveur debian/
 
 Choisissez la langue pour GLPI (dans notre cas : Français)
 
-![glpi_init_1](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_1.png)
+![glpi_init_1](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_1.png)
 
 Cliquez sur "Continuer"
 
