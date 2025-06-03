@@ -594,47 +594,47 @@ Choisissez la langue pour GLPI (dans notre cas : Français)
 
 Cliquez sur "Continuer"
 
-![glpi_init_2](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_2.png)
+![glpi_init_2](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_2.png)
 
 Cliquer sur installer
 
-![glpi_init_3](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_3.png)
+![glpi_init_3](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_3.png)
 
 - Vérifier que tous les éléments requis soit validé et cliquez sur "Continuer" (Si il vous manque des éléments : recommencer la manipulation "Installation des modules annexes" de la partie "Installation des pré-requis" de cette section ou referez vous à la documentation officiel [ici](https://glpi-project.org/fr/glpi-documentation/) )
 
-![glpi_init_4](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_4.png)
+![glpi_init_4](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_4.png)
 
 - Rentrez les information demander :  
 	- Serveur SQL : 127.0.0.1
 	- Utilisateur SQL : glpi
 	- Mot de passe SQL : Azerty1*
 
-![glpi_init_5](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_5.png)
+![glpi_init_5](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_5.png)
 
 Choisissez la base de données que l'ont a créé plus tôt : glpidb
 Et cliquez sur "Continuer"
 
-![glpi_init_6](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_6.png)
+![glpi_init_6](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_6.png)
 
 La base de donner va s'initialisée (cela peux prendre plusieurs minute)
 
-![glpi_init_7](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_7.png)
+![glpi_init_7](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_7.png)
 
 Lorsque la base de données à fini de s'initialisée, cliquez sur "Continuer"
 
-![glpi_init_8](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_8.png)
+![glpi_init_8](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_8.png)
 
 Décochez "Envoyer statistique d'usage" et cliquez sur "Continuer"
 
-![glpi_init_9](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_9.png)
+![glpi_init_9](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_9.png)
 
 Cliquez sur "Continuer"
 
-![glpi_init_10](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_10.png)
+![glpi_init_10](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_10.png)
 
 Cliquez sur "Utiliser GLPI"
 
-![glpi_init_11](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_11.png)
+![glpi_init_11](/Sprints/S02-S03/Ressources/Installation_Logiciels/glpi_init_11.png)
 
 La configuration initial de GLPI est maintenant terminer.
 
@@ -680,7 +680,7 @@ Pour vérifier que le service Cockpit est actif, vous pouvez utiliser la command
 systemctl status cockpit
 ```
 
-![image status cockpit](/Sprints/S02-S03/Ressources/Emplacement_libre_2/cockpit_status.png)
+![image status cockpit](/Sprints/S02-S03/Ressources/Installation_Logiciels/cockpit_status.png)
 
     
 ### NetData
@@ -697,26 +697,26 @@ https://www.netdata.cloud
 
 Vous arriverez sur votre espace de monitoring ("Space" dans NetData)
 
-![Netdata_empty_space](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_empty_space.png)
+![Netdata_empty_space](/Sprints/S02-S03/Ressources/Installation_Logiciels/netdata_empty_space.png)
 
 Pour ajouter un machine ("Node" dans NetData) cliquez au centre de la fenêtre sur le bouton "Connect a node to start" pour ouvrir la fenêtre d'ajout d'un "Node".
 
-![Netdata_first_node_addition](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_first_node_addition.png)
+![Netdata_first_node_addition](/Sprints/S02-S03/Ressources/Installation_Logiciels/netdata_first_node_addition.png)
 
 Suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez monitorer pour installer le service **NetData Agent**.
 
 Un fois l'Agent installer, votre "Space" devrais s'actualiser automatiquement, sinon actualiser vous même votre navigateur web.
 
-![Netdata_first_node](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_first_node.png)
+![Netdata_first_node](/Sprints/S02-S03/Ressources/Installation_Logiciels/netdata_first_node.png)
 
 #### Installation de Node supplémentaire
 
 Pour ajouter un nouveau "Node" à votre "Space", cliquez sur l'icone d'hexagone "+" et suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
 
-![Netdata_add_node_1](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_add_node_1.png)
+![Netdata_add_node_1](/Sprints/S02-S03/Ressources/Installation_Logiciels/netdata_add_node_1.png)
 
 Ou cliquez sur le bouton "Live" en haut à droite, pour ouvrir la fenêtre d'affichage de tous les "Nodes", puis cliquez sur le bouton "Add Nodes". Suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
 
-![Netdata_add_node_2](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_add_node_2.png)
+![Netdata_add_node_2](/Sprints/S02-S03/Ressources/Installation_Logiciels/netdata_add_node_2.png)
 
 Répétez cette opération à chaque fois que vous voulez ajouter un nouveau Node à votre Space.
