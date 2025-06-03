@@ -36,12 +36,12 @@
 #### Étape 2 : Assistant d’ajout de rôles
 - Type d'installation : Installation basée sur un rôle ou une fonctionnalité
 
-![Installation ADDS](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/01_installation_adds.png)
+![Installation ADDS](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/01_installation_adds.png)
 
 
 - Sélection du serveur : WINSRV-AD-DHCP-DNS
 
-![Choix du serveur](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/02_choix_serveur_adds.png)
+![Choix du serveur](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/02_choix_serveur_adds.png)
 
 
 
@@ -52,14 +52,14 @@ Cocher les rôles suivants :
 - Serveur DNS  
 Valider les fonctionnalités supplémentaires si demandé.
 
-![Cocher les rôles](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/03_ajout_roles.png)
+![Cocher les rôles](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/03_ajout_roles.png)
 
 
 #### Étape 4 : Confirmation
 - Lancer l'installation
 - L'installateur doit indiqué "Installation succeeded". Les rôles correcetement installés sont visibles en vert dans le server manager.
 
-![Installation succeeded](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/04_fin_installation_roles.png)
+![Installation succeeded](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/04_fin_installation_roles.png)
 
 
 
@@ -72,14 +72,14 @@ Valider les fonctionnalités supplémentaires si demandé.
 #### Étape 1 : Promouvoir le serveur en contrôleur de domaine
 - Après l'installation, cliquer sur l'alerte "Promouvoir ce serveur en contrôleur de domaine"
 
-![Promotion DC](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/05_configuration_DC.png)
+![Promotion DC](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/05_configuration_DC.png)
 
 
 #### Étape 2 : Configuration du déploiement
 - Choisir "Ajouter une nouvelle forêt"
 - Nom du domaine racine : ecotechsolutions.lan
 
-![Root domain name](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/06_foret_deploiement.png)
+![Root domain name](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/06_foret_deploiement.png)
 
 
 
@@ -108,7 +108,7 @@ Laisser les chemins par défaut :
 - Laisser l’analyse de prérequis se terminer
 - Cliquer sur "Installer"
 
-![Fin configuration DC](/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/07_validation_installation.png)
+![Fin configuration DC](/Sprints/S02-S03/Ressources/Deploiement_machines/573_WINSRV_AD_DHCP_DNS/07_validation_installation.png)
 
 
 - Le serveur redémarrera automatiquement
@@ -222,7 +222,7 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 
 - Notre domaine `EcoTechSolution.lan` existe déjà. Clique droit sur celui-ci > **New** > **Organizational Unit**  
 
-![creation_OU](/Ressources/GPO/ou_01_creation.png)
+![creation_OU](/Sprints/S02-S03/Ressources/GPO/ou_01_creation.png)
 
 ---
 
@@ -232,7 +232,7 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 
 ---
 
-![creation_ou2](/Ressources/GPO/ou_03_arborescence.png)
+![creation_ou2](/Sprints/S02-S03/Ressources/GPO/ou_03_arborescence.png)
 
 ####  _Astuce : Activer **l’option "Protéger contre la suppression accidentelle"** lors de la création des OU._
 
@@ -250,7 +250,7 @@ Ouvrir la **console "Gestion de la stratégie de groupe"** (`gpmc.msc`).
   - `Inactivité avant verrouillage de la session` : **600 secondes (10 minutes)**
 - Lier à : `EcoTechSolution.lan`
 
-![Verrouillage_session](/Ressources/GPO/01-gpo_lockout_policies.png)
+![Verrouillage_session](/Sprints/S02-S03/Ressources/GPO/01-gpo_lockout_policies.png)
 
 ---
 
@@ -264,7 +264,7 @@ Ouvrir la **console "Gestion de la stratégie de groupe"** (`gpmc.msc`).
   - Durée de vie : **42 jours**
 - Lier à : `EcoTechSolution.lan`
 
-![complexité_mdp](/Ressources/GPO/02-gpo_passwordpolicies.png)
+![complexité_mdp](/Sprints/S02-S03/Ressources/GPO/02-gpo_passwordpolicies.png)
 
 ---
 
@@ -288,7 +288,7 @@ Nous avons fait le choix d'interdir avec un GPO l'acces au panneau de configurat
   - "Disabled" pour l'OU admin/DSI
 - Lier l'interdiction à : `EcoTechSolution.lan` et l'autorisation à l'OU DSI/Admin
 
-![prohibit_access_control_panel](/Ressources/GPO/03-gpo_control_panel_admin.png)
+![prohibit_access_control_panel](/Sprints/S02-S03/Ressources/GPO/03-gpo_control_panel_admin.png)
 
 ---
 
@@ -309,7 +309,7 @@ Nous avons fait le choix d'interdir avec un GPO l'acces au panneau de configurat
 - Lier à : `EcoTechSolution.lan`
 > ⚠️ Le fichier `wallpaper.jpg` doit être disponible via un partage réseau accessible à tous.
 
-![wallpaper](/Ressources/GPO/04-gpo_wallpaper.png)
+![wallpaper](/Sprints/S02-S03/Ressources/GPO/04-gpo_wallpaper.png)
 
 ---
 
@@ -424,13 +424,13 @@ Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mo
 
 A) - Installer le rôle ADDS puis cliquer sur **Promouvoir ce serveur en contrôleur de domaine**.
 
-![](/Ressources/Replication-DC/Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Promouvoir-ce-serveur-en-tant-que-controleur-de-domaine.png)
 
 B) - Configurer le déploiement en sélectionnant **Ajouter un contrôleur de domaine à un domaine existant** et spécifiez le nom du domaine, ici **EcoTechSolutions.lan**.
 
 **NB** : Les permissions administrateurs sont nécessaires pour réaliser cette opération via le bouton **Modifier**.
 
-![](/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-1.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-1.png)
 
 C) - A l'étape suivante :
 - Cochez **Serveur DNS** afin qu'il soit aussi serveur DNS, ce qui permettra de redonder ce service au niveau de l'infrastructure
@@ -439,22 +439,22 @@ C) - A l'étape suivante :
 - **Laissez le nom du site par défaut**, sauf si votre infrastructure se situe sur plusieurs sites et que vous avez déjà fait la déclaration de vos sites AD
 - **Indiquez un mot de passe complexe** pour la restauration des services d'annuaire (qui n'a rien à voir avec le mot de passe pour se connecter au serveur)
 
-![](/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-2.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-2.png)
 
 D) - Passez l'étape **DNS** pour arriver aux **options supplémentaires**, ici vous pouvez spécifier d'utiliser un DC spécifique pour la réplication. Dans notre situation nous en avons qu'un seul donc on peut laisser par défaut sur **Tout contrôleur de domaine** sinon choisissez votre nom de domaine.
 
-![](/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-4.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-4.png)
 
 E) - Conservez les chemins par défaut et faite **Suivant**
 
-![](/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-5.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Promouvoir-serveur-en-DC-Windows-Server-2022-5.png)
 
 F) - Attendez l'étape de vérifications. Si tout est OK, cliquer sur **installer**.
 Une fois l'opération effectuer le serveur **redémarre automatiquement**
 
 G) - Vérifier l'opération soit directement en GUI : Dans l'onglet **Active Directory Users and Computers** sous **Domain Controllers**, vous devriez voir vos différents serveurs affiliés.
 
-![](/Ressources/Replication-DC/Serveur-DC-repadmin.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Serveur-DC-repadmin.png)
 
 - Soit en ligne de commande PowerShell (indispensable pour vérifier sur le server Core) avec :
 ``Get-ADDomainController -Identity <NomDuServeur>``
@@ -464,7 +464,9 @@ G) - Vérifier l'opération soit directement en GUI : Dans l'onglet **Active Dir
 ``repadmin /replsummary``
 
 Ces commandes donne des détails sur la réplication entre les contrôleurs de domaine : s'il y a une erreur de réplication, elle apparaîtra ici.
-![](/Ressources/Replication-DC/Server-DC-cmde-repadmin.png)
+![](/Sprints/S02-S03/Ressources/Replication-DC/Server-DC-cmde-repadmin.png)
+
+------------------------
 
 ## Installation de Debian avec GLPI – DEBSRV-GLPI  
 <span id="installation-de-debian-avec-glpi--debsrv-glpi"></span>  
@@ -588,51 +590,51 @@ http://adresse IP du serveur debian/
 
 Choisissez la langue pour GLPI (dans notre cas : Français)
 
-![glpi_init_1](/Ressources/Emplacement_libre_2/glpi_init_1.png)
+![glpi_init_1](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_1.png)
 
 Cliquez sur "Continuer"
 
-![glpi_init_2](/Ressources/Emplacement_libre_2/glpi_init_2.png)
+![glpi_init_2](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_2.png)
 
 Cliquer sur installer
 
-![glpi_init_3](/Ressources/Emplacement_libre_2/glpi_init_3.png)
+![glpi_init_3](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_3.png)
 
 - Vérifier que tous les éléments requis soit validé et cliquez sur "Continuer" (Si il vous manque des éléments : recommencer la manipulation "Installation des modules annexes" de la partie "Installation des pré-requis" de cette section ou referez vous à la documentation officiel [ici](https://glpi-project.org/fr/glpi-documentation/) )
 
-![glpi_init_4](/Ressources/Emplacement_libre_2/glpi_init_4.png)
+![glpi_init_4](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_4.png)
 
 - Rentrez les information demander :  
 	- Serveur SQL : 127.0.0.1
 	- Utilisateur SQL : glpi
 	- Mot de passe SQL : Azerty1*
 
-![glpi_init_5](/Ressources/Emplacement_libre_2/glpi_init_5.png)
+![glpi_init_5](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_5.png)
 
 Choisissez la base de données que l'ont a créé plus tôt : glpidb
 Et cliquez sur "Continuer"
 
-![glpi_init_6](/Ressources/Emplacement_libre_2/glpi_init_6.png)
+![glpi_init_6](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_6.png)
 
 La base de donner va s'initialisée (cela peux prendre plusieurs minute)
 
-![glpi_init_7](/Ressources/Emplacement_libre_2/glpi_init_7.png)
+![glpi_init_7](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_7.png)
 
 Lorsque la base de données à fini de s'initialisée, cliquez sur "Continuer"
 
-![glpi_init_8](/Ressources/Emplacement_libre_2/glpi_init_8.png)
+![glpi_init_8](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_8.png)
 
 Décochez "Envoyer statistique d'usage" et cliquez sur "Continuer"
 
-![glpi_init_9](/Ressources/Emplacement_libre_2/glpi_init_9.png)
+![glpi_init_9](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_9.png)
 
 Cliquez sur "Continuer"
 
-![glpi_init_10](/Ressources/Emplacement_libre_2/glpi_init_10.png)
+![glpi_init_10](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_10.png)
 
 Cliquez sur "Utiliser GLPI"
 
-![glpi_init_11](/Ressources/Emplacement_libre_2/glpi_init_11.png)
+![glpi_init_11](/Sprints/S02-S03/Ressources/Emplacement_libre_2/glpi_init_11.png)
 
 La configuration initial de GLPI est maintenant terminer.
 
@@ -678,7 +680,7 @@ Pour vérifier que le service Cockpit est actif, vous pouvez utiliser la command
 systemctl status cockpit
 ```
 
-![image status cockpit](/Ressources/Emplacement_libre_2/cockpit_status.png)
+![image status cockpit](/Sprints/S02-S03/Ressources/Emplacement_libre_2/cockpit_status.png)
 
     
 ### NetData
@@ -695,26 +697,26 @@ https://www.netdata.cloud
 
 Vous arriverez sur votre espace de monitoring ("Space" dans NetData)
 
-![Netdata_empty_space](/Ressources/Emplacement_libre_2/netdata_empty_space.png)
+![Netdata_empty_space](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_empty_space.png)
 
 Pour ajouter un machine ("Node" dans NetData) cliquez au centre de la fenêtre sur le bouton "Connect a node to start" pour ouvrir la fenêtre d'ajout d'un "Node".
 
-![Netdata_first_node_addition](/Ressources/Emplacement_libre_2/netdata_first_node_addition.png)
+![Netdata_first_node_addition](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_first_node_addition.png)
 
 Suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez monitorer pour installer le service **NetData Agent**.
 
 Un fois l'Agent installer, votre "Space" devrais s'actualiser automatiquement, sinon actualiser vous même votre navigateur web.
 
-![Netdata_first_node](/Ressources/Emplacement_libre_2/netdata_first_node.png)
+![Netdata_first_node](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_first_node.png)
 
 #### Installation de Node supplémentaire
 
 Pour ajouter un nouveau "Node" à votre "Space", cliquez sur l'icone d'hexagone "+" et suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
 
-![Netdata_add_node_1](/Ressources/Emplacement_libre_2/netdata_add_node_1.png)
+![Netdata_add_node_1](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_add_node_1.png)
 
 Ou cliquez sur le bouton "Live" en haut à droite, pour ouvrir la fenêtre d'affichage de tous les "Nodes", puis cliquez sur le bouton "Add Nodes". Suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
 
-![Netdata_add_node_2](/Ressources/Emplacement_libre_2/netdata_add_node_2.png)
+![Netdata_add_node_2](/Sprints/S02-S03/Ressources/Emplacement_libre_2/netdata_add_node_2.png)
 
 Répétez cette opération à chaque fois que vous voulez ajouter un nouveau Node à votre Space.
