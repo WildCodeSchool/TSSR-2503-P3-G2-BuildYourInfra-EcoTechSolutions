@@ -362,56 +362,56 @@ Pour cela, executer successivement ces 3 lignes de commandes PowerShell :
   
  #### Étape 1 :   
  - Dans le menu principal, sélectionner PowerShell avec l’option 15  
-![main_menu](https://github.com/user-attachments/assets/09c2daf3-d7da-4525-b8f1-908aa40163ae)  
+![main_menu](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/01_menu.png)  
   
 #### Étape 2 :  
 - Entrer la commande suivante :  
 > Add-Computer -DomainName "EcoTechSolution.lan" -Credential "EcoTechSolution\Administrator" -Restart
   
-![commande](https://github.com/user-attachments/assets/d7ddd9fc-8a67-4e87-acda-8356cbe62b5f)
+![commande](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/02_commande.png)
   
 #### Étape 3 :  
 - Une fenêtre s’ouvre, vous invitant à entrer le mot de passe. Entrer le mot de passe : Azerty1*  
 Après cela, la machine va redémarrer.  
-![password](https://github.com/user-attachments/assets/7a30872b-adcc-4d3a-9a81-ccb54e7f018e)
+![password](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/03_password.png)
   
 #### Étape 4 :  
 - Une fois redémarrer, vous pouvez observer sur la ligne Domain/workgroup, que vous êtes passez de « Workgroup » à « EcoTechSolution.lan ». Cela signifie que votre machine à bien été ajouté au  domain.  
-![domain](https://github.com/user-attachments/assets/f920946f-5cca-4e62-a6f9-cfc4823ca5be)
+![domain](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/04_domain.png)
   
 #### Étape 5 :  
 - Redémarrer la machine, lors du déverrouillage du clavier, appuyer 2 fois sur la touche ESC (echap) pour changer de compte.  
-![switch_account](https://github.com/user-attachments/assets/06e22116-7bcb-4808-8d06-a328b8367133)
+![switch_account](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/05_switch_account.png)
   
 #### Étape 6 :  
 - Sélectionner « Other user »  
-![other_user](https://github.com/user-attachments/assets/32c73da7-efd9-4a96-bf5b-078bdc8e0afa)
+![other_user](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/06_other_user.png)
   
 #### Étape 7 :  
 - Dans « User name » entrer : ECOTECHSOLUTION\Administrator  
 Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mot de passe (Password) et entrer le mot de passe : Azerty1* , puis Entrée.  
-![login](https://github.com/user-attachments/assets/4bfa2503-211d-4a8d-a181-278e2049a9db)
+![login](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/07_login.png)
   
 #### Étape 8 :  
 - Une fois dans le menu, sélectionner l’option 15 (PowerShell)  
-![menu](https://github.com/user-attachments/assets/65e962e0-501f-497d-8558-dc3114858f5c)
+![menu](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/08_menu.png)
   
 #### Étape 9 :  
 - Vérifier que vous êtes bien connecté au compte Administrator du domain avec la commande : whoami  
-![verification](https://github.com/user-attachments/assets/2783cde4-b098-46cf-8ebe-7a9b4798afed)
+![verification](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/09_verification.png)
   
 #### Étape 10 :  
 - Vérification que le serveur apparaît bien comme membre du domaine dans la console Active Directory :  
   Dans la barre de recherche du menu démarrer, taper : dsa.msc, une fenêtre (Active Directory Users and Computers) s’ouvre  
-![verification_domain_member](https://github.com/user-attachments/assets/e3e3319e-dd32-4cf9-b027-d073ab11caad)
+![verification_domain_member](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/10_verification_domain_member.png)
   
 #### Étape 11 :  
 - Dans l’arborescence du domaine (EcoTechSolution), dérouler le menu  
-![verification_domain_member_part_2](https://github.com/user-attachments/assets/71c2832b-1efe-4190-83ca-14e8d40fdbf4)
+![verification_domain_member_part_2](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/11_verification_domain_member_part_2.png)
   
 #### Étape 12 :  
 - Cliquer sur « Computer », vous verrez apparaître dans la fenêtre centrale la machine server core  
-![verification_domain_member_part_3](https://github.com/user-attachments/assets/cb5b955d-6465-426f-8aaa-ceb9ce85d252)
+![verification_domain_member_part_3](/Sprints/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/12_verification_domain_member_part_3.png)
 
 ### Partie 5 – Réplication complète
 <span id="partie-5--Réplication-complète"></span> 
