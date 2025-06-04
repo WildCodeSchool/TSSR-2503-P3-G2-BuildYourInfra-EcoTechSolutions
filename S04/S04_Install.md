@@ -3,6 +3,7 @@
 ## Sommaire
 
 1. [Mettre en place du RAID 1 sur un serveur](#Mettre-place-du-RAID-1-sur-un-serveur)
+2. [Installer et configurer un pare-feu pfSense](#Installer-et-configurer-un-pare-feu-pfSense)
   
 
 
@@ -73,4 +74,46 @@
 #### H°) Votre RAID 1 est désormais crée ! vous pouvez voir dans le menu des disques que vos deux disques sont maintenant sous l'étiquettes ``Mirrored Volume``
 
 ![](/S04/Ressources/Capture-Raid/RAID-active.png)
+
+
+
+
+
+
+## 2 - Installer et configurer un pare-feu pfSense
+<span id="Installer-et-configurer-un-pare-feu-pfSense"></span>
+
+#### Installation pfSense
+
+Nous allons installer le pare feu pfSense sur une machine dédié. Celle ci aura trois carte réseau : 
+- WAN => em0 (bc:24:11:e5:43:8b)
+- LAN => em1 (bc:24:11:e0:07:ea)
+- DMZ => em2 (bc:24:11:e8:ac:43)
+
+
+
+Une fois installer, nous pouvons administrer notre pare-feu en graphique avec un navigateur web d'une machine connecté a son réseau : ici le réseau 172.16.20.0/24.
+Pour se connecter, il suffit de taper dans notre navigateur web l'adresse ip de la machine hebergeant pfSense 
+
+![image navigateur]()
+
+### Configuration pfSense 
+
+Maintenant nous allons pouvoir le configurer en graphique. Pour se faire, nous allons aller dans la catégorie **Firewall**, puis dans **Rules**.
+
+![image de firewall_rules]()
+
+Nous allons commencer a ajouter des règles pour le réseau LAN selon le guide des bonnes pratiques de **Netgate Docs** (https://docs.netgate.com/pfsense/en/latest/recipes/example-basic-configuration.html)
+
+![image des regle de la lan]()
+
+Nous allons faire la même chose avec le WAN et le DMZ. 
+
+
+
+
+
+
+
+
 
