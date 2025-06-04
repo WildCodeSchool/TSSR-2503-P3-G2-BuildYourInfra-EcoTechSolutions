@@ -95,17 +95,17 @@ Nous allons installer le pare feu pfSense sur une machine dédié. Celle ci aura
 Une fois installer, nous pouvons administrer notre pare-feu en graphique avec un navigateur web d'une machine connecté a son réseau : ici le réseau 172.16.20.0/24.
 Pour se connecter, il suffit de taper dans notre navigateur web l'adresse ip de la machine hebergeant pfSense 
 
-![image navigateur]()
+![image navigateur](/S04/Ressources/navigateur_pfsense.png)
 
 ### Configuration pfSense 
 
 Maintenant nous allons pouvoir le configurer en graphique. Pour se faire, nous allons aller dans la catégorie **Firewall**, puis dans **Rules**.
 
-![image de firewall_rules]()
+![image de firewall_rules](/S04/Ressources/pfsense_rules.png)
 
 Nous allons commencer a ajouter des règles pour le réseau LAN selon le guide des bonnes pratiques de **Netgate Docs** (https://docs.netgate.com/pfsense/en/latest/recipes/example-basic-configuration.html)
 
-![image des regle de la lan]()
+![image des regle de la lan](/S04/Ressources/pfsense_regle_lan.png)
 
 Nous allons faire la même chose avec le WAN et le DMZ. 
 
