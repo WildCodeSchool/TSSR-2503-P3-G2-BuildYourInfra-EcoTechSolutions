@@ -13,7 +13,9 @@
    - [Partie 1 – Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
    - [Partie 2 – Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
 3. [Installation de Debian avec GLPI – SERVEUR "DEBSRV-GLPI"](#installation-de-debian-avec-glpi--debsrv-glpi)
-4. [Installation d’un poste client d'administration Ubuntu – CLIENT "DT-DSI-Admin"](#installation-dun-client-ubuntu--dt-dsi-admin)
+4. [Installation d’un poste d'administration Ubuntu "DT-DSI-Admin"](#installation-du-pc-admin-dt-dsi-admin)
+   - [Partie 1 : Rejoindre le domaine EcoTechSolution](#installation-du-pc-admin-dt-dsi-admin)
+   - [Partie 2 - Installation des logiciels ](#installation-des-logiciels)
 
 
 ### Installation et configuration des rôles ADDS, DHCP et DNS
@@ -638,10 +640,220 @@ Cliquez sur "Utiliser GLPI"
 
 La configuration initial de GLPI est maintenant terminer.
 
-## Installation d’un client Ubuntu – DT-DSI-Admin  
-<span id="installation-dun-client-ubuntu--dt-dsi-admin"></span>  
+### Installation d’un poste d'administration Ubuntu "DT-DSI-Admin"
+<span id="installation-du-pc-admin-dt-dsi-admin"></span>   
 
-### Trippy
+## Partie 1 : REJOINDRE LE DOMAINE ECOTECHSOLUTION
+
+#### Etape 1: Faire les mises à jours des paquets  
+> commande : sudo apt update && sudo apt upgrade -y
+   
+#### Etape 2 : Redémarrer la machine  
+> commande : sudo reboot
+   
+#### Etape 3: Installation des packages  
+> commande : sudo apt install -y realmd libnss-sss libpam-sss sssd sssd-ad sssd-dbus sssd-tools adcli samba-common-bin oddjob  oddjob-mkhomedir packagekit
+   
+#### Etape 4 : Changer le hostname  
+> commande : sudo hostnamectl set-hostname administrator.EcoTechSolution.lan
+   
+#### Etape 5 : Redémarrer la machine  
+> commande : sudo reboot
+   
+#### Etape 6 : Changer le DNS de la machine et le pointer sur le DC  
+> commande : sudo nano /etc/resolv.conf
+   
+ Mettre:  
+	nameserver 172.16.20.3  
+	search EcoTechSolution.lan  
+#### Etape 7 : Vérification  
+> commande : nslookup www.google.fr  
+  
+#### Etape 8 : Modification du fichier timesyncd.conf  
+> commande : sudo /etc/systemd/timesyncd.conf
+  
+Supprimer les # pour enlever les commentaires sur les lignes suivantes:  
+	NTP= 172.16.20.3 (on note l'adresse IPv4 du contrôleur de domaine)  
+	FallbackNTP=ntp.ubuntu.com  
+#### Etape 9 : Vérification de la synchronisation de l'horloge  
+> commande : timedatectl status
+   
+vérifier la ligne : System clock synchronized: yes  
+vérifier la ligne : NTP service: active  
+
+#### Etape 10 : Créer une zone de recherche direct et une zone de recherche inversée sur le DNS Manager  
+ - Dans le DNS Manager, aller sur le serveur du domaine  
+ - Faire un clic-droit sur "Zone de recherche inversée", puis "Nouvelle zone"  
+ - Cliquer suivant jusqu'à arriver sur l'ID réseau, et entrer les 3 premier octets : 172.16.20  
+ - Finir l'installation et cliquer sur "Terminer"  
+ - Aller dans la "Zone de recherche directe", faites un clic-droit dans la fenêtre centrale et sélectionner "Nouvel hôte A ou AAAA"  
+ - Entrer le nom de la machine "DT-DSI-Admin" et noter l'adresse IP de la machine 172.16.20.7, puis sélectionner la case "Créer un pointeur d'enregistrement (PTR associé), puis cliquer sur "Ajouter l'hôte"  
+
+#### Etape 11 : Vérification de la résolution de nom en directe et inversée  
+> commande : nslookup 172.16.20.7  
+	    nslookup DT-DSI-Admin  
+
+#### Etape 12 : Tester si la machine arrive à découvrir le domaine DC  
+> commande : realm discover EcoTechSolution.lan  
+
+#### Etape 13 : Rejoindre le domaine  
+> commande : sudo realm join -U Administrator EcoTechSolution.lan
+  
+ On vous demande le mot de passe pour valider: Azerty1*  
+
+#### Etape 14 : Vérifier la jonction  
+> commande : realm list  
+
+#### Etape 15 : Création d'un dossier de travail  
+Lorsqu' un utilisateur s'authentifie avec un compte du domaine, on lui créer son propre dossier de travail sur la machine Ubuntu :  
+ - Editer le fichier de configuration:  
+ 	> commande : sudo nano /usr/share/pam-configs/mkhomedir  
+ - Mettre: Default: yes  
+	   Priority: 900  
+ - Sauvegarder (ctrl+o) et quitter (ctrl +x)  
+ - Configuration du PAM:  
+> commande : sudo pam-auth-update  
+ - Dans le menu cocher la case "Create home directory on login", valider et quitter  
+
+#### Etape 16 : Redémarrer et vérifier le service sssd  
+> commande : sudo systemctl restart sssd  
+> commande : sudo systemctl status sssd  
+
+#### Etape 17 : Tester la communication avec le Contrôleur de domaine  
+> commande : id administrator@EcoTechSolution.lan  
+
+#### Etape 18 : Autoriser qui peut se connecter sur la machine local ( on peut préciser un utilisateur ou un groupe, ou tout le monde)  
+> commande : sudo realm permit -g "Grp-admin"  
+
+#### Etape 19 : Donner les droits sudo aux administrateurs   
+ - Editer le fichier avec la commande : sudo nano /etc/sudoers.d/grp-admin  
+ - Ajouter la ligne : %domain\ Grp-admin@EcoTechSolution.lan	ALL(ALL)	ALL  
+ - Enregistrer (ctrl + o) et quitter (ctrl + x)  
+
+#### Etape 20 : Redémarrer la machine  
+> commande : sudo reboot  
+
+#### Etape 21 : Test d'authentification  
+- Essayer de vous identifier avec un membre du groupe Grp-admin:  
+	exemple : toto@EcoTechSolution.lan  
+Nb: Si vous essayer de vous identifier avec un utilisateur qui ne fait pas parti du groupe Grp-admin, cela ne doit pas fonctionner (la GPO sera donc bien établi)  
+Une fois identifié, pour vérifier que vous êtes bien authentifié en tant qu'utilisateur de l'AD "toto" par exemple, taper dans le terminal la commande : whoami, vous devriez voir apparaître quelque chose comme cela :  
+toto@EcoTechSolution.lan en réponse.  
+
+## Partie 2 - Installation des logiciels  
+<span id="installation-des-logiciels"></span> 
+  
+**OpenSSH** 
+
+#### Etape 1 : Installation  
+> commande : sudo apt install openssh-server openssh-client  
+   
+#### Etape 2 : Vérification du service SSH  
+Afin de s'assurer que le système SSH soit actif:  
+> commande : sudo systemctl status ssh  
+  
+Vous devriez avoir une ligne : Active: active (running)  
+Si ce n'est pas le cas :  
+ Démarrer le système avec la commande:  
+> sudo systemctl start ssh  
+  
+Pour l'activer au démarrage :  
+> commande : sudo systemctl enable ssh  
+  
+#### Etape 3 : Activation du pare-feu  
+> commande : sudo ufw enable  
+  
+#### Etape 4 : Autoriser la connexion SSH au niveau du pare-feu:  
+> commande : sudo ufw allow ssh  
+  
+#### Etape 5 : Vérification d'autorisation  
+> commande : sudo ufw status  
+  
+Tester la connexion SSH  
+  
+#### Etape 1 : A faire sur le server Windows Server 2022 (WINSRV-AD-DHCP-DNS)  
+- Ouvrir PowerShell en tant qu'administrateur  
+- taper la commande : ssh wilder@172.16.20.7  
+- un message s'affichera, valider en tapant : yes  
+![message_de_connexion](https://github.com/user-attachments/assets/601e29e7-2feb-4f4a-8d61-c45d247ebf0f)  
+  
+- Saisissez le mot de passe (ici : Azerty1*) et valider  
+![mot_de_passe](https://github.com/user-attachments/assets/834dab43-63fe-4f6e-b80c-c33a06737594)  
+  
+- Vous êtes maintenant connecté en ssh sur le server admin  
+![connexion_win_ubu_etablie](https://github.com/user-attachments/assets/ad60d024-753f-44ab-9c6f-f3135a090048)  
+  
+  
+  
+Installation de OpenSSH (Server) sur le PC (WINSRV-AD-DHCP-DNS)  
+  
+#### Etape 1 : Installation de OpenSSH  
+> commande : Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0  
+![Ubu_Win_SSH_01](https://github.com/user-attachments/assets/c81c0430-de32-4347-a909-0f218a661ec0)  
+   
+  
+#### Etape 2 : Vérification de l'activation du service sshd  
+> commande : Get-Service sshd  
+  
+Si le service est arrêté, le démarrer avec les commandes :  
+> Start-Service sshd  
+> Set-Service -Name sshd -StartupType Automatic  
+  
+Puis revérifier l'activation avec la commande :
+> Get-Service sshd  
+  
+#### Etape 3 : Vérifier que le port 22 est bien à l'écoute 
+> commande : netstat -an | findstr :22  
+  
+A Faire sur le PC Admin:  
+  
+#### Etape 1 : Générer une paire de clés SSH  
+> commande : ssh-keygen -t ed25519    
+  
+Appuyer sur Entrée à chaque question, sauf vous voulez un mot de passe pour la clé.  
+  
+#### Etape 2 : Copier la clé publique sur Windows Server  
+- Depuis le PC Admin, entrer la commande:  
+> scp ~/.ssh/id_ed25519.pub Administrator@172.16.20.3:/Users/Administrator/  
+  
+- Ensuite, sur le PC WINSRV-AD-DHCP-DNS, déplacer la clé publique reçue avec la commande :  
+  
+> move C:\Users\Administrator\id_ed25519.pub C:\Users\Administrator\.ssh\authorized_keys  
+  
+#### Etape 3 : Tester la connexion SSH  
+- sur le PC Admin, entrer la commande:  
+> ssh Administrator@172.16.20.3  
+- Vous êtes maintenant connecté en ssh sur le server AD  
+![test](https://github.com/user-attachments/assets/e4556ccb-159a-433d-b93e-dc9c139aeb72)  
+
+
+**Wireshark**   
+  
+#### Etape 1 : Installation  
+> commande : sudo apt install wireshark  
+   
+Lors de l'installation, au message :  
+"Should non-superusers be able to capture packets ?" Sélectionner "Oui".   
+![wireshark_common](https://github.com/user-attachments/assets/4c6536e4-e5ad-4648-92e7-f57078ff6dfe)  
+  
+#### Etape 2 : Vérification de la création du groupe "wireshark"   
+> commande : getent group wireshark  
+   
+#### Etape 3 : Ajouter un utilisateur au groupe "wireshark" (ex: wilder)  
+> commande : sudo usermod -aG wireshark wilder    
+  
+#### Etape 4 : Redémarrer la machine  
+> commande : sudo reboot  
+  
+#### Etape 5 : Tester les droits   
+- Se connecter avec l'utilisateur ajouté au groupe  
+- Vérifier les groupes avec la commande : groups (Wireshark devrait apparaître dans la liste)  
+- Lancer Wireshark sans sudo avec la commande : wireshark  
+- Sélectionner la carte réseau ens18 et démarrer la capture de paquets en cliquant sur l'aileron bleau en haut à gauche  
+![test](https://github.com/user-attachments/assets/eb692970-ec84-444c-8f43-d2e08313db39)  
+
+
+**Trippy**
 
 Pour installer Trippy sur Ubuntu, il suffit de taper ceci en ligne de commande :
 
@@ -649,17 +861,8 @@ Pour installer Trippy sur Ubuntu, il suffit de taper ceci en ligne de commande :
 sudo add-apt-repository ppa:fujiapple/trippy
 sudo apt update && sudo apt install trippy
 ```
-
-
-### WireShark
-
-Pour installer Wireshark sur Ubuntu il suffit de taper cette commande sur le terminal :
-
-```bash
-sudo apt install wireshark
-```
-    
-### Cockpit
+  
+**Cockpit**
 
 Pour fonctionner, Cockpit doit être installer sur toutes les machines (Linux uniquement) que l'on souhaite administrer. 
     
@@ -683,7 +886,7 @@ systemctl status cockpit
 ![image status cockpit](/S02-S03/Ressources/Installation_Logiciels/cockpit_status.png)
 
     
-### NetData
+**NetData**
 
 Pour ce logiciel, nous avons besoin d'installer le service **NetData Agent** sur toutes les machines que l'ont souhaitent monitorer. 
 
