@@ -31,7 +31,7 @@ Stop-Service -Name DcpSvc -Force
 Set-Service -Name DiagTrack -StartupType Disable
 
 # diagsvc
-Set-Serivce -Name diagsvc -StartupType Disable
+Set-Service -Name diagsvc -StartupType Disable
 
 # drwappshsvc
 Set-Service -Name drwappshsvc -StartupType Disable
