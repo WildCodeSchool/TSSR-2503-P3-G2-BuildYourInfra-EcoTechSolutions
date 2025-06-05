@@ -12,30 +12,62 @@
 
 # DiagTrack
 Get-Service diagtrack | Stop-Service -PassThru | Set-Service -StartupType disabled
-if($?){   write-Host -ForegroundColor Green "Windows Diagnostics Tracking Service Disabled"  }else{   write-Host -ForegroundColor red "Windows Diagnostics Tracking Service not Disabled" }
+if($?) 
+{
+     write-Host -ForegroundColor Green "Service diagTrack Désactiver"  
+}
+else
+{
+       write-Host -ForegroundColor red "Service diagTrack NON Désactiver"
+}
+
 Get-Service DiagTrack | Stop-Service -PassThru | Set-Service -StartupType disabled
-if($?){   write-Host -ForegroundColor Green "Windows Diagnostics Tracking Service Disabled"  }else{   write-Host -ForegroundColor red "Windows Diagnostics Tracking Service not Disabled" } 
+if($?)
+{
+       write-Host -ForegroundColor Green "Service DiagTrack Désactiver"  
+}
+else
+{
+       write-Host -ForegroundColor red "Service DiagTrack NON Désactiver" 
+} 
 
 # drwappshsvc
 Get-Service dmwappushservice | Stop-Service -PassThru | Set-Service -StartupType disabled
-if($?){   write-Host -ForegroundColor Green "Windows Keylogger Disabled"  }else{   write-Host -ForegroundColor red "Windows Keylogger not Disabled" }
+if($?)
+{
+       write-Host -ForegroundColor Green "Windows Keylogger Désactiver"  
+}
+else
+{
+       write-Host -ForegroundColor red "Windows Keylogger NON Désactiver" 
+}
 
 # diagnosticshub
 Get-Service diagnosticshub.standardcollector.service | Stop-Service -PassThru | Set-Service -StartupType disabled
-if($?){   write-Host -ForegroundColor Green "diagnosticshub Disabled"  }else{   write-Host -ForegroundColor red "diagnosticshub not Disabled" }
-
-# DcpSvc
-Get-Service DcpSvc | Stop-Service -PassThru | Set-Service -StartupType disabled
-if($?){   write-Host -ForegroundColor Green "DcpSvc Disabled"  }else{   write-Host -ForegroundColor red "DcpSvc not Disabled" }
+if($?)
+{
+       write-Host -ForegroundColor Green "diagnosticshub Désactiver"  
+}
+else
+{
+       write-Host -ForegroundColor red "diagnosticshub NON Désactiver"
+}
 
 ###### Désactivation dans le registre ######
 
-# Sauvegarde du registe avant modification ()
-reg export HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection Backup_Reg.reg
+# Sauvegarde du registe avant modification
+reg export HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection C:\Backup_Reg.reg /y
 
 # Désactivation de la télémétrie
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f | Out-Null
-if($?){   write-Host -ForegroundColor Green "Windows Telemetry Disabled"  }else{   write-Host -ForegroundColor red "Windows Telemetry not Disabled" } 
+if($?)
+{
+       write-Host -ForegroundColor Green "Télémétrie Windows Désactiver"  
+}
+else
+{
+       write-Host -ForegroundColor red "Télémétrie Windows NON Désactiver" 
+} 
 
 ###### Supprimez les tâche planifier ######
 
