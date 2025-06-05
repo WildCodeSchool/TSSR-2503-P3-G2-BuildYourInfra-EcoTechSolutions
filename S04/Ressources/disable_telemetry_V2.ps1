@@ -55,8 +55,16 @@ else
 
 ###### Désactivation dans le registre ######
 
-# Sauvegarde du registe avant modification
-reg export HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection C:\Backup_Reg.reg /y
+### Sauvegarde du registe avant 1er modification ###
+if(Test-Path C:\Registre\Backup_Reg.reg)
+{
+    Write-Host "Sauvegarde original du registre déjà présente dans C:\Registre"
+}
+else 
+{
+    New-Item -Path C:\ -Name Registre -ItemType Directory > $null
+    reg export HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection C:\Registre\Backup_Reg.reg
+}
 
 # Désactivation de la télémétrie
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f | Out-Null
