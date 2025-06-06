@@ -64,7 +64,7 @@
 
 ![](/S04/Ressources/Capture-Raid/RAID-active.png)
 
-## Rejoindre le domain AD:  
+#### I°) Rejoindre le domain AD:  
   
 Etape 1 - Aller dans Network & Internet settings  
 Etape 2 - Change adapter options  
