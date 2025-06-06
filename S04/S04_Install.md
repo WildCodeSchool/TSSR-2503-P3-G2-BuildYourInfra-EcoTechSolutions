@@ -64,7 +64,20 @@
 
 ![](/S04/Ressources/Capture-Raid/RAID-active.png)
 
-
+## Rejoindre le domain AD:  
+  
+Etape 1 - Aller dans Network & Internet settings  
+Etape 2 - Change adapter options  
+Etape 3 - Clique droit sur la carte réseau Ethernet > Properties  
+Etape 4 - Protocole Internet version 4 (TCP/IPv4) > Properties  
+Etape 5-  Use the Following DNS server addresses  
+Etape 6 - Dans Preferred DNS server , noter l'adresse du contrôleur de domaine 172.16.20.3  
+Etape 7 - Dans le server manager, cliquer sur "workgroup"  
+Etape 8 - cliquer sur "Change"  
+Etape 9 - Dans "Member of", sélectionner "Domain"  
+Etape 10 - Entrer le nom de domaine EcoTechSolution.lan, puis Entrée  
+Etape 11 - Saisissez "Administrator" et le mot de passe Azerty1*  
+Etape 12 - Un message vous indique que vous avez bien rejoint le domaine  
 
 
 
