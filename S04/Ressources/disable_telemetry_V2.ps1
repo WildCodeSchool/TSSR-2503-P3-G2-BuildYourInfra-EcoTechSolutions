@@ -58,7 +58,7 @@ else
 ### Sauvegarde du registe avant 1er modification ###
 if(Test-Path C:\Registre\Backup_Reg.reg)
 {
-    Write-Host "Sauvegarde original du registre déjà présente dans C:\Registre"
+    Write-Host -ForegroundColor Green "Sauvegarde original du registre déjà présente dans C:\Registre"
 }
 else 
 {
