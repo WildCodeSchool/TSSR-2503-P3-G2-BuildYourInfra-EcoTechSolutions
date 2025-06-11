@@ -79,7 +79,8 @@ Mot de passe : zabbix
    
 
 #### Etape 8 : Dashboard  
-Une fois connecté, vous arrivez sur le dashboard 
+Une fois connecté, vous arrivez sur le dashboard.  
+Dans la partie " Information système" , vous verrez "le serveur zabbix est en cours d'exécution" avec la valeur "Oui" en vert.  
   
 ![dashboard](https://github.com/user-attachments/assets/f8b9587b-04f9-4f67-8829-45d6d10ffcae)  
  
