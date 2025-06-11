@@ -214,12 +214,12 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 - Serveur DNS intégré
 - Serveur DHCP prêt à être configuré
 
-### Partie 5 - Réplication complète
+---
 
-### Partie 6 - Création des GPO unités organisationnelles et des GPO
-#### Objectif : Créer une hierarchie d'unité organisationnelle correspondant à la structure de l'entreprise afin d'appliquer des stratégies de gestion, sécuritaire selon les utilisateurs et les machines.
+### Partie 6 - Création des unités organisationnelles et des GPO
 
-#### Etape 1 : Création des UO
+#### 1 - Création des OU
+
 - Ouvrir Active Directory Users & Computers sur notre serveur Windows ADDS
 
 - Notre domaine `EcoTechSolution.lan` existe déjà. Clique droit sur celui-ci > **New** > **Organizational Unit**  
@@ -240,7 +240,7 @@ Le serveur WINSRV-AD-DHCP-DNS devient :
 
 ---
 
-#### Etape 2 : Création des GPO
+#### 2 - A) Création des GPO Sécurités
 
 Ouvrir la **console "Gestion de la stratégie de groupe"** (`gpmc.msc`).
 
@@ -315,11 +315,135 @@ Nous avons fait le choix d'interdir avec un GPO l'acces au panneau de configurat
 
 ---
 
-#### Étape 3 – Application des GPO
+#### 2 - B) Création des GPO Standard
 
-- Forcer l’application via la commande :
-_powershell_
-`gpupdate /force`
+**NB: Pour la création de GPO , lancer la console de gestion des stratégies de groupes (Group Policy Management) dans la barre de recherche windows** 
+
+![](/S02-S03/Ressources/GPO/GPO_Open.png)
+
+- Une fois la console ouverte vous serez sur le menu des GPO 
+
+![](/S02-S03/Ressources/GPO/GPO_Menu.png)
+
+- Pour crée une GPO faites un clic droit sur l'endroit ou vous voulez la crée _(Emplacement non exhaustif)_ , ici nous allons crée nos GPO aux racines de notre domaine.
+
+![](/S02-S03/Ressources/GPO/Create_GPO.png)
+
+- Donnez lui un nom
+
+![](/S02-S03/Ressources/GPO/Nommage_GPO.png)
+
+> Nous avons décider de mettre en place plusieurs GPO standard pour notre infrastructure, Voici le détail de certains :
+---
+##### GPO : Gestion de l'alimentation 
+
+- Une fois la GPO **Gestion de l'alimentation** crée, allez dans l'éditeur en cliquant droit sur ``Gestion de l'alimentation ``-> ``Edit`` 
+
+![](/S02-S03/Ressources/GPO_OU/GPO_Edit.png)
+
+- Allez dans ``Computer Configuration`` -> ``Policies`` -> ``Administrative Templates ...`` -> ``System`` -> ``Power Management``. 
+
+![](/S02-S03/Ressources/GPO_OU/Setting_Alimentation.png)
+
+![](/S02-S03/Ressources/GPO_OU/Setting_Alimentation.png)
+
+- Ici vous avez toute les options configurables concernant l'alimentation des ordinateurs, dans notre cas nous avons activé la reconnexion par mot de passe en cas de mis en veille de l'ordinateur par manque batterie.
+- Pour cela allez dans ``Sleep Settings`` double cliquez sur une option proposé ici nous choisirons ``Require a password when a computer wakes (on battery)``. **(On Battery)** correspond aux ordinateurs portables et **(Plugged in)** aux ordinateurs sur secteur, ainsi vous pouvez choisir l'un des deux ou les deux selon vos besoins.
+
+![](/S02-S03/Ressources/GPO_OU/Password_Logout_Battery.png)
+
+![](/S02-S03/Ressources/GPO_OU/Password_Logout_PluggedIn.png)
+
+- Vous arrivez sur une nouvelle fenêtre , cochez la case ``Enabled`` pour activer l'option choisi. Cette fenêtre peut varier selon les options choisis.
+
+![](/S02-S03/Ressources/GPO_OU/Enable_Password_Logout.png)
+
+- Nous avons aussi mis en place une mise en veille lorsque l'ordinateur n'a aucune activité depuis **5 minute**, pour cela éditer l'option ``Specify the system sleep timeout (Plugged in)`` puis spécifiez une durée à vos besoins.
+
+![](/S02-S03/Ressources/GPO_OU/Sleep-timeout.png)
+
+![](/S02-S03/Ressources/GPO_OU/5mn_Sleep.png)
+
+##### GPO : Fond d’écran imposé
+
+- Nom : `Wallpaper`
+- Chemin : ``Configuration utilisateur > Stratégies > Modèles d’administration > Bureau > Active Desktop``
+- Paramètre : **Image d’arrière-plan Active Desktop** : `\\WINSRV-AD-DHCP-DNS.EcoTechSolution.lan\DOCS\Wallpaper\Wallpaper_Windows_XP.JPG`
+- Lier à : `EcoTechSolution.lan`
+> ⚠️ Le fichier `wallpaper.jpg` doit être disponible via un partage réseau accessible à tous.
+
+![wallpaper](/S02-S03/Ressources/GPO/04-gpo_wallpaper.png)
+
+-------
+
+##### GPO : Publication d'applications
+
+> Nous avons mis en place une installation du navigateur par défaut sur les machines de notre domaine via Firefox. Pour cela il est nécéssaire d'avoir un dossier de partage pour stocker votre fichier **MSI** et evidemment il vous faut le fichier **MSI** du navigateur voulu, ici **Firefox Extended Support Release (ESR)**
+
+- Une fois que vous avez votre fichier **MSI** et qu'il est placé dans votre partage nous pouvons passer à la création de la GPO pour l'installer sur les machines.
+Ouvrez la console ``Gestion de stratégie de groupe`` et créez une nouvelle GPO : Clic droit sur ``Objets de stratégie de groupe`` puis ``Nouveau``. Nommez cette GPO, pour nous "Publication-Firefox-ESR".
+
+- Modifiez cette GPO et allez directement dans ``Computer Configuration`` -> ``Policies`` -> ``Software Settings`` -> ``Software installation`` 
+
+![](/S02-S03/Ressources/GPO_OU/Publication_Firefox_Software.png)
+
+- Effectuer ensuite un clic droit sur ``Software installation`` -> ``New`` -> ``Package`` puis renseigné le chemin **réseau** vers le partage ou se situe le fichier **MSI**.
+
+![](/S02-S03/Ressources/GPO_OU/Emplacement_Installer_Firefox.png)
+
+- Séléctionner votre fichier **MSI** puis cochez la case ``Assigned``. Le programme d'installation devrait apparaître comme ceci :
+
+![](/S02-S03/Ressources/GPO_OU/Result_Firefox.png)
+
+---------
+
+##### GPO : Configuration Navigateur Firefox ESR
+
+Prérequis
+> Pour rebondir sur notre **GPO** précédente nous avons mis en place une configuration par **GPO** de notre navigateur.
+> Il est nécéssaire de se munir de la dernière version du [modèle de stratégie](https://github.com/mozilla/policy-templates/releases) Mozilla. Télécharger le **Source code (zip)** puis l'extraire. Copier les fichier ADMX dans le répertoire des définitions de stratégie.
+Vous pouvez le faire en powershell :
+``` 
+C:
+cd downloads/windows
+copy /y firefox.admx C:\Windows\PolicyDefinitions
+copy /y mozilla.admx C:\Windows\PolicyDefinitions
+```
+> Déplacer également le sous-répertoire linguistique voulu, dans notre cas **fr-FR**
+```
+C:
+cd downloads/windows
+cd en-US
+copy /y firefox.adml C:\Windows\PolicyDefinitions\en-US
+copy /y mozilla.adml C:\Windows\PolicyDefinitions\en-US
+```
+
+- Une fois les prérequis compléter, allez à l'emplacement ``Computer Configuration`` -> ``Administrative Templates`` -> ``Mozilla`` -> ``Firefox``
+
+![](/S02-S03/Ressources/GPO_OU/Conf_Firefox_menu.png)
+
+>Vous avez accès à tout les option pour configurer votre navigateur avec différent paramètre accessible soit, en cliquant sur l'emplacement **Firefox** ou bien dans le menu déroulant avec différent dossier contenant divers options.
+
+- Pour notre infrastructure nous avons décider de désactiver par exemple l'accès à la navigation privé, en activant l'option ``Disable Private Browsing``
+
+![](/S02-S03/Ressources/GPO_OU/Disable_Private_Browser.png)
+
+![](/S02-S03/Ressources/GPO_OU/Enable_policy_PrvBrowser.png)
+
+- Ou bien encore de ne pas révéler en clair les mots de passe dans les connexions déja enregistré avec l'option ``Do not allow passwords to be revealed in saved logins`` -> ``Enabled``
+
+![](/S02-S03/Ressources/GPO_OU/Password_Reveal_notAllow.png)
+
+----
+
+#### – Application des GPO
+Pour actualiser les GPO modifier et/ou crée il est important d'actualiser les stratégies en redémarrant la machine ou bien par powershell
+
+```
+
+gpupdate /force
+
+```
 
 ---
 
