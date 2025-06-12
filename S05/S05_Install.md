@@ -38,10 +38,26 @@ L'installation se lance. Patientez jusqu'à la fin, puis cliquer sur "Close"
 <span id="backup"></span> 
   
 Pour la planification de backup nous allons utiliser le service  **Task Scheduler** (rôle qui est présent par défault sur Windows server) couplé a un script pour pouvoir automatiser les backup une fois par semaine. 
+
+Nous allons commencer avec le script, que nous avons placé en : 
+```
+C:\Scripts\Scripts_backup.ps1
+```
+
+![image script](/S05/Ressources/script_backup.png)
   
+Avec ce script, nous pouvons utiliser **Windows Backup** pour sauvegarder l'ensemble du serveur sur le disque 
+```
+F:\
+```
+
+![image disque sauvegarde](/S05/Ressources/sauvegarde_autre_disque.png)
+
+Maintenant nous allons utiliser l'outil **Task Scheduler** pour programmer notre script afin qu'il puisse s'executer une fois par semaine : 
+
+![image task scheduler](/S05/Ressources/schedule_plein_ecran.png)
   
-  
-  
+Grâce à tout cela notre serveur ADDS a une sauvegarde hebdomadaire. 
   
   
     
