@@ -42,6 +42,9 @@ L'installation se lance. Patientez jusqu'à la fin, puis cliquer sur "Close"
 
 
 
+
+
+   
 ## 2 - Mise en place d'une supervision de l'infrastructure réseau   
 <span id="supervision-zabbix"></span>  
   
