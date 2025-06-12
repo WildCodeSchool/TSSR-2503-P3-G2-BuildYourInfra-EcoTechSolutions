@@ -37,7 +37,7 @@ L'installation se lance. Patientez jusqu'à la fin, puis cliquer sur "Close"
 ### Partie 2 - Création d'une planification de backup   
 <span id="backup"></span> 
   
-  
+Pour la planification de backup nous allons utiliser le service  **Task Scheduler** (rôle qui est présent par défault sur Windows server) couplé a un script pour pouvoir automatiser les backup une fois par semaine. 
   
   
   
