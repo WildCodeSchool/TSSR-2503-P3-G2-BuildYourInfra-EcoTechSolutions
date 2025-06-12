@@ -4,7 +4,7 @@
 
 1. [Mettre en place une sauvegarde de données](#sauvegarde-de-donnees)
 2. [Mise en place d'une supervision de l'infrastructure réseau](#supervision-zabbix)
-
+3. [Déploiement des Agents Zabbix](#agent-zabbix)
   
   
   
@@ -85,7 +85,70 @@ Dans la partie " Information système" , vous verrez "le serveur zabbix est en c
 ![dashboard](https://github.com/user-attachments/assets/f8b9587b-04f9-4f67-8829-45d6d10ffcae)  
  
 
-  
+## 3 - Déploiement des Agents Zabbix
+<span id="agent-zabbix"></span>  
+
+Une fois le serveur Zabbix mise en place, pour obtenir les métriques des machines que l'on veux superviser, nous devons déployer l'Agent Zabbix sur nos machines.
+
+### Pour les machines Windows
+
+Manipulation à faire sur chaque machine Windows (serveur ou client) :
+
+- Aller sur le site de Zabbix (www.zabbix.com), puis cliquez sur le bouton vert en haut à droite "Get Zabbix"
+
+- Choisissez l'option le plus à droite : "Agents Zabbix"
+
+![agent_zabbix_w1](/S05/Ressources/Zabbix/agent_zabbix_w1.png)
+
+- Sélectionner votre version de l'Agent pour Windows
+
+![agent_zabbix_w2](/S05/Ressources/Zabbix/agent_zabbix_w2.png)
+
+- Cliquez sur le bouton "Download" pour télécharger l'Agent Zabbix
+
+![agent_zabbix_w3](/S05/Ressources/Zabbix/agent_zabbix_w3.png)
+
+- Une fois télécharger, lancer l'installateur de l'Agent et cliquez sur "Next"
+
+![agent_zabbix_w4](/S05/Ressources/Zabbix/agent_zabbix_w4.png)
+
+- Cochez la casse "I accept the terms in the License Agreement", puis cliquez sur "Next"
+
+![agent_zabbix_w5](/S05/Ressources/Zabbix/agent_zabbix_w5.png)
+
+- Laissez toutes les option comme elle sont et cliquez sur "Next"
+
+![agent_zabbix_w6](/S05/Ressources/Zabbix/agent_zabbix_w6.png)
+
+- Renseigner le nom de la machine dans "Host name" et l'IP de votre serveur Zabbix dans "Zaabix server IP/DNS" et "Server or Proxy for active checks"
+
+![agent_zabbix_w7](/S05/Ressources/Zabbix/agent_zabbix_w7.png)
+
+- Cliquez sur "Install" pour commencer l'installation
+
+![agent_zabbix_w8](/S05/Ressources/Zabbix/agent_zabbix_w8.png)
+
+- Cliquez sur "Finish" pour terminer l'installation de l'Agent Zabbix sur votre machine Windows
+
+### Pour les machines Linux
+
+Manipulation à faire sur chaque machine Linux (serveur ou client) :
+
+- Aller sur le site de Zabbix (www.zabbix.com), puis cliquez sur le bouton vert en haut à droite "Get Zabbix"
+
+- Choisissez l'option le plus à gauche : "Packages Zabbix"
+
+![agent_zabbix_l1](/S05/Ressources/Zabbix/agent_zabbix_l1.png)
+
+- Choisissez parmi les options : Votre version de Zabbix, Votre Distribution Linux et Agent comme "Composent Zabbix"
+
+![agent_zabbix_l2](/S05/Ressources/Zabbix/agent_zabbix_l2.png)
+
+- Suivez les instructions d'installation sur le site officiel de Zabbix
+
+![agent_zabbix_l3](/S05/Ressources/Zabbix/agent_zabbix_l3.png)
+
+- Une fois installer, édité le fichier de configuration `/etc/zabbix/zabbix_agentd.conf` et modifier les lignes "Server" et "ServerActive" en y indiquant l'IP de votre serveur Zabbix  
 
 
 
