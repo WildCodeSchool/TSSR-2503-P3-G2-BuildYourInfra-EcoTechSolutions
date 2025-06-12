@@ -2,17 +2,38 @@
 
 ## Sommaire
 
-1. [Mettre en place une sauvegarde de données](#sauvegarde-de-donnees)
-2. [Mise en place d'une supervision de l'infrastructure réseau](#supervision-zabbix)
-3. [Déploiement des Agents Zabbix](#agent-zabbix)
-  
-  
-  
-  
-  
-  
+1. [Mettre en place une sauvegarde de données](#sauvegarde-de-donnees)  
+     [Partie 1 - Installation du rôle Windows Server Backup](#wsb)  
+     [Partie 2 - Création d'une planification de backup](#backup)  
+2. [Mise en place d'une supervision de l'infrastructure réseau](#supervision-zabbix)  
+3. [Déploiement des Agents Zabbix](#agent-zabbix)  
+    
+    
 ## 1 - Mettre en place une sauvegarde de données  
 <span id="sauvegarde-de-donnes"></span>  
+  
+### Partie 1 - Installation du rôle Windows Server Backup  
+<span id="wbs"></span>  
+  
+Pour utiliser Windows Server Backup, il faut avant tout installer le rôle sur le serveur.  
+
+Dans le Server Manager, cliquer sur "Manage" et "Add Roles and Features"  
+
+![wsb_role_01](https://github.com/user-attachments/assets/188df6fe-c670-46a9-b9e2-4698384721a6)  
+
+Une fenêtre s'ouvre, cliquer sur "Next"  
+![wsb_role_02](https://github.com/user-attachments/assets/71f87a03-53d6-4184-8858-06d72ca8907a)  
+  
+Continuer a cliquer sur "Next" jusqu'à arriver à la section "Features" et cocher la case "Windows Server Backup", puis cliquer sur "Next"   
+![wsb_role_03](https://github.com/user-attachments/assets/d117560b-a9fc-4fe7-9eff-980d8358b13d)  
+
+La section "Confirmation" vous récapitule les rôles installés, ici Windows Server Backup. Cliquer sur "Install"  
+![wsb_role_04](https://github.com/user-attachments/assets/11e341e6-e06c-41a3-81c3-20f24029a0c5)  
+  
+L'installation se lance. Patientez jusqu'à la fin, puis cliquer sur "Close"  
+![wsb_role_05](https://github.com/user-attachments/assets/51766d4b-b96d-4e28-bbb4-0da0f7334b7f)  
+
+  
 
 
 
