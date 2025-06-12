@@ -32,9 +32,10 @@ La section "Confirmation" vous récapitule les rôles installés, ici Windows Se
   
 L'installation se lance. Patientez jusqu'à la fin, puis cliquer sur "Close"  
 ![wsb_role_05](https://github.com/user-attachments/assets/51766d4b-b96d-4e28-bbb4-0da0f7334b7f)  
-
   
-
+  
+### Partie 2 - Création d'une planification de backup   
+<span id="backup"></span> 
 
 
 
