@@ -341,19 +341,55 @@ Le service Communication Externe gère les relations publiques, médias et commu
 - **GRP-Communication-Externe**
 
 ### Configuration des droits d'accès
+
+#### Création des dossiers de stockage pour nos utilisateurs
+On a fait le choix de faire des dossiers séparés pour le mappage. Il y aura un dossier par département et un dossier par service.
 ![capture-dossier](/S04/Ressources/Capture-mappage/1-capture-dossier.png)
 
 ![capture-dossier](/S04/Ressources/Capture-mappage/2-capture-arbo-dep.png)
 
 ![capture-dossier](/S04/Ressources/Capture-mappage/3-capture-arbo-svc.png)
 
+#### Paramétrage des droits d'accès
+- Clique droit sur **Communication-Externe** > **Security** > **Advanced**
+- Depuis cette fenetre, on peut ajouter des groupes existants et personnaliser les droits. Pour notre groupe communication-externe, nous nous limiterons à Read / Write / List Folder Content
+- Appliquer  
+
 ![capture-dossier](/S04/Ressources/Capture-mappage/4-capture-filtrage-secu.png)
+
+### Paramétrage du partage
+- Aller dans l'onglet sécurité, clique droit sur **Advanced Sharing**
+- Le share name est par default, le laisser
+- Permissions, ajouter les groupes voulus (Communication-Externe)
+- Cliquer sur les cases Change / Read dans Allow  
 
 ![capture-dossier](/S04/Ressources/Capture-mappage/5-capture-permission.png)
 
+### Ajout du droit access bases enumeration sur le server manager
+- Ouvrir l'interface Server Manager > File and Storage Services > Shares
+- Clique droit sur **Communication-Externe** > **Propriété**
+- Séléctionner **Enable access-based enumeration** > **Apply**
+
+Ce droit permet aux utilisateurs de ne voir que les dossiers dont ils ont les droits.
+
 ![capture-dossier](/S04/Ressources/Capture-mappage/6-capture-acces-bases-enumeration.png)
 
+### Mise en place du mappage services ":J"
+- Aller dans le Group Policy Management
+- Créer un GPO à la racine du domain EcoTechSolution.lan
+- Ajouter le groupe communication-externe dans le security filtering, puis idem dans l'onglet délégation.
+
 ![capture-dossier](/S04/Ressources/Capture-mappage/7-creation-gpo.png)
+
+Nous allons editer la GPO pour y ajouter notre mappage :J.
+
+- Clique droit sur la GPO > **Edit**
+- Suivre le chemin suivant **User Configuration** > **Preferences** > **Windows Settings** > **Drive Maps** > Clique droit dans la fenetre vierge **ajouter un mappage réseau**
+- Action : Update
+- Location : Emplacement du chemin du dossier réseau
+- Reconnect : Oui
+- Drive letter : J
+- Reste par defaut
 
 ![capture-dossier](/S04/Ressources/Capture-mappage/8-creation-mappage.png)
 
