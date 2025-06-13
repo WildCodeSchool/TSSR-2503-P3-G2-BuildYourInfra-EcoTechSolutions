@@ -334,6 +334,19 @@ Le département DSI (Direction des Systèmes d'Information) nécessite un accès
 
 ## Exemple 2 : Service Communication Externe - Accès Spécialisé
 
+#### Sur le mappage J: Communication-Externe uniquement
+**Chemin spécifique** : `\\SRVWIN-RAID\Services\Communication-Externe`
+
+**Permissions NTFS :**
+- **Read & Execute** : Lecture et exécution des fichiers
+- **List Folder Contents** : Listage du contenu des dossiers
+- **Write** : Création et modification de fichiers
+- **Modify** : Modification des fichiers existants
+- **Delete** : Pas de suppression (protection des données)
+- **Full Control** : Pas de contrôle total
+
+### Procédure de configuration avec capture - Communication Externe
+
 ### Contexte
 Le service Communication Externe gère les relations publiques, médias et communication corporate. Accès limité à leur service spécifique avec droits de lecture, écriture et listage des dossiers.
 
@@ -385,38 +398,26 @@ Nous allons editer la GPO pour y ajouter notre mappage :J.
 
 - Clique droit sur la GPO > **Edit**
 - Suivre le chemin suivant **User Configuration** > **Preferences** > **Windows Settings** > **Drive Maps** > Clique droit dans la fenetre vierge **ajouter un mappage réseau**
+
+Onglet General
 - Action : Update
 - Location : Emplacement du chemin du dossier réseau
 - Reconnect : Oui
 - Drive letter : J
 - Reste par defaut
+Onglet Common
+- Selectionner la case `item level targeting`
+- Choisir le groupe Communication-Externe avec le bouton `targeting`
+- Apply
 
 ![capture-dossier](/S04/Ressources/Capture-mappage/8-creation-mappage.png)
 
 ![capture-dossier](/S04/Ressources/Capture-mappage/9-item-level-targeting.png)
 
+
+Il faut forcer les gpo avec gpupdate puis gpresult /R pour voir ce qui a fonctionner.
+Connection d'un compte utilisateur du service communication-externe. Le mappage fonctionne bien.
 ![capture-dossier](/S04/Ressources/Capture-mappage/10-dossier-partagés.png)
-
-
-#### Sur le mappage J: Communication-Externe uniquement
-**Chemin spécifique** : `\\SRVWIN-RAID\Services\Communication-Externe`
-
-**Permissions NTFS :**
-- **Read & Execute** : Lecture et exécution des fichiers
-- **List Folder Contents** : Listage du contenu des dossiers
-- **Write** : Création et modification de fichiers
-- **Modify** : Modification des fichiers existants
-- **Delete** : Pas de suppression (protection des données)
-- **Full Control** : Pas de contrôle total
-
-**Permissions de partage :**
-- **Change** pour `GRP-Communication-Externe`
-
-#### Accès aux autres mappages
-- **Mappage K:** Accès en lecture seule à `K:\Communication` (département)
-- **Mappage I:** Accès standard à leur dossier personnel uniquement
-
-### Procédure de configuration avec capture - Communication Externe
 
 
 
