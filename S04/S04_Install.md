@@ -5,7 +5,7 @@
 1. [Mettre en place du RAID 1 sur un serveur](#Mettre-place-du-RAID-1-sur-un-serveur)
 2. [Installer et configurer un pare-feu pfSense](#Installer-et-configurer-un-pare-feu-pfSense)
 3. [Installation des logiciels](#installation-des-logiciels)
-  
+4. [Mise en place du partage de dossier](#Mise-en-place-du-partage-de-dossier)
   
   
   
@@ -224,6 +224,194 @@ Lors de l'installation, au message :
 - Sélectionner la carte réseau ens18 et démarrer la capture de paquets en cliquant sur l'aileron bleau en haut à gauche  
 ![test](https://github.com/user-attachments/assets/eb692970-ec84-444c-8f43-d2e08313db39) 
 
+## 4 - Mise en place du partage de dossier
+# Guide de Configuration - Partages, Mappage et Droits d'Accès
+## Ecotech Solutions
+
+---
+
+## 📋 Vue d'ensemble de l'infrastructure
+
+### Architecture réseau
+- **Serveur de stockage** : `SRVWIN-RAID` 
+  - Lecteur E: configuré en RAID 1 pour la redondance
+  - Héberge tous les dossiers partagés de l'entreprise
+- **Contrôleur de domaine** : `WINSRV-ADDS-DHCP-DNS`
+  - Gère Active Directory Domain Services (ADDS)
+  - Administre les droits d'accès du serveur de stockage
+  - Services DHCP et DNS intégrés
+
+### Structure des mappages réseau
+
+#### Mappage J: - Services *(Dossiers par service/équipe)*
+Chemin racine : `\\SRVWIN-RAID\Services\`
+
+Les utilisateurs accèdent aux dossiers spécifiques à leur service :
+- `J:\administration-du-personnel`
+- `J:\Communication-Externe` 
+- `J:\Developpement-BackEnd`
+- `J:\DSI`
+- `J:\Finance`
+
+
+#### Mappage K: - Départements *(Dossiers par département)*
+Chemin racine : `\\SRVWIN-RAID\Départements\`
+
+Accès aux ressources départementales :
+- `K:\Communication`
+- `K:\Developpement` 
+- `K:\DSI`
+- `K:\Direction`
+- `K:\Finance-Comptabilité`
+- `K:\Service-Commercial`
+- `K:\Direction-Ressources-Humaines`
+
+#### Mappage I: - Utilisateurs *(Dossiers individuels)*
+Chemin racine : `\\SRVWIN-RAID\Utilisateurs\`
+
+Chaque utilisateur dispose d'un espace personnel :
+- `%Logon%` (dossier personnel basé sur l'identifiant de connexion)
+
+---
+
+## 🛠️ Configuration des partages - Procédure générale
+
+### Étapes sur le serveur SRVWIN-RAID pour créer les dossiers
+
+1. **Accès au volume de stockage raid E:**
+   - Créer dossier **Départements** et **Services**
+
+2. **Configuration de la sécurité**
+   - Clic droit sur le partage > **Properties**
+   - Onglet **Security** > **Advanced** 
+   - Configurer les permissions NTFS détaillées
+
+3. **Configuration du partage réseau**
+   - Onglet **Sharing**
+   - Cliquer sur **Add** pour ajouter les groupes
+   - Définir les permissions de partage
+   - Valider avec **Apply**
+
+---
+
+## Exemple 1 : Département DSI - Contrôle Total
+
+### Contexte
+Le département DSI (Direction des Systèmes d'Information) nécessite un accès complet à l'ensemble de l'infrastructure pour la maintenance et l'administration système.
+
+### Groupes Active Directory concernés
+- **GRP-DSI** : Administrateurs DSI
+
+### Configuration des droits d'accès
+
+#### Sur tous les mappages J: (Services)
+**Chemin** : `\\SRVWIN-RAID\Services\*`
+
+**Permissions NTFS avancées :**
+- **Full Control** pour `GRP-DSI`
+- **Modify** pour `GRP-DSI`
+- **Read & Execute** (héritage sur sous-dossiers)
+- **Write** (création/modification de fichiers)
+- **Delete** (suppression de fichiers et dossiers)
+
+**Permissions de partage :**
+- **Full Control** pour `GRP_DSI`
+
+#### Sur tous les mappages K: (Départements)
+**Chemin** : `\\SRVWIN-RAID\Départements\*`
+
+**Configuration identique** : Contrôle total pour administration et maintenance
+
+#### Sur les mappages I: (Utilisateurs)
+**Chemin** : `\\SRVWIN-RAID\Utilisateurs\*`
+
+**Permissions spéciales :**
+- **Read & Execute**
+- **Change & Read**
+
+
+---
+
+## Exemple 2 : Service Communication Externe - Accès Spécialisé
+
+### Contexte
+Le service Communication Externe gère les relations publiques, médias et communication corporate. Accès limité à leur service spécifique avec droits de lecture, écriture et listage des dossiers.
+
+### Groupe Active Directory
+- **GRP-Communication-Externe**
+
+### Configuration des droits d'accès
+![capture-dossier](/S04/Ressources/Capture-mappage/1-capture-dossier.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/2-capture-arbo-dep.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/3-capture-arbo-svc.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/4-capture-filtrage-secu.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/5-capture-permission.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/6-capture-acces-bases-enumeration.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/7-creation-gpo.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/8-creation-mappage.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/9-item-level-targeting.png)
+
+![capture-dossier](/S04/Ressources/Capture-mappage/10-dossier-partagés.png)
+
+
+#### Sur le mappage J: Communication-Externe uniquement
+**Chemin spécifique** : `\\SRVWIN-RAID\Services\Communication-Externe`
+
+**Permissions NTFS :**
+- **Read & Execute** : Lecture et exécution des fichiers
+- **List Folder Contents** : Listage du contenu des dossiers
+- **Write** : Création et modification de fichiers
+- **Modify** : Modification des fichiers existants
+- **Delete** : Pas de suppression (protection des données)
+- **Full Control** : Pas de contrôle total
+
+**Permissions de partage :**
+- **Change** pour `GRP-Communication-Externe`
+
+#### Accès aux autres mappages
+- **Mappage K:** Accès en lecture seule à `K:\Communication` (département)
+- **Mappage I:** Accès standard à leur dossier personnel uniquement
+
+### Procédure de configuration avec capture - Communication Externe
+
+
+
+---
+
+## 📝 Bonnes pratiques et sécurité
+
+### Recommandations générales
+- **Principe du moindre privilège** : Accorder uniquement les droits nécessaires
+- **Groupes AD** : Utiliser exclusivement des groupes (jamais d'utilisateurs individuels)
+
+
+---
+
+## 📊 Tableau récapitulatif des droits
+
+### DSI - Contrôle Total
+
+| Mappage | Chemin | Droits NTFS | Droits Partage |
+|---------|--------|-------------|----------------|
+| **J:** | `\\SRVWIN-RAID\Services\*` | **Full Control** | **Full Control** |
+| **K:** | `\\SRVWIN-RAID\Départements\*` | **Full Control** | **Full Control** |
+| **I:** | `\\SRVWIN-RAID\Utilisateurs\*` | **Full Control** | **Full Control** |
+
+### Communication Externe - Accès Spécialisé
+
+| Mappage | Chemin | Droits NTFS | Droits Partage |
+|---------|--------|-------------|----------------|
+| **J:** | `\\SRVWIN-RAID\Services\Communication-Externe` | Read, Write, List, Modify | Change |
+| **K:** | `\\SRVWIN-RAID\Départements\Communication` | Read Only | Read |
+| **I:** | `\\SRVWIN-RAID\Utilisateurs\%user%` | Full Control (personnel) | Change |
 
 
 
