@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoTechSolution - Solutions écologiques et technologiques pour un avenir durable">
+    <title>EcoTechSolution</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers une feuille de style CSS externe -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #2C6B2F;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2C6B2F;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>EcoTechSolution</h1>
+        <p>Innovations écologiques pour un avenir durable</p>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Nos Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section: Presentation -->
+    <section id="accueil">
+        <h2>Bienvenue chez EcoTechSolution</h2>
+        <p>Nous sommes une entreprise dédiée à fournir des solutions écologiques et technologiques pour améliorer la durabilité de votre entreprise et de votre quotidien.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Solutions d'énergie renouvelable</h3>
+                <p>Des systèmes solaires et éoliens pour alimenter votre entreprise de manière durable.</p>
+            </div>
+            <div class="service-card">
+                <h3>Consultation environnementale</h3>
+                <p>Des conseils et des audits pour rendre votre entreprise plus verte.</p>
+            </div>
+            <div class="service-card">
+                <h3>Technologies éco-responsables</h3>
+                <p>Des solutions technologiques qui minimisent votre empreinte écologique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <p>Pour toute demande d'information ou pour un devis, n'hésitez pas à nous contacter via le formulaire ci-dessous.</p>
+        <form>
+            <label for="name">Nom:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <input type="submit" value="Envoyer">
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 EcoTechSolution. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
