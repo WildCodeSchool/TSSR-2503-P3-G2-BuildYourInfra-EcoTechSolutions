@@ -20,13 +20,16 @@ Installation de l'ISO :
 
 ![cap1](/S06/Ressources/FreePBX/freePBX-01.png)
 
+------------------------------------------------------------------------------------  
 
 - Choisir la configuration GUI  
 ![cap1](/S06/Ressources/FreePBX/freePBX-02.png)
 
+------------------------------------------------------------------------------------  
 
 - FreePBX Standard  
 ![cap1](/S06/Ressources/FreePBX/freePBX-03.png)
+------------------------------------------------------------------------------------  
 
 
 - On redémarre le serveur FreePBX.
@@ -39,6 +42,7 @@ Installation de l'ISO :
 Maintenant que la VM Serveur FreePBX est configuré, nous allons nous y connecter via un client windows ou ubuntu.
 - Connexion depuis un moteur de recherche l'adresse IP du serveur : `https://172.16.20.17`
 ![cap1](/S06/Ressources/FreePBX/freePBX-04.png)  
+------------------------------------------------------------------------------------  
 
 Une fois sur l'interface de FreePBX, on peut laisser l'installation se terminer et changer le mot de passe par défault par un mot de passe fort.
 Suivre les étapes ci-dessous jusqu'au Dashboard.
