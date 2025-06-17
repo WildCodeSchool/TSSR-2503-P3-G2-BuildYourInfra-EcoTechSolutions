@@ -15,3 +15,6 @@ Création de la machine virtuel avec l'ISO SNG7-PBX16-64bit-2302-1.iso.
 FreePBX fonctionne uniquement sous linux.
 
 Installation de l'ISO
+
+
+!(cap1)[/S06/Ressources/FreePBX/freePBX-01.png]
