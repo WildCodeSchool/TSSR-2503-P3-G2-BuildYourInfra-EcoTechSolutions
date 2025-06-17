@@ -18,3 +18,19 @@ Installation de l'ISO
 
 
 ![cap1](/S06/Ressources/FreePBX/freePBX-01.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-02.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-03.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-04.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-05.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-06.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-07.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-08.png)
+
+![cap1](/S06/Ressources/FreePBX/freePBX-09.png)
