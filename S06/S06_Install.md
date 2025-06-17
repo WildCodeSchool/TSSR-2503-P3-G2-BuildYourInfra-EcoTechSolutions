@@ -8,5 +8,5 @@
 2. [Mise en place d'un serveur de messagerie](#messagerie)  
 
 
-##1.Mise en place du serveur VoIP FreePBX
+## 1.Mise en place du serveur VoIP FreePBX
 <span id="FreePBS"/><span>
