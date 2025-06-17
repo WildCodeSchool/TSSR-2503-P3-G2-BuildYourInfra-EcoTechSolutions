@@ -10,3 +10,8 @@
 
 ## 1.Mise en place du serveur VoIP FreePBX
 <span id="FreePBS"/><span>
+
+Création de la machine virtuel avec l'ISO SNG7-PBX16-64bit-2302-1.iso.
+FreePBX fonctionne uniquement sous linux.
+
+Installation de l'ISO
