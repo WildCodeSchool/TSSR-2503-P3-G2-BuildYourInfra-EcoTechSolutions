@@ -17,4 +17,4 @@ FreePBX fonctionne uniquement sous linux.
 Installation de l'ISO
 
 
-!(cap1)[/S06/Ressources/FreePBX/freePBX-01.png]
+![cap1](/S06/Ressources/FreePBX/freePBX-01.png)
