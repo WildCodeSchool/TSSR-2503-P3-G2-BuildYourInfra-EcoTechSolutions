@@ -57,3 +57,52 @@ L'installation de FreePBX est terminé, il reste à configurer les utilisateurs 
 ![cap1](/S06/Ressources/FreePBX/freePBX-09.png)
 
 ------------------------------------------------------------------------------------
+
+## 1.Mise en place du serveur de messagerie
+<span id="messagerie"/><span>
+
+Nous allons héberger notre serveur de messagerie sur un nouveau serveur : **G2-SRV-iRedMail**
+
+![image serveur]()
+
+Maintenant nous allons configurer le nom d'hôte de notre serveur :
+```bash
+sudo hostnamectl set-hostname mail
+echo "ecotechsolution.mail.lan" | sudo tee /etc/hostname
+```
+
+Ainsi que le fichier /etc/hosts :
+```bash
+#adresse IP du serveur
+172.16.20.16 ecotechsolution.mail.lan localhost
+```
+
+Installation iRedMail :
+```bash
+wget https://github.com/iredmail/iRedMail/archive/refs/tags/1.7.4.tar.gz
+tar xvf 1.7.4.tar.gz
+cd iRedMail-1.7.4
+bash iRedMail.sh
+```
+
+Nous allons configurer avec ces données : 
+
+![image serveur]()
+
+Pour pouvoir nous connecter sans devoir mémoriser l'adresse IP de notre serveur, nous allons configurer notre DNS :
+
+![image dns]()
+
+Une fois cela fait nous pouvons nous connecter et administrer iRedMail en graphique grace a un navigateur web :
+
+![image nav web]()
+
+Nous avons créer plusieurs utilisateurs pour être sur que cela fonctionne :
+
+![image utilisateur]()
+
+Nous pouvons maintenant consulter les mails sur un navigateur web ou une messagerie lourde comme Thunderbird : 
+
+![image nav web et thunderbird]()
+
+
