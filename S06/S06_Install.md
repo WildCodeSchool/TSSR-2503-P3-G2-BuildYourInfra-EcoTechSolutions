@@ -62,14 +62,14 @@ L'installation de FreePBX est terminé, il reste à configurer les utilisateurs 
 
 ------------------------------------------------------------------------------------
 ### Partie 2 - Configuration de FreePBX et 3CX
-<span id ="Cfg.FPBX/><span>
+<span id ="Cfg.FPBX"/><span>
 
 Nous allons voir comment ajouter des utilisateurs sur FreePBX.
 Sur notre page FreePBX sur l'adresse 172.16.20.17, nous avons accès à plusieurs onglets.
 - Clique gauche sur `Application`puis `Extension`.
 - Séléctionner l'onglet `SIP [chan_pjsip] Extensions` et cliquez sur le bouton `+Add New SIP [chan_pjsip] Extension`.
 
-![cap1](/S06/Ressources/FreePBX/FreePBX-91.png)
+![cap1](/S06/Ressources/FreePBX/FreePPX-91.png)
 
 -------------------------------------------------------------------------------------
 Une fenêtre de configuration va s'afficher.  
