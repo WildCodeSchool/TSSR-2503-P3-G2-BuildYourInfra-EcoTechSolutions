@@ -82,7 +82,7 @@ Display Name : Elisa Costa
 Secret : 1234  
 Password For New User : 1234  
 
-![cap1](/S06/Ressources/FreePBX/freePBX-92.png)  
+![cap1](/S06/Ressources/FreePBX/freePBX-92.png)
 
 A la fin, cliquez sur `submit` pour valider les modifications.
 ------------------------------------------------------------------------------------
