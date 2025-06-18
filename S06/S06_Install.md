@@ -4,7 +4,7 @@
 
 1. [Mise en place du serveur VoIP FreePBX](#FreePBX)  
      [Partie 1 - Installation de FreePBX](#Ins.FPBX)  
-     [Partie 2 - Configuration de FreePBX](#Cfg.FPBX)  
+     [Partie 2 - Configuration de FreePBX et 3CX](#Cfg.FPBX)  
 2. [Mise en place d'un serveur de messagerie](#messagerie)  
 
 
@@ -59,14 +59,16 @@ L'installation de FreePBX est terminé, il reste à configurer les utilisateurs 
 ![cap1](/S06/Ressources/FreePBX/freePBX-09.png)
 
 ------------------------------------------------------------------------------------
-### Partie 2 - Configuration de FreePBX
+### Partie 2 - Configuration de FreePBX et 3CX
 <span id ="Cfg.FPBX/><span>
 
 Nous allons voir comment ajouter des utilisateurs sur FreePBX.
 Sur notre page FreePBX sur l'adresse 172.16.20.17, nous avons accès à plusieurs onglets.
 - Clique gauche sur `Application`puis `Extension`.
 - Séléctionner l'onglet `SIP [chan_pjsip] Extensions` et cliquez sur le bouton `+Add New SIP [chan_pjsip] Extension`.
+![cap1](/S06/Ressources/FreePBX/freePBX-91.png)
 
+-------------------------------------------------------------------------------------
 Une fenêtre de configuration va s'afficher.
 
 Indiquez les informations de l'utilisateur à ajouter. 
@@ -77,7 +79,26 @@ Display Name : Elisa Costa
 Secret : 1234
 Password For New User : 1234
 
+![cap1](/S06/Ressources/FreePBX/freePBX-92.png)
+
 A la fin, cliquez sur `submit` pour valider les modifications.
+------------------------------------------------------------------------------------
+La dernière étape sera la mise en place de 3CX en solution de Softphone.
+Téléchargez le logiciel sur le lien suivant : https://downloads.3cx.com/downloads/3CXPhone6.msi
+
+Une fois télécharger, exécutez le.
+
+Ouvez l'application. Sur l'écran du SIP phone, clique sur `Set account` pour avoir la fenêtre Accounts. Dans notre exemple, celui ci est déjà configurer et le nom `Set Account`est remplacé par `Elisa Costa`
+
+Dans la fenêtre Account Setting, ajoutez les champs en reprenant les informations de FreePBX.
+Il faut ajouter l'adresse de notre serveur de VOiP.
+![cap1](/S06/Ressources/FreePBX/3CX-02.png)
+
+Cette interface montre tout les contacts ajoutés.
+![cap1](/S06/Ressources/FreePBX/3CX-03.png)
+
+La communication fonctionne bien entre Elisa Costa et un Administrateur sur une autre machine.
+![cap1](/S06/Ressources/FreePBX/3CX-01.png)
 
 ------------------------------------------------------------------------------------
 ## 2.Mise en place du serveur de messagerie
