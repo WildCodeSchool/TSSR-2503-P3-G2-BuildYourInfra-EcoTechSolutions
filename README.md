@@ -85,6 +85,39 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 |   John         | Technicien      |  Installation et configuration du PC d'Administration sur Ubuntu / Installation des logiciels (Wireshark, OpenSSH ...) sur le PC d'Administration / Installation et configuration du SSSD sur le PC d'Administration , intégration au Domaine AD et gestions des accès  |  
 |   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
 
+### 📅 Sprint 4 
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Scrum Master   |  Mise en place du pfSense, Mise en place des dossiers partagés et script ajout utilisateurs     |
+|   Lloyd        | Technicien    |  Gestion de la télémétrie sur les clients Windows 10/11 |
+|   Alan         | Technicien      |  Mise en place du pfSense, début routage avec ubuntu, mise en place des dossiers partagés  |
+|   Florian      | Technicien      | Mise en place du serveur de stockage et d'un RAID 1. Travail sur le script ajout utilisateurs. Ajout GPO Standard    |
+|   John         | Product Owner      |  Installation et configuration de SSH et Wireshark sur PC admin. Mise en place du raid 1. Travail sur le script ajout utilisateurs      |
+|   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
+
+### 📅 Sprint 5 
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Technicien   |  Mise en place de la sauvegarde de données et de la planification de sauvegarde    |
+|   Lloyd        | Product Owner    |  Mise en place de la supervision du réseau, mise en place du serveur WEB  |
+|   Alan         | Technicien      |  Travail sur le partage de fichier et mappage réseau, mise en place de la sauvegarde et de sa planification  |
+|   Florian      | Scrum Master      |  Débogage et création des GPO Standard / Sécurité, travail sur le mappage et la sauvegarde données, début du script de restriction d'accès selon horaires    |
+|   John         | Technicien      |  Mise en place de la supervision du réseau, mise en place de la sauvegarde de données et sa planification      |
+|   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
+
+### 📅 Sprint 6 
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Technicien    |  Mise en place du serveur de messagerie (IredMail, Thunderbird)     |
+|   Lloyd        | Technicien    |  Mise en place du serveur VoIP (FreePBX et 3CX)  |
+|   Alan         | Product Owner      |  Mise en place du serveur VoIP (FreePBX et 3CX), finition du script de restriction d'horaires  |
+|   Florian      | Technicien      |  Mise en place du serveur VoIP (FreePBX et 3CX), finition du script de restriction d'horaires   |
+|   John         | Scrum Master      |  Mise en place du serveur de messagerie, finition du script de restriction d'horaires, (IredMail, Thunderbird)      |
+|   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
+
  ------------------ 
  
 ## ⚙️ Prérequis
