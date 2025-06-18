@@ -65,7 +65,7 @@ Process{
    Set-ADUser -Identity $Identity -Replace @{logonhours = $FullByte} 
 }
 end{
-   Write-Output "All Done :)"
+   Write-Host "Les heures d'accès des utilisateurs ont bien été appliquées" -ForegroundColor Green 
 }
 }
 
