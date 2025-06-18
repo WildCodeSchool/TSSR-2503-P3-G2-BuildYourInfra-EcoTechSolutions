@@ -68,8 +68,8 @@ Nous allons voir comment ajouter des utilisateurs sur FreePBX.
 Sur notre page FreePBX sur l'adresse 172.16.20.17, nous avons accès à plusieurs onglets.
 - Clique gauche sur `Application`puis `Extension`.
 - Séléctionner l'onglet `SIP [chan_pjsip] Extensions` et cliquez sur le bouton `+Add New SIP [chan_pjsip] Extension`.
-- 
-![cap1](/S06/Ressources/FreePBX/freePBX-91.png)  
+
+![cap1](/S06/Ressources/FreePBX/FreePBX-91.png)
 
 -------------------------------------------------------------------------------------
 Une fenêtre de configuration va s'afficher.  
@@ -82,7 +82,7 @@ Display Name : Elisa Costa
 Secret : 1234  
 Password For New User : 1234  
 
-![cap1](/S06/Ressources/FreePBX/freePBX-92.png)
+![cap1](/S06/Ressources/FreePBX/FreePBX-92.png)
 
 A la fin, cliquez sur `submit` pour valider les modifications.
 ------------------------------------------------------------------------------------
