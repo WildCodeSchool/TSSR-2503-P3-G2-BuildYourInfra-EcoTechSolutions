@@ -63,7 +63,7 @@ L'installation de FreePBX est terminé, il reste à configurer les utilisateurs 
 
 Nous allons héberger notre serveur de messagerie sur un nouveau serveur : **G2-SRV-iRedMail**
 
-![image serveur]()
+![image serveur](/S06/Ressources/serveur_mail_proxmox.png)
 
 Maintenant nous allons configurer le nom d'hôte de notre serveur :
 ```bash
@@ -87,22 +87,22 @@ bash iRedMail.sh
 
 Nous allons configurer avec ces données : 
 
-![image serveur]()
+![image serveur](/S06/Ressources/config_srv_mail.png)
 
 Pour pouvoir nous connecter sans devoir mémoriser l'adresse IP de notre serveur, nous allons configurer notre DNS :
 
-![image dns]()
+![image dns](/S06/Ressources/dns_serveur_mail.png)
 
 Une fois cela fait nous pouvons nous connecter et administrer iRedMail en graphique grace a un navigateur web :
 
-![image nav web]()
+![image nav web](/S06/Ressources/admin_web_mail.png)
 
 Nous avons créer plusieurs utilisateurs pour être sur que cela fonctionne :
 
-![image utilisateur]()
+![image utilisateur](/S06/Ressources/utilisateur_mail.png)
 
 Nous pouvons maintenant consulter les mails sur un navigateur web ou une messagerie lourde comme Thunderbird : 
 
-![image nav web et thunderbird]()
+![image nav web et thunderbird](/S06/Ressources/mail_both.png)
 
 
