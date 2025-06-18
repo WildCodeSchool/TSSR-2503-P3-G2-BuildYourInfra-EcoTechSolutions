@@ -43,7 +43,9 @@ Installation de l'ISO :
 
 Maintenant que la VM Serveur FreePBX est configuré, nous allons nous y connecter via un client windows ou ubuntu.
 - Connexion depuis un moteur de recherche l'adresse IP du serveur : `https://172.16.20.17`
+
 ![cap1](/S06/Ressources/FreePBX/freePBX-04.png)  
+
 ------------------------------------------------------------------------------------  
 
 Une fois sur l'interface de FreePBX, on peut laisser l'installation se terminer et changer le mot de passe par défault par un mot de passe fort.
@@ -66,6 +68,7 @@ Nous allons voir comment ajouter des utilisateurs sur FreePBX.
 Sur notre page FreePBX sur l'adresse 172.16.20.17, nous avons accès à plusieurs onglets.
 - Clique gauche sur `Application`puis `Extension`.
 - Séléctionner l'onglet `SIP [chan_pjsip] Extensions` et cliquez sur le bouton `+Add New SIP [chan_pjsip] Extension`.
+- 
 ![cap1](/S06/Ressources/FreePBX/freePBX-91.png)  
 
 -------------------------------------------------------------------------------------
@@ -92,15 +95,18 @@ Ouvez l'application. Sur l'écran du SIP phone, clique sur `Set account` pour av
 
 Dans la fenêtre Account Setting, ajoutez les champs en reprenant les informations de FreePBX.
 Il faut ajouter l'adresse de notre serveur de VOiP.  
+
 ![cap1](/S06/Ressources/FreePBX/3CX-02.png)
 
 -----------------------------------------------------------------------------------
 
 Cette interface montre tout les contacts ajoutés.  
+
 ![cap1](/S06/Ressources/FreePBX/3CX-03.png)
 
 -----------------------------------------------------------------------------------
 La communication fonctionne bien entre Elisa Costa et un Administrateur sur une autre machine.  
+
 ![cap1](/S06/Ressources/FreePBX/3CX-01.png)
 
 ------------------------------------------------------------------------------------
