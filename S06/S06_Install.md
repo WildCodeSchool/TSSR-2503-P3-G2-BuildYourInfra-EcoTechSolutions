@@ -47,7 +47,7 @@ Maintenant que la VM Serveur FreePBX est configuré, nous allons nous y connecte
 ------------------------------------------------------------------------------------  
 
 Une fois sur l'interface de FreePBX, on peut laisser l'installation se terminer et changer le mot de passe par défault par un mot de passe fort.
-Suivre les étapes ci-dessous jusqu'au Dashboard.
+Suivre les étapes ci-dessous jusqu'au Dashboard.  
 ![cap1](/S06/Ressources/FreePBX/freePBX-05.png)  
 
 ![cap1](/S06/Ressources/FreePBX/freePBX-06.png)  
@@ -66,20 +66,20 @@ Nous allons voir comment ajouter des utilisateurs sur FreePBX.
 Sur notre page FreePBX sur l'adresse 172.16.20.17, nous avons accès à plusieurs onglets.
 - Clique gauche sur `Application`puis `Extension`.
 - Séléctionner l'onglet `SIP [chan_pjsip] Extensions` et cliquez sur le bouton `+Add New SIP [chan_pjsip] Extension`.
-![cap1](/S06/Ressources/FreePBX/freePBX-91.png)
+![cap1](/S06/Ressources/FreePBX/freePBX-91.png)  
 
 -------------------------------------------------------------------------------------
-Une fenêtre de configuration va s'afficher.
+Une fenêtre de configuration va s'afficher.  
 
-Indiquez les informations de l'utilisateur à ajouter. 
-Pour créer notre premier contact, celui de Elisa Costa, ci-dessous les champs renseignés:
+Indiquez les informations de l'utilisateur à ajouter.  
+Pour créer notre premier contact, celui de Elisa Costa, ci-dessous les champs renseignés:  
 
-User Extension : 6101
-Display Name : Elisa Costa
-Secret : 1234
-Password For New User : 1234
+User Extension : 6101  
+Display Name : Elisa Costa  
+Secret : 1234  
+Password For New User : 1234  
 
-![cap1](/S06/Ressources/FreePBX/freePBX-92.png)
+![cap1](/S06/Ressources/FreePBX/freePBX-92.png)  
 
 A la fin, cliquez sur `submit` pour valider les modifications.
 ------------------------------------------------------------------------------------
@@ -91,13 +91,16 @@ Une fois télécharger, exécutez le.
 Ouvez l'application. Sur l'écran du SIP phone, clique sur `Set account` pour avoir la fenêtre Accounts. Dans notre exemple, celui ci est déjà configurer et le nom `Set Account`est remplacé par `Elisa Costa`
 
 Dans la fenêtre Account Setting, ajoutez les champs en reprenant les informations de FreePBX.
-Il faut ajouter l'adresse de notre serveur de VOiP.
+Il faut ajouter l'adresse de notre serveur de VOiP.  
 ![cap1](/S06/Ressources/FreePBX/3CX-02.png)
 
-Cette interface montre tout les contacts ajoutés.
+-----------------------------------------------------------------------------------
+
+Cette interface montre tout les contacts ajoutés.  
 ![cap1](/S06/Ressources/FreePBX/3CX-03.png)
 
-La communication fonctionne bien entre Elisa Costa et un Administrateur sur une autre machine.
+-----------------------------------------------------------------------------------
+La communication fonctionne bien entre Elisa Costa et un Administrateur sur une autre machine.  
 ![cap1](/S06/Ressources/FreePBX/3CX-01.png)
 
 ------------------------------------------------------------------------------------
