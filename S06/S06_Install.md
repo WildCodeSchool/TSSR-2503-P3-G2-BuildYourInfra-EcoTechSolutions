@@ -11,6 +11,8 @@
 ## 1.Mise en place du serveur VoIP FreePBX
 <span id="FreePBS"/><span>
 
+### Partie 1 - Installation de FreePBX
+<span id="Ins.FPBX"/><span>
 Création de la machine virtuel avec l'ISO SNG7-PBX16-64bit-2302-1.iso.
 FreePBX fonctionne uniquement sous linux.
 
@@ -57,8 +59,28 @@ L'installation de FreePBX est terminé, il reste à configurer les utilisateurs 
 ![cap1](/S06/Ressources/FreePBX/freePBX-09.png)
 
 ------------------------------------------------------------------------------------
+### Partie 2 - Configuration de FreePBX
+<span id ="Cfg.FPBX/><span>
 
-## 1.Mise en place du serveur de messagerie
+Nous allons voir comment ajouter des utilisateurs sur FreePBX.
+Sur notre page FreePBX sur l'adresse 172.16.20.17, nous avons accès à plusieurs onglets.
+- Clique gauche sur `Application`puis `Extension`.
+- Séléctionner l'onglet `SIP [chan_pjsip] Extensions` et cliquez sur le bouton `+Add New SIP [chan_pjsip] Extension`.
+
+Une fenêtre de configuration va s'afficher.
+
+Indiquez les informations de l'utilisateur à ajouter. 
+Pour créer notre premier contact, celui de Elisa Costa, ci-dessous les champs renseignés:
+
+User Extension : 6101
+Display Name : Elisa Costa
+Secret : 1234
+Password For New User : 1234
+
+A la fin, cliquez sur `submit` pour valider les modifications.
+
+------------------------------------------------------------------------------------
+## 2.Mise en place du serveur de messagerie
 <span id="messagerie"/><span>
 
 Nous allons héberger notre serveur de messagerie sur un nouveau serveur : **G2-SRV-iRedMail**
