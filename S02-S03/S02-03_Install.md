@@ -12,7 +12,7 @@
 2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
    - [Partie 1 – Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
    - [Partie 2 – Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
-3. [Installation de Debian avec GLPI – SERVEUR "DEBSRV-GLPI"](#installation-de-debian-avec-glpi--debsrv-glpi)
+3. [Installation de avec GLPI](#installation-de-debian-avec-glpi--debsrv-glpi)
 4. [Installation d’un poste d'administration Ubuntu "DT-DSI-Admin"](#installation-du-pc-admin-dt-dsi-admin)
    - [Partie 1 : Rejoindre le domaine EcoTechSolution](#installation-du-pc-admin-dt-dsi-admin)
    - [Partie 2 - Installation des logiciels ](#installation-des-logiciels)
@@ -470,7 +470,7 @@ Ces commandes donne des détails sur la réplication entre les contrôleurs de d
 
 ------------------------
 
-## Installation de Debian avec GLPI – DEBSRV-GLPI  
+## Installation de GLPI  
 <span id="installation-de-debian-avec-glpi--debsrv-glpi"></span>  
 
 ### Installation des pré-requis
