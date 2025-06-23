@@ -43,7 +43,7 @@ Nous avons créer deux autres serveurs Windows Core pour avoir trois Domain Cont
 Pour les mettres en DC, il a fallu leur attribuer une IP pour qu'elles fassent partie du réseau de l'AD (grâce au rôle DHCP cela c'est fait automatiquement).
 Puis rensigner le nom de domaine pour leur faire intégrer notre AD **EcoTechSolution.lan**.
 
-![image serveur core](S07/Ressources/FSMO/ad_domaine.png)
+![image serveur core](Ressources/FSMO/ad_domaine.png)
 
 #### Distributions des rôles FSMO
 
@@ -75,15 +75,15 @@ Enfin nous allons transférer le rôle FSMO **RID Master** a ce serveur :
 transfert RID master
 ```
 
-![image fsmo](S07/Ressources/FSMO/fsmo.png)
+![image fsmo](Ressources/FSMO/fsmo.png)
 
 Une fois cela fait nous allons faire de même avec notre deuxieme serveur Windows Core et lui attribuer le rôle FSMO **Emulateur PDC**
 
-![fsmo_2](S07/Ressources/FSMO/fsmo_2.png)
+![fsmo_2](Ressources/FSMO/fsmo_2.png)
 
 Pour finir nous allons vérifier si tout à été bien configurer : 
 
-![qwery](S07/Ressources/FSMO/qwery.png)
+![qwery](Ressources/FSMO/qwery.png)
 
 
 
