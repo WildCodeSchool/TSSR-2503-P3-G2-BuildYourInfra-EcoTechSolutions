@@ -43,12 +43,47 @@ Nous avons créer deux autres serveurs Windows Core pour avoir trois Domain Cont
 Pour les mettres en DC, il a fallu leur attribuer une IP pour qu'elles fassent partie du réseau de l'AD (grâce au rôle DHCP cela c'est fait automatiquement).
 Puis rensigner le nom de domaine pour leur faire intégrer notre AD **EcoTechSolution.lan**.
 
-![image serveur core]()
+![image serveur core](S07/Ressources/FSMO/ad_domaine.png)
 
 #### Distributions des rôles FSMO
 
 Une fois que nous avons nos trois DC sur notre AD ( 1 GUI et 2 CLI), nous avons réparties les rôles FSMO entre eux.  
+Pour ce faire nous avons utilisé l'utilitaire **ntdsutil.exe**.
+Pour accéder a cet outil, il suffit d'utiliser la console PowerShell. Ici nous allons l'utiliser sur notre serveur Windows GUI.
+```PowerShell
+ntdsutil.exe
+```
 
+Une fois l'utilitaire lancée, nous allons passé en mode **fsmo maintenance** : 
+```PowerShell
+role
+```
+
+Maintenant nous allons établir une connexion avec le serveurs sur lequel on veut transférer un ou des rôles : 
+```powershell
+connections
+```
+
+Nous sommes maintenant en mode **server connections**, nous allons nous connecter à un serveur Windows Core : 
+
+```powershell
+connect to server WINCORESRV-ADDS
+```
+
+Enfin nous allons transférer le rôle FSMO **RID Master** a ce serveur : 
+```powershell
+transfert RID master
+```
+
+![image fsmo](S07/Ressources/FSMO/fsmo.png)
+
+Une fois cela fait nous allons faire de même avec notre deuxieme serveur Windows Core et lui attribuer le rôle FSMO **Emulateur PDC**
+
+![fsmo_2](S07/Ressources/FSMO/fsmo_2.png)
+
+Pour finir nous allons vérifier si tout à été bien configurer : 
+
+![qwery](S07/Ressources/FSMO/qwery.png)
 
 
 
