@@ -4,11 +4,11 @@
 
 1. [Mise en place du serveur WSUS](#Srv-WSUS)  
      [Partie 1 - Intégration du serveur WSUS au domaine](#WSUS-AD)  
-     [Partie 2 - Liaison des groupes](#liaison-groupes)
-     [Partie 3 - Liaison des MAJ](#liaison-maj)
-      - [A - Les clients]
-      - [B - Les serveurs]
-      - [C - Les DC] 
+     [Partie 2 - Liaison des groupes](#liaison-groupes)  
+     [Partie 3 - Liaison des MAJ](#liaison-maj)  
+      - [A - Les clients](#maj-clients)  
+      - [B - Les serveurs](#maj-serveurs)  
+      - [C - Les DC](#maj-dc)  
 2. [Rôles FSMO](#fsmo)  
 
 
