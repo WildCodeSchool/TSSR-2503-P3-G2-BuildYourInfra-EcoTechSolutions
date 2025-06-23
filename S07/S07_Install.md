@@ -23,7 +23,8 @@
   
 ### Partie 2 - Liaison des groupes  
 <span id="liaison-groupes"/><span>  
-  
+
+
   
 
 
@@ -35,3 +36,21 @@
 
 ## 2.Rôles FSMO  
 <span id="fsmo"/><span>  
+
+#### Création serveur Windows Core 
+
+Nous avons créer deux autres serveurs Windows Core pour avoir trois Domain Controler sur notre domaine AD.
+Pour les mettres en DC, il a fallu leur attribuer une IP pour qu'elles fassent partie du réseau de l'AD (grâce au rôle DHCP cela c'est fait automatiquement).
+Puis rensigner le nom de domaine pour leur faire intégrer notre AD **EcoTechSolution.lan**.
+
+![image serveur core]()
+
+#### Distributions des rôles FSMO
+
+Une fois que nous avons nos trois DC sur notre AD ( 1 GUI et 2 CLI), nous avons réparties les rôles FSMO entre eux.  
+
+
+
+
+
+
