@@ -12,13 +12,13 @@
 2. [Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS"](#installation-de-windows-server-core--wincoresrv-adds)
    - [Partie 1 – Installation de Windows Server Core – WINCORESRV-ADDS](#installation_windows_server_core)
    - [Partie 2 – Rejoindre le domaine EcoTechSolution](#rejoindre-le-domaine-ecotechsolution)
-3. [Installation de avec GLPI](#installation-de-debian-avec-glpi--debsrv-glpi)
+3. [Installation de Debian avec GLPI – SERVEUR "DEBSRV-GLPI"](#installation-de-debian-avec-glpi--debsrv-glpi)
 4. [Installation d’un poste d'administration Ubuntu "DT-DSI-Admin"](#installation-du-pc-admin-dt-dsi-admin)
    - [Partie 1 : Rejoindre le domaine EcoTechSolution](#installation-du-pc-admin-dt-dsi-admin)
    - [Partie 2 - Installation des logiciels ](#installation-des-logiciels)
 
 
-### Installation et configuration des rôles ADDS, DHCP et DNS
+## Installation et configuration des rôles ADDS, DHCP et DNS
 <span id="installation-des-rôles-adds-dhcp-dns--winsrv-adds-dhcp-dns"></span>   
 
 #### Serveur : WINSRV-AD-DHCP-DNS  
@@ -68,7 +68,7 @@ Valider les fonctionnalités supplémentaires si demandé.
 
 ---
 
-## PARTIE 2 – Installation du DC Active Directory (ADDS)  
+### PARTIE 2 – Installation du DC Active Directory (ADDS)  
 <span id="partie-2--installation-du-dc-active-directory-adds"></span>
 
 #### Étape 1 : Promouvoir le serveur en contrôleur de domaine
@@ -117,10 +117,10 @@ Laisser les chemins par défaut :
 
 ...
 
-### Partie 3 – Configuration du DHCP  
+### PARTIE 3 – Configuration du DHCP  
 <span id="partie-3--configuration-du-dhcp"></span>  
 
-### Ajouter un nouveau Scope DHCP
+#### Ajouter un nouveau Scope DHCP
 
 1. Ouvrir la console **DHCP** (`dhcpmgmt.msc`) ou **Server Manager** > **Tools** > **DHCP**
 2. Clic droit sur **IPv4** > **New Scope**
@@ -140,10 +140,10 @@ Laisser les chemins par défaut :
    - Finir l'assistant
    - Le scope est bien crée
 
-### Serveur DHCP : `winsrv-ad-dhcp-dns.ecotechsolution.lan`
+#### Serveur DHCP : `winsrv-ad-dhcp-dns.ecotechsolution.lan`
 Le rôle **DHCP** est installé sur le serveur principal, qui possède l'**IP statique : `172.16.20.3`**.
 
-### Plages d'adresses (Scopes)
+#### Plages d'adresses (Scopes)
 
 Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâce à une configuration multi-scopes :
 
@@ -159,7 +159,7 @@ Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâ
 | 172.16.110.0/24   | 172.16.110.1 – 172.16.110.254      | Commercial                              |
 | 172.16.120.0/24   | 172.16.120.1 – 172.16.120.254      | Extérieur (visiteurs, partenaires, etc.)|
 
-### Paramètres DHCP communs
+#### Paramètres DHCP communs
 
 - **Masque de sous-réseau :** `255.255.255.0`
 - **Passerelle par défaut :** `172.16.20.254`
@@ -168,10 +168,10 @@ Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâ
 
 ...
 
-### Partie 4 – Configuration du DNS  
+### PARTIE 4 – Configuration du DNS  
 <span id="partie-4--configuration-du-dns"></span> 
 
-### Ajouter un nouvel enregistrement DNS (Host A)
+#### Ajouter un nouvel enregistrement DNS (Host A)
 
 1. Ouvrir la console **DNS** (`dnsmgmt.msc`) ou **Server Manager** > **Tools** > **DNS**
 2. Cliquer sur **Forward Lookup Zones** dans la zone EcoTechSolution.lan
@@ -183,18 +183,18 @@ Chaque service de l’entreprise dispose de sa propre plage d’adresses IP grâ
 5. Cliquer sur **Add Host**
 6. Une confirmation s'affiche, cliquer sur OK
 
-### Domaine Active Directory : `EcoTechSolution.lan`
+#### Domaine Active Directory : `EcoTechSolution.lan`
 
 Le serveur `WINSRV-AD-DHCP-DNS` assure les rôles :
 - **Contrôleur de domaine**
 - **Serveur DNS**
 - **Serveur DHCP**
 
-### Zones DNS configurées
+#### Zones DNS configurées
 
 - `EcoTechSolution.lan` (zone de recherche directe)
 
-### Principaux enregistrements DNS Host A
+#### Principaux enregistrements DNS Host A
 
 | Nom                  | Type    | Adresse IP     | Observations                          |
 |----------------------|---------|----------------|----------------------------------------|
@@ -208,15 +208,15 @@ Le serveur `WINSRV-AD-DHCP-DNS` assure les rôles :
 
 ---
 
-## Résultat attendu
+#### Résultat attendu
 Le serveur WINSRV-AD-DHCP-DNS devient :
 - Contrôleur de domaine pour la forêt ecotechsolutions.lan
 - Serveur DNS intégré
 - Serveur DHCP prêt à être configuré
 
-### Partie 5 - Réplication complète
+### PARTIE 5 - Réplication complète
 
-### Partie 6 - Création des GPO unités organisationnelles et des GPO
+### PARTIE 6 - Création des GPO unités organisationnelles et des GPO
 #### Objectif : Créer une hierarchie d'unité organisationnelle correspondant à la structure de l'entreprise afin d'appliquer des stratégies de gestion, sécuritaire selon les utilisateurs et les machines.
 
 #### Etape 1 : Création des UO
@@ -323,15 +323,15 @@ _powershell_
 
 ---
 
-### Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS  
+## Installation de Windows Server Core – "SERVEUR WINCORESRV-ADDS  
 <span id="installation-de-windows-server-core--wincoresrv-adds"></span>  
 
-## Partie 1 - Installation de Windows Server Core – WINCORESRV-ADDS  
+### Partie 1 - Installation de Windows Server Core – WINCORESRV-ADDS  
 <span id="installation_windows_server_core"></span> 
   
-## 1° | Installation et configuration de notre Windows Serveur 2022 core :
+#### 1° | Installation et configuration de notre Windows Serveur 2022 core :
 -------------------------------
-## - Configuration initiale du serveur core -
+#### - Configuration initiale du serveur core -
 ##### **Changer le nom du serveur :** 
 - Aller dans **Computer name** et suivre les menus pour modifier le nom du serveur. Dans notre cas nous l'avons nommer selon notre convention de nommage soit => ``WINCORESRV-ADDS``
 
@@ -344,7 +344,7 @@ _powershell_
 ```
 - Vérifier votre configuration avec la commande ``Get-NetIPAdress`` permettant d'afficher les détails de votre interface réseau.
 
-## 2° | Installation des rôles :
+#### 2° | Installation des rôles :
 -------------------
 ##### **Fonctionnalités nécéssaire en tant que controleur de domaine :**
 Nous avons besoin de ces différents outils :
@@ -359,10 +359,10 @@ Pour cela, executer successivement ces 3 lignes de commandes PowerShell :
 3 Add-WindowsFeature -Name "DNS" -IncludeManagementTools -IncludeAllSubFeature
 ```
 
-## Partie 2 - Rejoindre le domaine EcoTechSolution  
+### Partie 2 - Rejoindre le domaine EcoTechSolution  
 <span id="rejoindre-le-domaine-ecotechsolution"></span>  
   
- #### Étape 1 :   
+#### Étape 1 :   
  - Dans le menu principal, sélectionner PowerShell avec l’option 15  
 ![main_menu](/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/01_menu.png)  
   
@@ -415,7 +415,7 @@ Ensuite, appuyer sur la touche « Tabulation » pour passer sur la ligne du mo
 - Cliquer sur « Computer », vous verrez apparaître dans la fenêtre centrale la machine server core  
 ![verification_domain_member_part_3](/S02-S03/Ressources/Deploiement_machines/575_WINCORESRV_ADDS/12_verification_domain_member_part_3.png)
 
-### Partie 5 – Réplication complète
+### Partie 3 – Réplication complète
 <span id="partie-5--Réplication-complète"></span> 
 
 -------------------
@@ -470,7 +470,7 @@ Ces commandes donne des détails sur la réplication entre les contrôleurs de d
 
 ------------------------
 
-## Installation de GLPI  
+## Installation de GLPI – DEBSRV-GLPI  
 <span id="installation-de-debian-avec-glpi--debsrv-glpi"></span>  
 
 ### Installation des pré-requis
@@ -583,6 +583,7 @@ Fermer le fichier et redémarrer la machine.
 
 ### Configuration initial de GLPI
 
+#### Installation
 Pour faire l’installation et la configuration initial de GLPI, nous devons le faire à partir d'un navigateur web, il faut donc utiliser une autre machine sur le même réseau que le serveur Debian disposant d'un navigateur web.
 
 Pour vous connecter, aller à cette adresse : 
@@ -640,48 +641,89 @@ Cliquez sur "Utiliser GLPI"
 
 La configuration initial de GLPI est maintenant terminer.
 
-### Installation d’un poste d'administration Ubuntu "DT-DSI-Admin"
+#### Synchronisation AD
+
+Nous pouvons synchroniser GLPI avec notre domain AD, ce qui permet d'importer les utilisateurs/groupes directement depuis l'AD.
+
+- Etape 1 : Connectez vous avec le compte super-administrateur de GLPI
+![glpi_sync](/S02-S03/Ressources/Installation_Logiciels/glpi_sync.png)
+- Etape 2 : Cliquez sur "Authentification" dans le menu de gauche "Configuration"
+![glpi_sync2](/S02-S03/Ressources/Installation_Logiciels/glpi_sync2.png)
+- Etape 3 : Cliquez sur "Annuaire LDAP"
+![glpi_sync3](/S02-S03/Ressources/Installation_Logiciels/glpi_sync3.png)
+- Etape 4 : Cliquez sur "Ajouter" en haut
+![glpi_sync4](/S02-S03/Ressources/Installation_Logiciels/glpi_sync4.png)
+- Etape 5 :
+	- **Préconfiguration** : Cliquez sur "Active Directory"
+	- **Nom** : Mettez le nom que vous voulez (de préférence le nom de votre domaine)
+	- **Serveur par défaut** : Sélectionner "Oui" ; Actif : sélectionner "Oui"
+	- **Serveur** : Renseigner l'IP de votre serveur AD : Port : laisser le Port par défault (389)
+	- **Filtre de connexion** : Si vous avez choisi "Active Directory" dans **Préconfiguration** cette espace est déjà remplis. Ne rien modifier.
+	- **BaseDN** : Renseignez le Distinguished Name de l’Unité d’Organisation dont vous voulez importer les utilisateurs ou le Distinguished Name du domaine entier si vous souhaitez tout importer (au format « OU=monOU,DC=domaine,DC=com » ou simplement « DC=domaine,DC=com » pour le domaine entier)
+	- **Utiliser bind** : sélectionner "Oui"
+	- **DN du compte** : Renseignez ici l’identifiant complet d’un utilisateur ayant les droits d’accès sur le domaine (comme l’administrateur par exemple, au format administrateur@domaine.com)
+	- **Mot de passe du compte** : ajoutez le mot de passe de l’utilisateur déclaré dans le champ précédent
+	- **Champ de l'identifiant** : Si vous avez choisi "Active Directory" dans **Préconfiguration** cette espace est déjà remplis. Ne rien modifier.
+	- **Champ de synchronisation** : Si vous avez choisi "Active Directory" dans **Préconfiguration** cette espace est déjà remplis. Ne rien modifier.
+	Quand vous avez terminé de remplir les différents champs, cliquez sur le bouton "Ajouter" en bas à droite. Après cet ajout, un test de connexion à l’AD est automatiquement effectué. Une infobulle en bas à droite de la fenêtre de GLPI vous avertira en cas de problème.
+![glpi_sync5](/S02-S03/Ressources/Installation_Logiciels/glpi_sync5.png)
+- Etape 6 : Cliquez sur "Utilisateurs" dans le menu de gauche "Administration"
+- Etape 7 : Cliquez sur "Liaison annuaire LDAP"
+![glpi_sync6](/S02-S03/Ressources/Installation_Logiciels/glpi_sync6.png)
+- Etape 8 : Cliquez sur "Importation de nouveau utilisateurs"
+![glpi_sync7](/S02-S03/Ressources/Installation_Logiciels/glpi_sync7.png)
+- Etape 9 : Cliquez sur "Rechercher"
+- Etape 10 : Sélectionnez tous les utilisateurs que vous voulez importez, et cliquez sur le bouton "Actions"
+![glpi_sync8](/S02-S03/Ressources/Installation_Logiciels/glpi_sync8.png)
+- Etape 11 : Choisissez "Importer" et cliquez sur "Envoyer"
+![glpi_sync9](/S02-S03/Ressources/Installation_Logiciels/glpi_sync9.png)
+Une infobulle en bas à droite de la fenêtre de GLPI vous avertira de l'importation de nouvelle utilisateurs.
+
+Vous pouvez faire la même manipulation à partir de l'Etape 6 dans le menu "Groupes" pour importer les groupes de votre AD
+## Installation d’un poste d'administration Ubuntu "DT-DSI-Admin"
 <span id="installation-du-pc-admin-dt-dsi-admin"></span>   
 
-## Partie 1 : REJOINDRE LE DOMAINE ECOTECHSOLUTION
+#### Partie 1 : REJOINDRE LE DOMAINE ECOTECHSOLUTION
 
-#### Etape 1: Faire les mises à jours des paquets  
+##### Etape 1: Faire les mises à jours des paquets  
 > commande : sudo apt update && sudo apt upgrade -y
    
-#### Etape 2 : Redémarrer la machine  
+##### Etape 2 : Redémarrer la machine  
 > commande : sudo reboot
    
-#### Etape 3: Installation des packages  
+##### Etape 3: Installation des packages  
 > commande : sudo apt install -y realmd libnss-sss libpam-sss sssd sssd-ad sssd-dbus sssd-tools adcli samba-common-bin oddjob  oddjob-mkhomedir packagekit
    
-#### Etape 4 : Changer le hostname  
+##### Etape 4 : Changer le hostname  
 > commande : sudo hostnamectl set-hostname administrator.EcoTechSolution.lan
    
-#### Etape 5 : Redémarrer la machine  
+##### Etape 5 : Redémarrer la machine  
 > commande : sudo reboot
    
-#### Etape 6 : Changer le DNS de la machine et le pointer sur le DC  
+##### Etape 6 : Changer le DNS de la machine et le pointer sur le DC  
 > commande : sudo nano /etc/resolv.conf
    
  Mettre:  
 	nameserver 172.16.20.3  
 	search EcoTechSolution.lan  
-#### Etape 7 : Vérification  
+
+##### Etape 7 : Vérification  
 > commande : nslookup www.google.fr  
   
-#### Etape 8 : Modification du fichier timesyncd.conf  
+##### Etape 8 : Modification du fichier timesyncd.conf  
 > commande : sudo /etc/systemd/timesyncd.conf
   
 Supprimer les # pour enlever les commentaires sur les lignes suivantes:  
 	NTP= 172.16.20.3 (on note l'adresse IPv4 du contrôleur de domaine)  
 	FallbackNTP=ntp.ubuntu.com  
-#### Etape 9 : Vérification de la synchronisation de l'horloge  
+
+##### Etape 9 : Vérification de la synchronisation de l'horloge  
 > commande : timedatectl status
    
 vérifier la ligne : System clock synchronized: yes  
 vérifier la ligne : NTP service: active  
 
-#### Etape 10 : Créer une zone de recherche direct et une zone de recherche inversée sur le DNS Manager  
+##### Etape 10 : Créer une zone de recherche direct et une zone de recherche inversée sur le DNS Manager  
  - Dans le DNS Manager, aller sur le serveur du domaine  
  - Faire un clic-droit sur "Zone de recherche inversée", puis "Nouvelle zone"  
  - Cliquer suivant jusqu'à arriver sur l'ID réseau, et entrer les 3 premier octets : 172.16.20  
@@ -689,22 +731,22 @@ vérifier la ligne : NTP service: active
  - Aller dans la "Zone de recherche directe", faites un clic-droit dans la fenêtre centrale et sélectionner "Nouvel hôte A ou AAAA"  
  - Entrer le nom de la machine "DT-DSI-Admin" et noter l'adresse IP de la machine 172.16.20.7, puis sélectionner la case "Créer un pointeur d'enregistrement (PTR associé), puis cliquer sur "Ajouter l'hôte"  
 
-#### Etape 11 : Vérification de la résolution de nom en directe et inversée  
+##### Etape 11 : Vérification de la résolution de nom en directe et inversée  
 > commande : nslookup 172.16.20.7  
 	    nslookup DT-DSI-Admin  
 
-#### Etape 12 : Tester si la machine arrive à découvrir le domaine DC  
+##### Etape 12 : Tester si la machine arrive à découvrir le domaine DC  
 > commande : realm discover EcoTechSolution.lan  
 
-#### Etape 13 : Rejoindre le domaine  
+##### Etape 13 : Rejoindre le domaine  
 > commande : sudo realm join -U Administrator EcoTechSolution.lan
   
  On vous demande le mot de passe pour valider: Azerty1*  
 
-#### Etape 14 : Vérifier la jonction  
+##### Etape 14 : Vérifier la jonction  
 > commande : realm list  
 
-#### Etape 15 : Création d'un dossier de travail  
+##### Etape 15 : Création d'un dossier de travail  
 Lorsqu' un utilisateur s'authentifie avec un compte du domaine, on lui créer son propre dossier de travail sur la machine Ubuntu :  
  - Editer le fichier de configuration:  
  	> commande : sudo nano /usr/share/pam-configs/mkhomedir  
@@ -715,32 +757,32 @@ Lorsqu' un utilisateur s'authentifie avec un compte du domaine, on lui créer so
 > commande : sudo pam-auth-update  
  - Dans le menu cocher la case "Create home directory on login", valider et quitter  
 
-#### Etape 16 : Redémarrer et vérifier le service sssd  
+##### Etape 16 : Redémarrer et vérifier le service sssd  
 > commande : sudo systemctl restart sssd  
 > commande : sudo systemctl status sssd  
 
-#### Etape 17 : Tester la communication avec le Contrôleur de domaine  
+##### Etape 17 : Tester la communication avec le Contrôleur de domaine  
 > commande : id administrator@EcoTechSolution.lan  
 
-#### Etape 18 : Autoriser qui peut se connecter sur la machine local ( on peut préciser un utilisateur ou un groupe, ou tout le monde)  
+##### Etape 18 : Autoriser qui peut se connecter sur la machine local ( on peut préciser un utilisateur ou un groupe, ou tout le monde)  
 > commande : sudo realm permit -g "Grp-admin"  
 
-#### Etape 19 : Donner les droits sudo aux administrateurs   
+##### Etape 19 : Donner les droits sudo aux administrateurs   
  - Editer le fichier avec la commande : sudo nano /etc/sudoers.d/grp-admin  
  - Ajouter la ligne : %domain\ Grp-admin@EcoTechSolution.lan	ALL(ALL)	ALL  
  - Enregistrer (ctrl + o) et quitter (ctrl + x)  
 
-#### Etape 20 : Redémarrer la machine  
+##### Etape 20 : Redémarrer la machine  
 > commande : sudo reboot  
 
-#### Etape 21 : Test d'authentification  
+##### Etape 21 : Test d'authentification  
 - Essayer de vous identifier avec un membre du groupe Grp-admin:  
 	exemple : toto@EcoTechSolution.lan  
 Nb: Si vous essayer de vous identifier avec un utilisateur qui ne fait pas parti du groupe Grp-admin, cela ne doit pas fonctionner (la GPO sera donc bien établi)  
 Une fois identifié, pour vérifier que vous êtes bien authentifié en tant qu'utilisateur de l'AD "toto" par exemple, taper dans le terminal la commande : whoami, vous devriez voir apparaître quelque chose comme cela :  
 toto@EcoTechSolution.lan en réponse.  
 
-## Partie 2 - Installation des logiciels  
+#### Partie 2 - Installation des logiciels  
 <span id="installation-des-logiciels"></span> 
   
 **Trippy**
@@ -780,7 +822,7 @@ systemctl status cockpit
 
 Pour ce logiciel, nous avons besoin d'installer le service **NetData Agent** sur toutes les machines que l'ont souhaitent monitorer. 
 
-#### Installation du 1er Node
+##### Installation du 1er Node
 
 Pour commencer, vous devez crée un compte et vous connecter sur le site : 
 
@@ -802,7 +844,7 @@ Un fois l'Agent installer, votre "Space" devrais s'actualiser automatiquement, s
 
 ![Netdata_first_node](/S02-S03/Ressources/Installation_Logiciels/netdata_first_node.png)
 
-#### Installation de Node supplémentaire
+##### Installation de Node supplémentaire
 
 Pour ajouter un nouveau "Node" à votre "Space", cliquez sur l'icone d'hexagone "+" et suivez les instructions de cette fenêtre en fonction de l'OS de la machine que vous voulez ajoutez.
 
