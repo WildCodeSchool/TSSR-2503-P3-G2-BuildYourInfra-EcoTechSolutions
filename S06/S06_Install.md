@@ -145,7 +145,17 @@ Pour pouvoir nous connecter sans devoir mémoriser l'adresse IP de notre serveur
 
 ![image dns](/S06/Ressources/dns_serveur_mail.png)
 
-Une fois cela fait nous pouvons nous connecter et administrer iRedMail en graphique grace a un navigateur web :
+Une fois cela fait nous pouvons nous connecter et administrer iRedMail en graphique grace a un navigateur web en allant sur :
+
+```
+http://ecotechsolution.mail.lan/iredadmin
+```
+
+Puis renseigner l'identifiant : 
+**postmaster@ecotechsolution.mail.lan**
+
+Et le mot de passe : 
+**Azerty1***
 
 ![image nav web](/S06/Ressources/admin_web_mail.png)
 
