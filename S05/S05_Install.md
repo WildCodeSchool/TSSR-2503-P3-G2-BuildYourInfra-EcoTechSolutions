@@ -39,18 +39,16 @@ L'installation se lance. Patientez jusqu'à la fin, puis cliquer sur "Close"
   
 Pour la planification de backup nous allons utiliser le service  **Task Scheduler** (rôle qui est présent par défault sur Windows server) couplé a un script pour pouvoir automatiser les backup une fois par semaine. 
 
-Nous allons commencer avec le script, que nous avons placé en : 
+Nous allons commencer avec le script, que nous avons placé dans : 
 ```
-C:\Scripts\Scripts_backup.ps1
+C:\Scripts\Script_backup.ps1
 ```
 
 ![image script](https://github.com/user-attachments/assets/f35abf1d-27ad-4031-a646-a9191d701acf)
 
   
-Avec ce script, nous pouvons utiliser **Windows Backup** pour sauvegarder l'ensemble du serveur sur le disque 
-```
-F:\
-```
+Avec ce script, nous pouvons utiliser **Windows Backup** pour sauvegarder l' état actuel de l'Active Directory sur le disque F:\
+  
 
 ![image disque sauvegarde](/S05/Ressources/sauvegarde_autre_disque.png)
 
