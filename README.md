@@ -117,8 +117,7 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 |   Florian      | Technicien      |  Mise en place du serveur VoIP (FreePBX et 3CX), finition du script de restriction d'horaires   |
 |   John         | Scrum Master      |  Mise en place du serveur de messagerie, finition du script de restriction d'horaires, (IredMail, Thunderbird)      |
 |   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
-
- ------------------ 
+ 
 
  ### 📅 Sprint 7
 
