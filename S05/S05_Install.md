@@ -44,7 +44,8 @@ Nous allons commencer avec le script, que nous avons placé en :
 C:\Scripts\Scripts_backup.ps1
 ```
 
-![image script](/S05/Ressources/script_backup.png)
+![image script](https://github.com/user-attachments/assets/f35abf1d-27ad-4031-a646-a9191d701acf)
+
   
 Avec ce script, nous pouvons utiliser **Windows Backup** pour sauvegarder l'ensemble du serveur sur le disque 
 ```
