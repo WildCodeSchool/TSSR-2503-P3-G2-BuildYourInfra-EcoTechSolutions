@@ -154,7 +154,7 @@ http://ecotechsolution.mail.lan/iredadmin
 Puis renseigner l'identifiant : 
 **postmaster@ecotechsolution.mail.lan**
 
-Et le mot de passe : 
+Et le mot de passe (que l'on a configuré plus tôt sur le serveur) : 
 **Azerty1***
 
 ![image nav web](/S06/Ressources/admin_web_mail.png)
