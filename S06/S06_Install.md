@@ -151,6 +151,11 @@ Une fois cela fait nous pouvons nous connecter et administrer iRedMail en graphi
 http://ecotechsolution.mail.lan/iredadmin
 ```
 
+Ou aller sur : 
+```
+http://<adresse IP serveur iredmail>/iredadmin
+```
+
 Puis renseigner l'identifiant : 
 **postmaster@ecotechsolution.mail.lan**
 
