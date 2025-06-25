@@ -119,16 +119,41 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 |   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
 
  ------------------ 
+
+ ### 📅 Sprint 7
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Scrum Master    |  AD Rôles FSMO, Mise en place de WSUS     |
+|   Lloyd        | Technicien    |  Contenerisation de GLPI, serveur WEB, Proxy, ajout de IredMail, GLPI, Proxy, FreePBX en DMZ  |
+|   Alan         | Technicien      |  AD Rôles FSMO, Debogage Mappage, CT Routeur  |
+|   Florian      | Product Owner      |  Contenerisation, Proxy   |
+|   John         | Technicien      |  Serveur WSUS, Stockage, modification RAID 1      |
+|   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
+
+------------------
  
 ## ⚙️ Prérequis
 <span id="Prérequis"></span>
 
 - Hyperviseur de Type 1 Proxmox 
-- 💿 Machines Virtuelles:  
-  - Un **serveur Windows 2022 GUI** 
-  - Un serveur **Windows Core 2022**  
-  - Un serveur **Linux Debian**  
-  - Un PC d'Administration **Windows 11** ou **Ubuntu client 24.04 LTS** (Au choix)  
+ 🖥️  Machines Virtuelles:
+
+| Nom complet                              | Adresse IP       | Masque              | Rôles | Priorité      |
+|------------------------------------------|------------------|---------------------|----------------|---------------|
+| G2-WINSRV-AD-DHCP-DNS                     | 172.16.20.5      | 255.255.255.0 (/24) | AD-DHCP-DNS / DC       | priority-high |
+| G2-WINCORESRV-ADDS-2                      | 172.16.20.21     | 255.255.255.0 (/24) | ADDS / DC / RID Master      | priority-high |
+| G2-WINCORESRV-ADDS                        | 172.16.20.19     | 255.255.255.0 (/24) | ADDS / DC / PDC Emulator     | priority-high |
+| G2-ROUTEUR                                | 172.16.20.10     | 255.255.255.0 (/24) | ROUTEUR      | priority-high |
+| G2-DT-DSI-Admin                           | 172.16.20.7      | 255.255.255.0 (/24) | Machine Test DSI/Admin       | priority-low  |
+| G2-SRVWIN-RAID                            | 172.16.20.13     | 255.255.255.0 (/24) | Serveur de stockage       | priority-high |
+| G2-BOR-COM-DT-Test                        | 172.16.20.17     | 255.255.255.0 (/24) | Machine Test Com/Client      | priority-low  |
+| G2-DEBSRV-ZABBIX                          |                  |                | Supervision      | priority-high |
+| G2-SRV-PROXY                              |                  |                    | Proxy       | priority-high |
+| G2-SRV-FreePBX                            | 172.16.20.16     | 255.255.255.0 (/24) | Serveur de VOiP       | priority-low  |
+| G2-SRV-iRedMail                           |                   |                   | Serveur de messagerie       | priority-high |
+| G2-BOR-DSI-DT-Test                        |                 |                  | Machine Sandbox Admin       | priority-low  |
+| G2-SRV-WSUS                               | 172.16.20.20     | 255.255.255.0 (/24) | Serveur de gestion de MAJ       | priority-low  |
 
 - 🌐 Toutes les machines sont sur le réseau :
   - Adresse IP de réseau : ``172.16.20.0/24`` 
@@ -139,7 +164,9 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
   - **VirtualBox** => Lab avant migration finale sur Proxmox  
   - **NetData** => Monitoring en temps réel
   - **Trippy** => Diagnostique réseau
-  - **Wireshark** => Analyse réseau 
+  - **Wireshark** => Analyse réseau
+  - **3CX** ==> Logiciel type Softphone
+  - **RoundCude** ==> Webmail
 
 ## 🧗 Difficultés rencontrées et 💡 Solutions trouvées
 <span id="Difficultés-rencontrées-et-solutions-trouvées"></span>
@@ -155,5 +182,6 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 ## 🚀 Améliorations possibles
 <span id="ameliorations-possibles"></span>
 
-- à venir  
--   
+- Plus de meeting synthétique pour la répartition des tâches
+- Répartition du travail en binôme maximum
+- 
