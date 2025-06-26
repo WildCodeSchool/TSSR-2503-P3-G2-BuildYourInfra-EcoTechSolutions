@@ -15,7 +15,24 @@
 ## 1.Mise en place du serveur WSUS  
 <span id="Srv-WSUS"/><span>  
 
-Nous avons créer une nouvelle machine en faisant un clone intégrale d'un serveur Windows Server 2022. Ensuite, dans **Manage** rajouter le rôle **Windows Server Update Service**. Une fois cela fait, 
+Nous avons créer une nouvelle machine en faisant un clone intégrale d'un serveur Windows Server 2022. 
+Sur cette machine, nous avons rajouter un deuxieme disque dure de 25 Go consacré au rôle WSUS. 
+Pour l'activer, nous avons utilisé **Computeur Management** dans **Tools**. Puis aller dans **Disk Management**. Visualise le nouveau disque, clique droit **Simple Volume** puis suivant jusqu'a **Finish**. 
+
+![image wsus disque](Ressources/SRV-WSUS/wsus_disk.png)
+
+Une fois le disque opérationnel, créer un dossier **WSUS** dessus.
+
+![image dossier wsus](Ressources/SRV-WSUS/wsus_dossier.png)
+
+À partir du **Server Manager**, installe le rôle **Windows Server Update Services**. Valide les fonctionnalités supplémentaires qui vont s'ajouter automatiquement.Indique le dossier que tu as créer pour l'emplacement du stockage des mises à jour.
+Termine l'installation et redémarre le serveur. 
+
+Quand le serveur est redémarré, clique sur l'icône avec le panneau orange sur **Server Manager** et lance la tâche **Post Deployment Configuration for WSUS**.
+
+Une fois fait, va dans **Windows Server Update Services** via **Tools** du **Server Manager**. Clique sur **Next** jusqu'a **Start Connecting**. 
+
+
 
 
 
