@@ -14,11 +14,17 @@
 
 ## 1.Mise en place du serveur WSUS  
 <span id="Srv-WSUS"/><span>  
-  
+
+Nous avons créer une nouvelle machine en faisant un clone intégrale d'un serveur Windows Server 2022. Ensuite, dans **Manage** rajouter le rôle **Windows Server Update Service**. Une fois cela fait, 
+
+
+
 ### Partie 1 - Intégration du serveur WSUS au domaine  
 <span id="WSUS-AD"/><span>  
 
-  
+Nous l'avons ensuite intégrer au domaine EcoTechSolution (pour rappel, pour intégrer un domaine il faut être sur le même réseau, et changer le nom de domaine sur **Server Manager** et utiliser le compte **Administrator** avec mot de passe **Azerty1*** pour intégrer le domaine)
+
+![image wsus](Ressources/SRV-WSUS/wsus_ecotechsolution.png)
   
   
 ### Partie 2 - Liaison des groupes  
