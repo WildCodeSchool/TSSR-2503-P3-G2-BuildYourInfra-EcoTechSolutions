@@ -68,6 +68,10 @@ Nous l'avons ensuite intégrer au domaine EcoTechSolution (pour rappel, pour int
 ### Partie 2 - Liaison des groupes  
 <span id="liaison-groupes"/><span>  
 
+Pour liéer les groupes que nous venons de faire, nous allons créer des GPO sur notre domaine AD-DS. Une pour chaque groupe.
+La premiere pour les utilisateurs :
+
+![image_gpo-utilisateur](Ressources/SRV-WSUS/wsus_gpo_users.png)
 
   
 
