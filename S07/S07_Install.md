@@ -25,15 +25,20 @@ Une fois le disque opérationnel, créer un dossier **WSUS** dessus.
 
 ![image dossier wsus](Ressources/SRV-WSUS/wsus_dossier.png)
 
-À partir du **Server Manager**, installe le rôle **Windows Server Update Services**. Valide les fonctionnalités supplémentaires qui vont s'ajouter automatiquement.Indique le dossier que tu as créer pour l'emplacement du stockage des mises à jour.
+À partir du **Server Manager**, installe le rôle **Windows Server Update Services**. Valide les fonctionnalités supplémentaires qui vont s'ajouter automatiquement. Indique le dossier que tu as créer pour l'emplacement du stockage des mises à jour.
 Termine l'installation et redémarre le serveur. 
 
 Quand le serveur est redémarré, clique sur l'icône avec le panneau orange sur **Server Manager** et lance la tâche **Post Deployment Configuration for WSUS**.
 
 Une fois fait, va dans **Windows Server Update Services** via **Tools** du **Server Manager**. Clique sur **Next** jusqu'a **Start Connecting**. 
 
+Après, sélectionne les langues **English** et **French**. 
+Dans la fenêtre d'après, sélectionne les produits pour lesquels tu souhaites avoir des mises à jour. Ici nous avons choisit peu de mise a jour pour pouvoir synchroniser les machines rapidements : 
 
+![image maj](Ressources/SRV-WSUS/wsus_maj.png)
 
+Il suffit ensuite de choisir combien de synchronisation on souhaite faire. Ici nous avons choisit 4 synchonisations par jour.
+Enfin coche la case **Begin initial synchronization**. 
 
 
 ### Partie 1 - Intégration du serveur WSUS au domaine  
