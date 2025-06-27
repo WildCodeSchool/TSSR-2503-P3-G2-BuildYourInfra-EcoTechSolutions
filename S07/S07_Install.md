@@ -73,7 +73,39 @@ La premiere pour les utilisateurs :
 
 ![image_gpo-utilisateur](Ressources/SRV-WSUS/wsus_gpo_users.png)
 
-  
+Pour configurer cette GPO : 
+**Computer Configuration** --> **Policies** --> **Administrative Templates** --> **Windows Components** --> **Windows update**
+
+Dans Specify intranet Microsoft update service location (qui indiquera où est le serveur de mise à jour)
+Coche **Enabled**.
+Dans les options, pour les 2 premiers champs, mettre l'URL avec le nom du serveur sous sa forme FQDN, ajouter le numéro du port 8530
+Ici nous allons utiliser :
+```
+http://WINSRV-WSUS.ecotechsolution.lan
+```
+           
+Ensuite va dans **Do not connect to any Windows Update Internet locations** (qui bloque la connexion aux serveurs de Microsoft)
+Coche **Enabled**.
+
+Puis va dans **Configure Automatic Updates** (pour savoir a quelle fréquence les mises a jours sont téléchargées)
+Coche **Enabled**
+Dans les options mets :
+Dans Configure automatic updating sélectionne 4- Auto Download and schedule the install
+Dans Scheduled install day mets 0 - Every day
+Dans Scheduled install time mets 09:00
+Cocher Every week
+Cocher Install updates for other Microsoft Products
+
+Puis, aller dans **Enable client-side targeting** (qui fait la liaison avec les groupes crées dans WSUS)
+Coche **Enabled**
+Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, donc **UTILISATEURS**
+Valide la configuration
+
+Enfin, aller dans **Turn off auto-restart for updates during active hours** (qui permet d'empêcher les machines de redémarrer après l'installation d'une mise à jour pendant leurs heures d'utilisations)
+Coche **Enabled**
+Dans les options, mettre (par exemple) 8 AM - 6 PM (les horaires ou les clients travaillent).
+
+
 
 
 ### Partie 3 - Liaison des MAJ  
