@@ -105,13 +105,45 @@ Enfin, aller dans **Turn off auto-restart for updates during active hours** (qui
 Coche **Enabled**
 Dans les options, mettre (par exemple) 8 AM - 6 PM (les horaires ou les clients travaillent).
 
+![image_gpo_users](Ressources/SRV-WSUS/wsus_gpo_client.png)
 
+
+
+Maintenant nous allons créer une deuxième GPO pour les serveurs **WSUS-Update-Serveurs** : 
+
+Pour configurer cette GPO : 
+**Computer Configuration** --> **Policies** --> **Administrative Templates** --> **Windows Components** --> **Windows update**
+Va dans **Configure Automatic Updates**
+Dans les options mets :
+**Configure automatic updating** sélectionne 7- Auto Download, Notify to restart
+Dans **Scheduled install day** mets 0 - Every day
+Dans **Scheduled install time** mets 09:00
+Cocher **Every week**
+Enfin, aller dans **Enable client-side targeting** (qui fait la liaison avec les groupes crées dans WSUS)
+Coche **Enabled**
+Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, dont ici les serveurs => **Serveurs**
+
+![image_gpo_serveurs](Ressources/SRV-WSUS/wsus_gpo_serveurs.png)
+
+
+
+Et enfin une dernière GPO pour les DC **WSUS-Updte-DC** : 
+Pour configurer cette GPO : 
+**Computer Configuration** --> **Policies** --> **Administrative Templates** --> **Windows Components** --> **Windows update**
+
+Aller dans **Enable client-side targeting**
+Coche **Enabled**
+Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, dont ici les contrôleurs de domaine **DC**
+
+![image gpo dc](Ressources/SRV-WSUS/wsus_gpo_dc.png)
 
 
 ### Partie 3 - Liaison des MAJ  
 <span id="liaison-maj"/><span>    
   
-  
+Maintenant nous pouvons lancer des MAJ directement sur notre serveurs WSUS :
+
+![image maj WSUS](Ressources/SRV-WSUS/wsus_controle_update.png)
 
 
 ## 2.Rôles FSMO  
