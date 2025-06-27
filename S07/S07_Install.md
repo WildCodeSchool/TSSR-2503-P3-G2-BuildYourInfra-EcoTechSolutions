@@ -39,6 +39,22 @@ Dans la fenêtre d'après, sélectionne les produits pour lesquels tu souhaites 
 
 Il suffit ensuite de choisir combien de synchronisation on souhaite faire. Ici nous avons choisit 4 synchonisations par jour.
 Enfin coche la case **Begin initial synchronization**. 
+Cela peut prendre plusieurs heures. Pour voir l'avancement, il faut aller dans **Synchronisation Status**.
+
+Une fois la synchronisation terminée, clique sur **Option** => **Automatic Approval**. Cocher **Default Automatic Approval Rule.**.
+
+![image automatic approval](Ressources/SRV-WSUS/wsus_automatic_approval.png)
+
+Puis clique sur **Run Rules**.
+
+Encore dans les **Options** => **Computeurs**, clique sur **Use Group Policy or registry settings on computers**.
+
+Maintenant nous allons créer des groupes pour organiser les ordinateurs selon leur fonction. Clique sur **Computers** puis clique droit sur **All Computers** => **Add Computers Group..**. Ici nous allons créer 3 groupes : 
+- DC
+- Serveurs
+- Utilisateurs
+
+![image groupe ordinateurs](Ressources/SRV-WSUS/wsus_grp_computers.png)
 
 
 ### Partie 1 - Intégration du serveur WSUS au domaine  
