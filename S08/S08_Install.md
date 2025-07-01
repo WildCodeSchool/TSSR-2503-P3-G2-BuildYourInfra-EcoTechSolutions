@@ -14,12 +14,14 @@
      [I - Résolution erreur fréquente](#debogage)
 
 
-Dans ce tutoriel, nous allons apprendre à installer et configurer Apache Guacamole, une solution open source et gratuite que l'on peut mettre en place en tant que bastion d'administration, passerelle d'accès ou encore serveur de rebond. Une machine sous Debian 12 sera utilisée pour héberger l'application. L'hôte Apache Guacamole est positionné en DMZ puisqu'il doit être accessible depuis l'extérieur.  
-Apache Guacamole devient un élément central de l'infrastructure puisqu'il sert de passerelle pour administrer les machines. 
+---
 
 
 ## 1. [Installation et configuration du serveur Bastion avec Apache Guacamole]
 <span id="Srv-Bastion"/><span> 
+
+Dans ce guide, nous allons apprendre à installer et configurer Apache Guacamole, une solution open source et gratuite que l'on peut mettre en place en tant que bastion d'administration, passerelle d'accès ou encore serveur de rebond. Une machine sous Debian 12 sera utilisée pour héberger l'application. L'hôte Apache Guacamole est positionné en DMZ puisqu'il doit être accessible depuis l'extérieur.  
+Apache Guacamole devient un élément central de l'infrastructure puisqu'il sert de passerelle pour administrer les machines. 
 
 ### A - Installer les prérequis d'Apache Guacamole  
 <span id="pré-requis"/><span>  
