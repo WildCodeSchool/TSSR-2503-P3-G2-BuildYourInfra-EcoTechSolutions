@@ -15,3 +15,47 @@
 
    
 
+
+### A - Installer les prérequis d'Apache Guacamole  
+
+
+
+
+### B - Compiler et installer Apache Guacamole "Server"  
+
+
+
+
+### C - Créer le répertoire de configuration  
+
+
+
+
+### D - Installer Guacamole Client (Web App)  
+
+
+
+
+### E - Base de données MariaDB pour l'authentification  
+
+
+
+
+### F - Configuration depuis l'interface Web  
+
+
+
+
+### G - Ajout d'une connexion RDP  
+
+
+
+
+### H - Ajout d'une connexion SSH  
+
+
+
+
+### I - Résolution erreur fréquente  
+
+
