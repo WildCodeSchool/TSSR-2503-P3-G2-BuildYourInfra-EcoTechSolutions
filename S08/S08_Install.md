@@ -241,6 +241,12 @@ bind_host = 0.0.0.0
 bind_port = 4822
 ```
 
+- On enregistre et on termine par redémarrer les trois services liés à Apache Guacamole :
+
+``sudo systemctl restart tomcat9 guacd mariadb``
+
+##### l'installation de base est terminée !
+
 
 ### F - Configuration depuis l'interface Web  
 <span id="webapp"/><span>  
