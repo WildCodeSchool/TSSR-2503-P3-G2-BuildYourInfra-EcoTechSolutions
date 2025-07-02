@@ -252,6 +252,41 @@ bind_port = 4822
 ### F - Configuration depuis l'interface Web  
 <span id="webapp"/><span>  
 
+- Connectez vous à Apache Guacamole via :
+
+```
+http://<Adresse IP>:8080/guacamole/
+```
+
+- Vous devriez arrivez sur cette page :
+
+
+![](/S08/Ressources/Connexion-a-Apache-Guacamole.png)
+
+- Utiliser les identifiants par défaut :
+  - Utilisateur = **guacadmin**
+  - Mot de passe = **guacadmin**
+
+
+- Une fois connecté, nous allons créer un nouveau compte d'administration et supprimer le compte par défaut, pour des raisons de sécurité.
+- Pour accéder aux paramètres, il faut cliquer sur le nom d'utilisateur en haut à droite puis sur "Paramètres".
+
+![](/S08/Ressources/Param_Bastion.png)
+
+- Ensuite, allez sur l'onglet **"Utilisateurs"** et sur **"Nouvel utilisateur"**.
+
+![](/S08/Ressources/New_Users_Param.png)
+
+- Un formulaire s'affiche. Adaptez vos valeurs en indiquant un nom d'utilisateur et choisissez un mot de passe robuste. Cochez l'ensemble des permissions pour que cet utilisateur soit administrateur de la plateforme Guacamole.
+
+![](/S08/Ressources/New_Users_Guac.png)
+
+
+- Nous allons maintenant que le nouveau compte est crée, supprimé le compte par défaut guacadmin pour cela :
+- Retournez dans **Paramètres > Utilisateur puis séléctionner le compte guacadmin**, dérouler la page jusqu'en bas ou vous pourrez cliquez sur le bouton **Supprimer**
+
+![](/S08/Ressources/Delete_DefaultUser_Guac.png)
+
 
 
 ### G - Ajout d'une connexion RDP  
