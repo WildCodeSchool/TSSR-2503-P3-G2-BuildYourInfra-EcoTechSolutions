@@ -2,7 +2,8 @@
 
 ## Sommaire
 
-1. [Installation et configuration du serveur Bastion avec Apache Guacamole](#Srv-Bastion)  
+1. [Installation et configuration du serveur Bastion avec Apache Guacamole](#Srv-Bastion)
+
      [A - Installer les prérequis d'Apache Guacamole](pré-requis)  
      [B - Compiler et installer Apache Guacamole "Server"](#pré-requis2)  
      [C - Créer le répertoire de configuration](#Répertoire)  
@@ -14,6 +15,7 @@
      [I - Résolution erreur fréquente](#debogage)
 
 2. [Configuration d'IPSEC sur pfSense](#IPSEC)
+
      [A - Configuration de la connexion WAN](#WAN)  
      [B - Configuration de la connexion LAN](#LAN)  
      [C - Actions finales et règles de pare-feu](#end)  
