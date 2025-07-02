@@ -35,7 +35,7 @@ Nous devons commencer par installer les paquets indispensable au fonctionnement 
 apt-get update
 apt-get install build-essential libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev
 ```
-![](S08/Ressources/Installer-dependance-Apache-Guacamole-sur-Debian.png)
+![](/S08/Ressources/Installer-dependance-Apache-Guacamole-sur-Debian.png)
 
 ### B - Compiler et installer Apache Guacamole "Server"  
 <span id="pré-requis2"/><span>  
@@ -65,7 +65,7 @@ sudo ./configure --with-systemd-dir=/etc/systemd/system/
 ```
 - Vous devriez avoir toutes les dépendances avec le status **YES** comme ceci : 
 
-![](S08/Ressources/Compiler-Guacamole-sur-Debian-12.png)
+![](/S08/Ressources/Compiler-Guacamole-sur-Debian-12.png)
 
 - Une fois que tout est Ok, poursuivez avec la compilation du code source de Guacamole-Server:
 ```
@@ -76,7 +76,7 @@ Make
 ```
 Make Install
 ```
-![](S08/Ressources/Compiler-Guacamole-sur-Debian-12-Exemple.png)
+![](/S08/Ressources/Compiler-Guacamole-sur-Debian-12-Exemple.png)
 
 > **La partie serveur d'Apache Guacamole est installée**, il reste cependant quelques étapes à réalisée
 
@@ -125,7 +125,7 @@ deb http://deb.debian.org/debian/ bullseye main
 sudo apt-get install tomcat9 tomcat9-admin tomcat9-common tomcat9-user
 ```
 
-![](S08/Ressources/Installer-Tomcat-9-sur-Debian-12-800x201.png)
+![](/S08/Ressources/Installer-Tomcat-9-sur-Debian-12-800x201.png)
 
 
 - Nous allons ensuite télécharger la dernière version de la Web App d'Apache Guacamole depuis le dépôt officiel. On se positionne dans **"/tmp"** et on télécharge la **Web App**, ce qui revient à télécharger un fichier avec l'extension ".war". Ici, la version 1.6.0 est téléchargée.
@@ -176,7 +176,7 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
-![](S08/Ressources/Base-de-donnees-MariaDB-MySQL-pour-Apache-Guacamole-800x367.png)
+![](/S08/Ressources/Base-de-donnees-MariaDB-MySQL-pour-Apache-Guacamole-800x367.png)
 
 
 - On va maintenant télécharger l'extension MySQL pour Apache Guacamole : 
@@ -194,7 +194,7 @@ sudo mv guacamole-auth-jdbc-1.6.0/mysql/guacamole-auth-jdbc-mysql-1.6.0.jar /etc
 - Utilisez le lien ci-dessous pour repérer le lien de la dernière version en choisissant "Platform Independent", puis ajouter le liens entre parenthèse situé en dessous de  "Compressed TAR Archive".
 [Connecteur MySQL](https://dev.mysql.com/downloads/connector/j/)
 
-![](S08/Ressources/MySQL_Connector.png)
+![](/S08/Ressources/MySQL_Connector.png)
 
 - On lance ensuite le téléchargement 
 ```
