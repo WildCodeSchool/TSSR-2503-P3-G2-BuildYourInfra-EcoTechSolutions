@@ -431,17 +431,24 @@ Un VPN (Virtual Private Network) Site-to-Site (aussi appellé LAN-to-LAN) est un
     - **Remote Gateway** : `192.168.1.3`
     - **Key Exchange Version** : `IKEv2`
     - **Internet Protocol** : `IPv4`
+  
+![general_settings](S08/Ressources/IPSEC/IPSEC_etape1_01.png)  
+
 3. **Paramètres de Phase 1**
     - **Authentication Method** : `Mutual PSK`
     - **Negotiation Mode** : `Main`
     - **My identifier** : `My IP address`
     - **Peer identifier** : `Peer IP address`
     - **Pre-Shared Key** : `Azerty1*` (identique au Site A)
+![step1](S08/Ressources/IPSEC/IPSEC_etape1_02.png)
+
 4. **Algorithmes de chiffrement**
     - **Encryption Algorithm** : `AES 256`
     - **Hash Algorithm** : `SHA256`
     - **DH Group** : `14 (2048 bit)`
     - **Lifetime** : `28800` secondes
+
+![step1.1](S08/Ressources/IPSEC/IPSEC_etape1_03.png)  
 
 ### B - Configuration de la connexion LAN
 <span id="LAN"/><span> 
@@ -475,13 +482,20 @@ Un VPN (Virtual Private Network) Site-to-Site (aussi appellé LAN-to-LAN) est un
     - **Mode** : `Tunnel IPv4`
     - **Local Network** : `LAN subnet` (172.16.10.0/24)
     - **Remote Network** : `Network` avec `172.16.20.0/24`
+
+![step2](S08/Ressources/IPSEC/IPSEC_etape2_01.png)  
+
 3. **Paramètres de Phase 2**
     - **Protocol** : `ESP`
     - **Encryption Algorithms** : `AES 128 GSM`
     - **Hash Algorithms** : `SHA256`
     - **PFS Key Group** : `14 (2048 bit)`
     - **Lifetime** : `3600` secondes
-   
+
+![](S08/Ressources/IPSEC/IPSEC_etape2_02.png)  
+
+![](S08/Ressources/IPSEC/IPSEC_etape2_03.png)  
+
 ### C - Actions finales et règles de pare-feu
 <span id="end"/><span> 
 
@@ -492,6 +506,8 @@ Un VPN (Virtual Private Network) Site-to-Site (aussi appellé LAN-to-LAN) est un
 3. **Vérifier le statut** du tunnel dans `VPN` > `IPsec` > `Status`
 4. **Tester la connectivité** entre les réseaux LAN des deux sites
 
+![finale](S08/Ressources/IPSEC/IPSEC_affichage_final.png)
+
 ## Règles de pare-feu (optionnel)
 
 A configurer plus tard en spécifiant les machines souhaitées en accès VPN.
@@ -499,3 +515,5 @@ Pour autoriser le trafic entre les sites, créer des règles dans `Firewall` > `
 
 - Autoriser le trafic de 172.16.20.0/24 vers 172.16.10.0/24
 - Autoriser le trafic de 172.16.10.0/24 vers 172.16.20.0/24
+
+![règle_generique](S08/Ressources/IPSEC/IPSEC_etape3_01.png)  
