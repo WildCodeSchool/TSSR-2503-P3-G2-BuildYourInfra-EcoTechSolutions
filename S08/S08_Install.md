@@ -292,6 +292,64 @@ http://<Adresse IP>:8080/guacamole/
 ### G - Ajout d'une connexion RDP  
 <span id="RDP"/><span>  
 
+> Nous allons créer notre première connexion dans Apache Guacamole, de manière à se connecter à un serveur en RDP !
+
+- Mais avant cela, on va créer un nouveau groupe, car ces groupes vont permettre d'organiser les connexions : ``Paramètres > Connexion > Nouveau groupe``
+
+> Dans cet exemple, je crée un groupe nommé "Windows". Il sera positionné sous le lieu **"ROOT"** qui est la racine de l'arborescence. Le type de groupe > **"Organizationel"** doit être sélectionné pour tous les groupes qui ont pour vocation à organiser les connexions.
+
+![](/S08/Ressources/Create_Grp_Windows.png)
+
+
+On enregistre et on clique sur le bouton **"Nouvelle connexion"**. On commence par nommer la connexion, choisir le groupe et le protocole. Ici, c'est sur le serveur **"WINSRV-AD-DHCP-DNS"** que je souhaite me connecter, associé à l'adresse IP **"172.16.20.3".**
+
+- Pour créer une nouvelle connexion : ``Paramètres > Connexion > Nouvelle connexion``
+
+
+![](/S08/Ressources/Connexion_SRVAD.png)
+
+- Ensuite, il y a un ensemble de paramètres à renseigner :
+  - **Nom d'hôte** : le nom DNS du serveur (si le serveur Apache Guacamole est capable de résoudre le nom), sinon l'adresse IP
+  - **Port** : le numéro de port du RDP, par défaut 3389 (pas utile de le préciser si c'est le port par défaut)
+  - **Identifiant** : compte avec lequel s'authentifier sur le serveur
+  - **Mot de passe** : mot de passe du compte spécifié ci-dessus
+  - **Nom de domaine** : nom du domaine Active Directory, si besoin
+  - **Mode de sécurité** : par défaut, c'est en détection automatique (vous pouvez également choisir le NLA)
+  - **Ignorer le certificat du serveur** : cochez cette option si vous n'avez pas déployé de certificat pour vos connexions RDP et si vous utilisez une adresse IP pour la connexion
+  - **Agencement clavier** : choisissez "Français (Azerty)", ou adaptez selon votre configuration
+  - **Fuseau horaire** : choisissez "Europe / Paris", ou adaptez selon votre configuration
+
+
+![](/S08/Ressources/Parametre_SRVAD.png)
+
+
+> Il y a de nombreuses options disponibles, notamment pour faire remonter les périphériques locaux, ou passer par une passerelle de bureau à distance. Au début, il faut > passer du temps à trouver la bonne formule pour que la connexion RDP intègre toutes les fonctions dont on a besoin. Toutefois, si l'on veut simplement se connecter et avoir le contrôle à distance, ce n'est pas utile de modifier profondément la configuration.
+Pour que l'expérience soit un peu plus agréable, on peut cocher les options ci-dessous (mais cela reste facultatif - testez avec et sans) :
+
+
+![](/S08/Ressources/Parametre_Suite_Performance_Connexion)
+
+- Une fois configuré comme voulu, **enregistrez**.La nouvelle connexion apparaît sous **"Windows"**. Pour tester cette connexion, il faut basculer sur **"Accueil"* en cliquant sur son identifiant en haut à droite.
+
+
+![](/S08/Ressources/Connexion-Grp.png)
+
+
+- Dans l'accueil, l'utilisateur peut visualiser toutes les connexions qu'il a le droit d'utiliser.
+
+
+![](/S08/Ressources/ConnexionRécente.png)
+
+- Il suffit de cliquer sur le serveur et la connexion va se lancer...
+
+
+![](/S08/Ressources/Apache-Guacamole-Connexion-en-cours.png)
+
+- Voilà, je suis connecté en Bureau à distance via le protocole RDP à mon serveur en passant par mon serveur Apache Guacamole ! Si ça ne fonctionne pas, **lisez la partie suivante de ce guide**. Voici un exemple de connexion RDP via Guacamole, sur une machine sous Windows Server 2022.
+
+
+![](/S08/Ressources/ConnexionRDP_Exemple.png)
+
 
 
 ### H - Ajout d'une connexion SSH  
