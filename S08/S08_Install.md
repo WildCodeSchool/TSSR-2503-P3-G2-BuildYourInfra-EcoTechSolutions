@@ -26,6 +26,7 @@ Apache Guacamole devient un élément central de l'infrastructure puisqu'il sert
 ### A - Installer les prérequis d'Apache Guacamole  
 <span id="pré-requis"/><span>  
 
+
 **NB**:_Pour l'installation nous sommes en Root, si vous êtes sur un comptes utilisateur, vous devez installer **sudo** puis ajouter l'utilisateur pour avoir la permission sur les commandes. Pensez à rajouter **sudo** devant les commandes qui vont suivre._
 
 
