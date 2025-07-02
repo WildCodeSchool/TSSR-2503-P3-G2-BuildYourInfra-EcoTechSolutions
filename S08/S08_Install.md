@@ -13,6 +13,11 @@
      [H - Ajout d'une connexion SSH](#SSH)  
      [I - Résolution erreur fréquente](#debogage)
 
+2. [Configuration d'IPSEC sur pfSense](#IPSEC)
+
+     [A - Configuration de la connexion WAN](#WAN)
+     [B - Configuration de la connexion LAN](#LAN)
+     [C - Actions finales et règles de pare-feu](#end)
 
 ---
 
@@ -365,6 +370,20 @@ Pour que l'expérience soit un peu plus agréable, on peut cocher les options ci
 
 - Renseignez l'utilisateur avec lequel vous voulez vous connectez en SSH avec son mot de passe, ou bien la clé SSH si vous utilisé une clé de chiffrement pour la connexion.
 
+
 ### I - Résolution erreur fréquente  
 <span id="debogage"/><span>  
 
+---
+
+## 2. Configuration d'IPSEC sur pfSense
+<span id="IPSEC"/><span> 
+
+### A - Configuration de la connexion WAN
+<span id="WAN"/><span> 
+
+### B - Configuration de la connexion LAN
+<span id="LAN"/><span> 
+   
+### C - Actions finales et règles de pare-feu
+<span id="end"/><span> 
