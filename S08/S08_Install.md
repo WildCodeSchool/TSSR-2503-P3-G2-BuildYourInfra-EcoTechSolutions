@@ -355,7 +355,15 @@ Pour que l'expérience soit un peu plus agréable, on peut cocher les options ci
 ### H - Ajout d'une connexion SSH  
 <span id="SSH"/><span>  
 
+- La connexion SSH ce fait de la même manière que la connexion RDP ci-dessus, à la seul différence que les paramètres à rentrées sont légèrements différents avec notamment le port **22** à renseigner au lieu du port **3389**
 
+![](/S08/Ressources/Param_Connexion_SSH.png)
+
+
+![](/S08/Ressources/Param_Connexion_SSH_Part2.png)
+
+
+- Renseignez l'utilisateur avec lequel vous voulez vous connectez en SSH avec son mot de passe, ou bien la clé SSH si vous utilisé une clé de chiffrement pour la connexion.
 
 ### I - Résolution erreur fréquente  
 <span id="debogage"/><span>  
