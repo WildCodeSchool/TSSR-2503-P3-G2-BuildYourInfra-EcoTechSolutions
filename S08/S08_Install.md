@@ -15,9 +15,9 @@
 
 2. [Configuration d'IPSEC sur pfSense](#IPSEC)
 
-     [A - Configuration de la connexion WAN](#WAN)
-     [B - Configuration de la connexion LAN](#LAN)
-     [C - Actions finales et règles de pare-feu](#end)
+     [A - Configuration de la connexion WAN](#WAN)  
+     [B - Configuration de la connexion LAN](#LAN)  
+     [C - Actions finales et règles de pare-feu](#end)  
 
 ---
 
@@ -378,12 +378,124 @@ Pour que l'expérience soit un peu plus agréable, on peut cocher les options ci
 
 ## 2. Configuration d'IPSEC sur pfSense
 <span id="IPSEC"/><span> 
+Un VPN (Virtual Private Network) Site-to-Site (aussi appellé LAN-to-LAN) est un VPN qui permet de joindre deux réseaux de type LAN distants de manière à faire en sorte qu'ils puissent communiquer comme s'ils étaient sur le même réseau et qu'un simple routeur les séparait. IPSEC (Internet Protocol Security) est un ensemble de protocoles utilisant des algorithmes permettant le transport de données sécurisées sur un réseau. Il se caractérise comme étant un standard ouvert travaillant sur la couche 3 et supportant de multiple algorithmes de chiffrement et d'authentification.  
+
+#### Informations du Tunnel  
+
+**Site A - EcoTechSolution**   
+
+- WAN : 192.168.1.3  
+- LAN : 172.16.20.0/24  
+
+**Site B - BillU**  
+
+- WAN : 192.168.1.2  
+- LAN : 172.16.10.0/24  
 
 ### A - Configuration de la connexion WAN
 <span id="WAN"/><span> 
 
+## Étape 1 : Configuration Phase 1
+
+### Sur pfSense Site A (EcoTechSolution)
+
+1. **Accéder à la configuration IPsec**
+    - Naviguer vers `VPN` > `IPsec`
+    - Cliquer sur `Add P1` pour créer une nouvelle Phase 1
+2. **Paramètres généraux**
+    - **Description** : `VPN vers BillU`
+    - **Interface** : `WAN`
+    - **Remote Gateway** : `192.168.1.2`
+    - **Key Exchange Version** : `IKEv2`
+    - **Internet Protocol** : `IPv4`
+3. **Paramètres de Phase 1**
+    - **Authentication Method** : `Mutual PSK`
+    - **Negotiation Mode** : `Main`
+    - **My identifier** : `My IP address`
+    - **Peer identifier** : `Peer IP address`  
+    - **Pre-Shared Key** : `Azerty1*`  
+4. **Algorithmes de chiffrement**  
+    - **Encryption Algorithm** : `AES 256`  
+    - **Hash Algorithm** : `SHA256`  
+    - **DH Group** : `14 (2048 bit)`  
+    - **Lifetime** : `28800` secondes  
+
+### Sur pfSense Site B (BillU)  
+
+1. **Accéder à la configuration IPsec**  
+    - Naviguer vers `VPN` > `IPsec`  
+    - Cliquer sur `Add P1` pour créer une nouvelle Phase 1  
+2. **Paramètres généraux**  
+    - **Description** : `Tunnel vers EcoTechSolution`  
+    - **Interface** : `WAN`
+    - **Remote Gateway** : `192.168.1.3`
+    - **Key Exchange Version** : `IKEv2`
+    - **Internet Protocol** : `IPv4`
+3. **Paramètres de Phase 1**
+    - **Authentication Method** : `Mutual PSK`
+    - **Negotiation Mode** : `Main`
+    - **My identifier** : `My IP address`
+    - **Peer identifier** : `Peer IP address`
+    - **Pre-Shared Key** : `Azerty1*` (identique au Site A)
+4. **Algorithmes de chiffrement**
+    - **Encryption Algorithm** : `AES 256`
+    - **Hash Algorithm** : `SHA256`
+    - **DH Group** : `14 (2048 bit)`
+    - **Lifetime** : `28800` secondes
+
 ### B - Configuration de la connexion LAN
 <span id="LAN"/><span> 
+
+## Étape 2 : Configuration Phase 2
+
+### Sur pfSense Site A (EcoTechSolution)
+
+1. **Créer la Phase 2**
+    - Après avoir sauvegardé la Phase 1, cliquer sur `Show Phase 2 Entries`
+    - Cliquer sur `Add P2` pour créer une nouvelle Phase 2
+2. **Paramètres généraux**
+    - **Description** : `VPN-BillU`
+    - **Mode** : `Tunnel IPv4`
+    - **Local Network** : `LAN subnet` (172.16.20.0/24)
+    - **Remote Network** : `Network` avec `172.16.10.0/24`
+3. **Paramètres de Phase 2**
+    - **Protocol** : `ESP`
+    - **Encryption Algorithms** : `AES 128 GSM`
+    - **Hash Algorithms** : `SHA256`
+    - **PFS Key Group** : `14 (2048 bit)`
+    - **Lifetime** : `3600` secondes
+
+### Sur pfSense Site B (BillU)
+
+1. **Créer la Phase 2**
+    - Après avoir sauvegardé la Phase 1, cliquer sur `Show Phase 2 Entries`
+    - Cliquer sur `Add P2` pour créer une nouvelle Phase 2
+2. **Paramètres généraux**
+    - **Description** : `LAN vers LAN EcoTechSolution`
+    - **Mode** : `Tunnel IPv4`
+    - **Local Network** : `LAN subnet` (172.16.10.0/24)
+    - **Remote Network** : `Network` avec `172.16.20.0/24`
+3. **Paramètres de Phase 2**
+    - **Protocol** : `ESP`
+    - **Encryption Algorithms** : `AES 128 GSM`
+    - **Hash Algorithms** : `SHA256`
+    - **PFS Key Group** : `14 (2048 bit)`
+    - **Lifetime** : `3600` secondes
    
 ### C - Actions finales et règles de pare-feu
 <span id="end"/><span> 
+
+## Actions finales
+
+1. **Sauvegarder** les configurations sur les deux sites
+2. **Appliquer les changements** en cliquant sur `Apply Changes`
+3. **Vérifier le statut** du tunnel dans `VPN` > `IPsec` > `Status`
+4. **Tester la connectivité** entre les réseaux LAN des deux sites
+
+## Règles de pare-feu (optionnel)
+
+A configurer plus tard en spécifiant les machines souhaitées en accès VPN.
+Pour autoriser le trafic entre les sites, créer des règles dans `Firewall` > `Rules` > `IPsec` :
+
+- Autoriser le trafic de 172.16.20.0/24 vers 172.16.10.0/24
+- Autoriser le trafic de 172.16.10.0/24 vers 172.16.20.0/24
