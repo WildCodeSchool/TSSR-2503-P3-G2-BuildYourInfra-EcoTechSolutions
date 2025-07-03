@@ -586,25 +586,25 @@ Une fois cela fait, nous allons ajouter le rôle RDP :
 
 Tout d'abord, aller dans **Manage** => **Add Roles and Feature** 
 
-![image rdp role]()
+![image rdp role](Ressources/rdp_role.png)
 
 Ensuite, choisir **Remote Desktop Services Installation**
 
-![image rdp desktop]()
+![image rdp desktop](Ressources/rdp_remote_desktop.png)
 
 Puis choisir un **Quick Start**
 
-![image quick]()
+![image quick](S08/Ressources/quick_start.png)
 
 Puis, **Session-based desktop deployement**
 
-![image session]()
+![image session](S08/Ressources/rdp_session-based.png)
 
 Enfin clique sur **Next** jusqu'a **Finish**.
 
 Une fois le rôle installé et le serveur redémarré, aller dans **Remote Desktop Service** du **Server Manager**.
 
-![image desktop service]()
+![image desktop service](S08/Ressources/rdp_remote_desktop_service.png)
 
 Puis doucle clique sur **RD Licensing**. Selectionne ton serveur et poursuit l'installation. 
 
@@ -612,11 +612,24 @@ Ensuite va dans **Collections** du **Remote Desktp Services** => **Task** => **E
 
 ![image task](Ressources/rdp_license.png)
 
-Puis sur la gauche, clique sur 
+Puis sur la gauche, clique sur **RD Licensing**
 
+![image licensing](S08/Ressources/rdp_rd_licensing.png)
 
+Pour finir clique sur **QuickSessionCollection**, ensuite sur la droite cliquez sur **Tâches** => **Edit Propertie**.
 
+L'onglet **User Groups** va permettre de spécifier les utilisateurs qui ont le droit de se connecter au serveur RDS. Nous allons donc créer un groupe dans le domaine AD-DS Dans une OU spécifique pour acceuillir les utilisateurs du service RDS. 
 
+![image rdp billu user](S08/Ressources/rdp_billu_user.png)
+![image rdp billu user](S08/Ressources/rdp_group_billu_users.png)
+
+Maintenant nous pouvons paramétrer les expiation de session dans l'onglet **Session**
+
+![image rdp session](S08/Ressources/rdp_session_horaire.png)
+
+Enfin, nous allons configurer les ressources que les personnes utilisants RDS vont pouvoir utiliser :
+
+![image rdp client setting](S08/Ressources/rdp_client_setting.png)
 
 
 
