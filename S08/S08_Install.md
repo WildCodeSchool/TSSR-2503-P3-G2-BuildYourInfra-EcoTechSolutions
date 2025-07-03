@@ -602,13 +602,17 @@ Puis, **Session-based desktop deployement**
 
 Enfin clique sur **Next** jusqu'a **Finish**.
 
+Une fois le rôle installé et le serveur redémarré, aller dans **Remote Desktop Service** du **Server Manager**.
 
+![image desktop service]()
 
+Puis doucle clique sur **RD Licensing**. Selectionne ton serveur et poursuit l'installation. 
 
+Ensuite va dans **Collections** du **Remote Desktp Services** => **Task** => **Edit Deployement Properties**. 
 
+![image task](Ressources/rdp_license.png)
 
-
-
+Puis sur la gauche, clique sur 
 
 
 
