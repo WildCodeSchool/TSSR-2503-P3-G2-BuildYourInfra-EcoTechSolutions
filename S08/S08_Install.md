@@ -20,6 +20,8 @@
      [B - Configuration de la connexion LAN](#LAN)  
      [C - Actions finales et règles de pare-feu](#end)  
 
+3. [Installation et configuration d'une VM RServeur Windows RDP](#RDP)
+
 ---
 
 
@@ -569,3 +571,57 @@ Pour autoriser le trafic entre les sites, créer des règles dans `Firewall` > `
 - Autoriser le trafic de 172.16.10.0/24 vers 172.16.20.0/24
 
 ![règle_generique](/S08/Ressources/IPSEC/IPSEC_etape3_01.png)  
+
+
+
+
+## 3 - Installation et configuration d'une VM Serveur Windows RDP
+<span id="RDP"/><span> 
+
+Nous avons créer une nouvelle VM **Windows Server 22** pour cet objectif. Pour cela nous avons cloner une VM serveur présente en **Template** sur notre Proxmox.
+
+Une fois notre VM prête, nous l'avons fait rejoindre le domaine **EcoTechSolution**.
+
+Une fois cela fait, nous allons ajouter le rôle RDP :
+
+Tout d'abord, aller dans **Manage** => **Add Roles and Feature** 
+
+![image rdp role]()
+
+Ensuite, choisir **Remote Desktop Services Installation**
+
+![image rdp desktop]()
+
+Puis choisir un **Quick Start**
+
+![image quick]()
+
+Puis, **Session-based desktop deployement**
+
+![image session]()
+
+Enfin clique sur **Next** jusqu'a **Finish**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
