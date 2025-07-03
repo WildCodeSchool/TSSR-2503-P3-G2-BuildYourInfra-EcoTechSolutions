@@ -375,6 +375,57 @@ Pour que l'expérience soit un peu plus agréable, on peut cocher les options ci
 ### I - Résolution erreur fréquente  
 <span id="debogage"/><span>  
 
+**Que faire si la connexion RDP ne se lance pas ou qu'elle affiche une erreur ?**
+
+- Retournez sur la ligne de commande de votre serveur et vérifiez les dernières lignes de logs qui s'affichent lorsque l'on regarde le statut du service guacd :
+
+```
+sudo systemctl status guacd
+```
+
+
+- Par exemple, on peut trouver ceci :
+
+
+```
+juin 14 20:15:29 srv-guacamole guacd[31120]: Certificate validation failed
+juin 14 20:15:29 srv-guacamole guacd[31120]: RDP server closed/refused connection: SSL/TLS connection failed (untrusted/self-signed certificate?)
+```
+> Si le certificat RDP ne peut pas être vérifié (auto-signé par exemple) et que l'option "Ignorer le certificat du serveur" n'est pas cochée dans les paramètres de la connexion Guacamole, alors cette erreur se produira.
+
+
+**Une autre erreur que vous pourriez rencontrer si vous avez besoin d'établir des connexions en RDP, c'est celle-ci :**
+
+```
+RDP server closed/refused connection: Security negotiation failed (wrong security type?)
+```
+
+- Ce problème est lié au compte utilisateur **"daemon"** utilisé par défaut pour exécuter le service **"guacd"**. Vous pouvez le vérifier avec cette commande :
+
+```
+sudo ps aux | grep -v grep| grep guacd
+# Résultat :
+daemon     31513  0.0  0.7 247928 15400 ?        Ss   16:03   0:00 /usr/local/sbin/guacd -f
+```
+
+- Nous devons créer un **nouvel utilisateur**, lui associer les permissions nécessaires sur les données d'Apache Guacamole, puis mettre à jour le service et enfin le relancer.
+
+> Voici la série de commandes à exécuter, dans l'ordre :
+
+```
+sudo useradd -M -d /var/lib/guacd/ -r -s /sbin/nologin -c "Guacd User" guacd
+sudo mkdir /var/lib/guacd
+sudo chown -R guacd: /var/lib/guacd
+sudo sed -i 's/daemon/guacd/' /etc/systemd/system/guacd.service
+sudo systemctl daemon-reload
+sudo systemctl restart guacd
+```
+
+- Puis, vérifiez l'état du service :
+```
+sudo systemctl status guacd
+```
+
 ---
 
 ## 2. Configuration d'IPSEC sur pfSense
