@@ -138,7 +138,7 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 |   Sheldon      | Technicien    |  Mappage dossier perso, vpn site à site, serveur rds     |
 |   Lloyd        | Scrum Master    |  Routage réseau interne, vpn site à site, serveur rds  |
 |   Alan         | Technicien      |  Mappage, Serveur bastion, vpn, serveur rds |
-|   Florian      | Product Owner      |  Serveur bastion, vpn, rds   |
+|   Florian      | Technicien      |  Serveur bastion, vpn, rds   |
 |   John         | Product Owner      |  Serveur bastion, serveur rds, firewall     |
 |   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
 
