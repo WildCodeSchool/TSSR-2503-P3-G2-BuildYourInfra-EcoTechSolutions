@@ -195,4 +195,5 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 
 - Plus de meeting synthétique pour la répartition des tâches
 - Répartition du travail en binôme maximum
-- 
+- Nomenclature plus précise
+- Règles de pare-feu plus strictes
