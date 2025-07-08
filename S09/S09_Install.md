@@ -53,6 +53,18 @@ Maintenant quand nous refaisons un audit, notre score a augmenté !
 
 ![image apres audit](Ressources/Lynis/apres_modif_sshd.png)
 
+Pour encore améliorer la configuration du système, nous allons télécharger plusieurs paquets reccomander par Lynis : 
+```bash
+#Clamav est un antivirus.
+#unattend-upgrades va vous permettre de gérer vos mises à jour en automatique et même de reboot la machine ou de purger automatiquement les anciens packages , il est entièrement configurable.
+#rkhunter est un anti-rootkit qui va analyser votre système de fichier.
+#Fail2ban, lui va se baser sur vos fichiers de logs en fonction de ce que vous lui donner à lire et il va travailler avec iptables, par exemple pour bannir les adresses IP qui tentent de "brute forcer" votre serveur en SSH.
+sudo apt-get install debsums apt-listbugs needrestart apt-show-versions fail2ban unattended-upgrades clamav clamav-daemon rkhunter
+```
+
+Grâce a cela notre sécurité augmente de nouveau 
+
+![image fini audit](Ressources/Lynis/fin_modif.png)
 
 
 
