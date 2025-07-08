@@ -36,9 +36,22 @@ Au premier audit nous avons un score de **63**. Plus le score est haut et mieux 
 
 ![image debut audit](S09/Ressources/Lynis/Lynis-Score-audit-de-securite.jpg)
 
+Lydis nous a pointer que SSHD n'est pas sécurisé (en effet, tout est par défaut). Nous allons modifier le fichier comme suit :
+```bash
+nano /etc/ssh/sshd_config
+```
+![image sshd1](S09/Ressources/Lynis/sshd1.png)
+![image sshd2](S09/Ressources/Lynis/sshd2.png)
+![image sshd3](S09/Ressources/Lynis/sshd3.png)
 
+Puis nous allons relancer le service sshd
+```bash
+systemctl restart sshd
+```
 
+Maintenant quand nous refaisons un audit, notre score a augmenté !
 
+![image apres audit](S09/Ressources/Lynis/apres_modif_sshd.png)
 
 
 
