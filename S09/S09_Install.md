@@ -25,7 +25,7 @@ Pour être sur que l'utilitaire est sur notre machine, nous pouvons vérifier en
 lynis update info
 ```
 
-![image update info](S09/Ressources/Lynis/update_info.png)
+![image update info](Ressources/Lynis/update_info.png)
 
 Maintenant nous allons utiliser Lydis pour faire un audit de notre système pour voir ce qui est bien configurer et ce qui peut être amélioé : 
 ```bash
@@ -34,15 +34,15 @@ sudo lynis audit system
 
 Au premier audit nous avons un score de **63**. Plus le score est haut et mieux la machine est sécurisée. 
 
-![image debut audit](S09/Ressources/Lynis/Lynis-Score-audit-de-securite.jpg)
+![image debut audit](Ressources/Lynis/Lynis-Score-audit-de-securite.jpg)
 
 Lydis nous a pointer que SSHD n'est pas sécurisé (en effet, tout est par défaut). Nous allons modifier le fichier comme suit :
 ```bash
 nano /etc/ssh/sshd_config
 ```
-![image sshd1](S09/Ressources/Lynis/sshd1.png)
-![image sshd2](S09/Ressources/Lynis/sshd2.png)
-![image sshd3](S09/Ressources/Lynis/sshd3.png)
+![image sshd1](Ressources/Lynis/sshd1.png)
+![image sshd2](Ressources/Lynis/sshd2.png)
+![image sshd3](Ressources/Lynis/sshd3.png)
 
 Puis nous allons relancer le service sshd
 ```bash
@@ -51,7 +51,7 @@ systemctl restart sshd
 
 Maintenant quand nous refaisons un audit, notre score a augmenté !
 
-![image apres audit](S09/Ressources/Lynis/apres_modif_sshd.png)
+![image apres audit](Ressources/Lynis/apres_modif_sshd.png)
 
 
 
