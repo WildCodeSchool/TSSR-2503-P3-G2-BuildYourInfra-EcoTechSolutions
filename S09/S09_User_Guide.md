@@ -108,18 +108,18 @@ En suivant le tableau ci dessous, nous avons un aperçu des correctifs que nous 
 
 Exemples de modifications qui ont été mise en place pour améliorer la sécurité de notre infrastructure.
 
-Anomalies :
+**Anomalies :**
 - Désactivation de la GPO "Password Policies" qui possède une limite de caractère à 7. Notre politique de MDP étant plus performante, aucun intérêt de garder cette GPO.
 - Activation de la "Recycle Bin AD" par ligne de commande. Cela permet de conserver des GPO, des OU ou autres informations supprimées accessibles pour un laps de temps
 - Certains utilisateurs avaient l'option, "password never expire". Décochage de la case.
 - Désactivation du service "Printer Spooler" sur les serveurs. Nous évitons ainsi une faille attack in the middle connue.
 
 
-Privileged Accoud :
+**Privileged Account :**
 - Ajout de notre groupe DSi et Exploitation (Service Informatique) dans le groupe "Protected Users" qui possède des règles par default qui protège les informations de ses membres.
 - Suppression du membre Administrator dans le groupe Schema Admin. C'est une bonne pratique quand aucune mise à jour du schéma AD est necessaire.
 
-Stale Objetcts :
+**Stale Objetcts :**
 - Mise à jour des clients Windows 11 nécessaire (2H22)
 - Ajout de la caractéristique Secure Only sur notre Reverse Lookup Zone pour le DNS.
 - Création d'un GPO pour donner des permissions supplémentaire sur la remonté des logs "audit". Computer > Policies > Audit Policies > Success
