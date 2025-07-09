@@ -98,13 +98,13 @@ L'outil génère deux rapports dans le répertoire d'installation :
 
 Sur le Dashboard, on peut interprété un niveau de risque élevé toutes catégories confondues excepté "Trust" qui correspond aux données quand plusieurs Active Directory sont liés, ce qui n'est pas notre cas.
 
-"IMAGE DASHBOARD"
+![](/S09/Ressources/PingCastle/01_premier_audit.png)  
 
 Notre moyenne sans la catégorie "Trust" est à 59%. Notre objectif est de descendre en dessous de 20%.
 
 En suivant le tableau ci dessous, nous avons un aperçu des correctifs que nous allons effectuer.
 
-"IMAGE TABLEAU RISQUE 1"
+![](/S09/Ressources/PingCastle/02_Risk_Model.png)  
 
 Exemples de modifications qui ont été mise en place pour améliorer la sécurité de notre infrastructure.
 
@@ -126,7 +126,9 @@ Stale Objetcts :
 
 Après ces différentes mesures, ci-dessous le résultat du deuxième audit.
 
-"DASHBOARD"
+![](/S09/Ressources/PingCastle/03_audit2_dashboard.png)  
+
+![](/S09/Ressources/PingCastle/audit2_tableau.png)  
 
 ### b. Guide d’utilisation de l'outil **Microsoft ToolKit**
 <span id="toolkit"/><span> 
