@@ -96,6 +96,35 @@ b. Installation et configuration de l'outil **OpenScap**
 ### a. Installation et configuration de l'outil **Ping Castle**
 <span id="pingcastle"/><span> 
 
+## Présentation de Ping Castle
+
+Ping Castle est un logiciel français gratuit pour auditer votre propre annuaire Active Directory. Il génère un score de risque et un rapport détaillé pour améliorer la sécurité de votre AD.  
+
+**Prérequis :**  
+
+- Un compte sur le domaine cible (pas nécessairement administrateur)  
+- Compatible de Windows 7 à Windows 11 et Windows Server 2008 à 2022  
+- Licence gratuite pour audit interne, licence payante pour prestations commerciales  
+
+## Étapes d'installation  
+
+### 1. Téléchargement  
+
+- Accédez au site officiel de Ping Castle  
+- Cliquez sur "Download" dans le menu  
+- Téléchargez l'archive ZIP contenant les sources  
+- Extrayez le contenu dans un répertoire (recommandé : directement sur le contrôleur de domaine pour un audit plus rapide)  
+
+### 2. Structure des fichiers  
+
+Après extraction, vous obtiendrez :  
+
+- `PingCastle.exe` : Exécutable principal  
+- `PingCastle.exe.config` : Fichier de configuration  
+- Deux documents PDF de documentation  
+### 3. Configuration SMTP (optionnel)  
+
+Pour l'envoi automatique de rapports par email, configurez le serveur SMTP dans le fichier `PingCastle.exe.config`.  
 
 ### b. Installation et configuration de l'outil **Microsoft ToolKit**
 <span id="toolkit"/><span> 
