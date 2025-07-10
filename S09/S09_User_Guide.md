@@ -137,6 +137,27 @@ Après ces différentes mesures, ci-dessous le résultat du deuxième audit.
 ### c. Guide d’utilisation de l'outil **HardenSysvol**
 <span id="harden"/><span> 
 
+##### Scan   
+Pour lancer le scan taper la commande suivante:  
+> Invoke-hardenSysvol  
+  
+![hardensysvol_3](https://github.com/user-attachments/assets/4a2da6c5-c04d-4a18-a28e-bc3f1960c7db)  
+  
+##### Dashboard  
+
+Une fois le scan terminé, une page web s'ouvrira, vous arriverez directement sur la partie "TAB 1: Dashboard" où vous aurez une vue global du scan effectué,   ainsi qu'un score (plus votre score est bas, meilleure est votre sécurité).  
+
+![hardensysvol_4](https://github.com/user-attachments/assets/3d763a89-b9cf-4e74-b222-9589abcf586a)
+
+##### Details  
+
+Dans la partie "TAB 2 : Details", si vous avez des erreurs, elles apparaîtront dans cette section.   
+  
+![hardensysvol_5](https://github.com/user-attachments/assets/965dbf34-6a72-436f-b99b-fd29d728229f)  
+
+Pour plus d'info :  
+https://www.it-connect.fr/securite-active-directory-hardensysvol-scanner-vulnerabilites-partage-sysvol/  
+
 
 ## 3) Guide d’utilisation des logiciels Audit Serveur Windows – AccessChk, AccessEnum, ShareEnum
 
