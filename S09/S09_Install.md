@@ -187,7 +187,8 @@ Une fois le scan terminé, une page web s'ouvrira, vous arriverez directement su
 
 ##### Details  
 
-Dans la partie "TAB 2 : Details", si vous avez des erreurs, elles apparaîtront dans cette section.  
+Dans la partie "TAB 2 : Details", si vous avez des erreurs, elles apparaîtront dans cette section.   
+  
 ![hardensysvol_5](https://github.com/user-attachments/assets/965dbf34-6a72-436f-b99b-fd29d728229f)
 
   
