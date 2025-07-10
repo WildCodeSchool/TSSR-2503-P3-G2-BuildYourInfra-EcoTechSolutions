@@ -154,8 +154,16 @@ Avec une seule commande, Invoke-Hardensysvolvous aide à identifier les risques 
 Installation à partir de la galerie Powershell  
 Exécutez la commande suivante dans PowerShell :  
   
-> Install-Module -Name HardenSysvol -Scope CurrentUser -Force  
+> Install-Module -Name HardenSysvol -Scope CurrentUser -Force
   
+![hardensysvol_1](https://github.com/user-attachments/assets/bf83aa78-949c-40e3-816a-69f28a51f2a9)  
+
+L'installation du module va se lancer  
+
+L'installation de divers packages nécessaires peuvent être demandés, valider avec "Y"  :  
+![hardensysvol_2](https://github.com/user-attachments/assets/44795812-63d0-48ea-b6e0-eebb5b3bdba1)  
+  
+
 ##### Installation hors ligne  
 Décompressez simplement les fichiers du module dans C:\Users\<YourUsername>\Documents\WindowsPowerShell\Modules\.
 Si le dossier Modules n'existe pas, créez-le manuellement.  
@@ -164,7 +172,24 @@ Si le dossier Modules n'existe pas, créez-le manuellement.
 Si vous rencontrez une erreur de stratégie d’exécution sur Windows 10, exécutez la commande suivante pour la contourner temporairement :  
   
 powershell.exe -ExecutionPolicy Bypass Invoke-hardensysvol  
+
+##### Scan   
+Pour lancer le scan taper la commande suivante:  
+> Invoke-hardenSysvol  
   
+![hardensysvol_3](https://github.com/user-attachments/assets/4a2da6c5-c04d-4a18-a28e-bc3f1960c7db)  
+  
+##### Dashboard  
+
+Une fois le scan terminé, une page web s'ouvrira, vous arriverez directement sur la partie "TAB 1: Dashboard" où vous aurez une vue global du scan effectué,   ainsi qu'un score (plus votre score est bas, meilleure est votre sécurité).  
+
+![hardensysvol_4](https://github.com/user-attachments/assets/3d763a89-b9cf-4e74-b222-9589abcf586a)
+
+##### Details  
+
+Dans la partie "TAB 2 : Details", si vous avez des erreurs, elles apparaîtront dans cette section.  
+![hardensysvol_5](https://github.com/user-attachments/assets/965dbf34-6a72-436f-b99b-fd29d728229f)
+
   
 ## 3) Guide d’installation et configuration Audit Serveur Windows – AccessChk, AccessEnum, ShareEnum
 
