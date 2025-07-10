@@ -189,7 +189,10 @@ Une fois le scan terminé, une page web s'ouvrira, vous arriverez directement su
 
 Dans la partie "TAB 2 : Details", si vous avez des erreurs, elles apparaîtront dans cette section.   
   
-![hardensysvol_5](https://github.com/user-attachments/assets/965dbf34-6a72-436f-b99b-fd29d728229f)
+![hardensysvol_5](https://github.com/user-attachments/assets/965dbf34-6a72-436f-b99b-fd29d728229f)  
+
+Pour plus d'info :  
+https://www.it-connect.fr/securite-active-directory-hardensysvol-scanner-vulnerabilites-partage-sysvol/  
 
   
 ## 3) Guide d’installation et configuration Audit Serveur Windows – AccessChk, AccessEnum, ShareEnum
