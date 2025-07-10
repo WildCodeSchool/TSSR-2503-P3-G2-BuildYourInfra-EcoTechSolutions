@@ -132,8 +132,40 @@ Pour l'envoi automatique de rapports par email, configurez le serveur SMTP dans 
 
 ### c. Installation et configuration de l'outil **HardenSysvol**
 <span id="harden"/><span> 
+  
+Harden-Sysvol est un module PowerShell qui audite la stratégie de groupe et analyse le contenu des fichiers du dossier SYSVOL afin de détecter les données sensibles, les erreurs de configuration ou les éléments suspects tels que les fichiers cachés, les macros malveillantes, les listes de contrôle d'accès incorrectes, etc. Il prend en charge plusieurs types et extensions de fichiers, notamment les documents Office, les PDF, les formats LibreOffice et OpenOffice.  
+    
 
-
+Avec une seule commande, Invoke-Hardensysvolvous aide à identifier les risques de sécurité potentiels et les erreurs de configuration qui passent souvent inaperçus.  
+  
+🔧 Principales caractéristiques  
+🔍 Analyse les données sensibles (mots de passe, informations d'identification, hachages, adresses IP, etc.) sur plus de 40 extensions de fichiers.  
+  
+🛡 Analyse les binaires suspects (EXE renommés, DLL, installateurs MSI) parmi plus de 180 types connus  
+  
+🎫 Vérifie les certificats/clés privées exportables (PFX, CER, PEM…) et signale ceux qui ne sont pas sécurisés  
+  
+🖼 Détecte les fichiers cachés dans les images (ZIP, EXE…) en utilisant des techniques de stéganographie  
+  
+📂 Audite les ACL sur les fichiers et dossiers SYSVOL pour identifier les droits d'accès trop permissifs ou non standard  
+  
+##### Prérequis  
+💻 Windows 10/11 ou Windows Server 🔐 Compte utilisateur de domaine standard (aucun droit d'administrateur requis)
+Installation à partir de la galerie Powershell  
+Exécutez la commande suivante dans PowerShell :  
+  
+> Install-Module -Name HardenSysvol -Scope CurrentUser -Force  
+  
+##### Installation hors ligne  
+Décompressez simplement les fichiers du module dans C:\Users\<YourUsername>\Documents\WindowsPowerShell\Modules\.
+Si le dossier Modules n'existe pas, créez-le manuellement.  
+  
+##### Erreur de stratégie d'exécution (Windows 10)  
+Si vous rencontrez une erreur de stratégie d’exécution sur Windows 10, exécutez la commande suivante pour la contourner temporairement :  
+  
+powershell.exe -ExecutionPolicy Bypass Invoke-hardensysvol  
+  
+  
 ## 3) Guide d’installation et configuration Audit Serveur Windows – AccessChk, AccessEnum, ShareEnum
 
 ### a. Installation et confiugration de l'ouil **AccessChk**
