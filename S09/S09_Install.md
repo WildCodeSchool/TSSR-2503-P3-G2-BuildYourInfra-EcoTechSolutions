@@ -138,7 +138,7 @@ Harden-Sysvol est un module PowerShell qui audite la stratégie de groupe et ana
 
 Avec une seule commande, Invoke-Hardensysvolvous aide à identifier les risques de sécurité potentiels et les erreurs de configuration qui passent souvent inaperçus.  
   
-🔧 Principales caractéristiques  
+##### Principales caractéristiques  
 🔍 Analyse les données sensibles (mots de passe, informations d'identification, hachages, adresses IP, etc.) sur plus de 40 extensions de fichiers.  
   
 🛡 Analyse les binaires suspects (EXE renommés, DLL, installateurs MSI) parmi plus de 180 types connus  
