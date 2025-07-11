@@ -142,6 +142,18 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 |   John         | Product Owner      |  Serveur bastion, serveur rds, firewall     |
 |   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
 
+
+ ### 📅 Sprint 9
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Product Owner    | Réparation Zabbix, Audit serveurs Linux - Open SCAP     |
+|   Lloyd        | Technicien    |  Audit serveurs Linux - Lynis  |
+|   Alan         | Scrum Master      | Ping Castle, DNS, Sysinternal |
+|   Florian      | Technicien      |  Microsoft Security Compliance Toolkit, Audit serveurs windows - SysInternal   |
+|   John         | Technicien     |  HardenSysvol, Audit serveur Windows     |
+|   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
+
 ------------------
  
 ## ⚙️ Prérequis
