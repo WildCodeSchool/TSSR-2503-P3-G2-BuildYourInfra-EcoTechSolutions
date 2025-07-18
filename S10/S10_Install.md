@@ -2,7 +2,7 @@
 
   
 ## Sommaire  
-### 1) Guide d’installation et configuration Exegol Suricata    
+### 1) Guide d’installation et configuration Exegol Snort   
 a. [Installation et configuration de l'outil **Exegol**](#exegol)  
   
 b. [Installation et configuration de l'outil **Suricata**](#suricata)  
