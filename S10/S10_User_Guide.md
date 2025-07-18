@@ -88,6 +88,7 @@ Utilisation de script nmap pour récupérer plus d'informations.
 ![](/S10/Ressources/Attaque/02_scriptssh.png)  
 
 Test de brute force sur le port 22 du pc admin.
+Il y a eu 2800 tentatives qui se sont soldés en échec.
 
 
 #### Partie 2 - L' exploitation  
