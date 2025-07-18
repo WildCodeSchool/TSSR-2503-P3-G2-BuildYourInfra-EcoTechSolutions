@@ -43,22 +43,33 @@ b. [Guide d'utilisation de l'outil **Suricata**](#suricata)
 
 Etape 1 :
 Récupération d'une adresse IP dans le réseau par DHCP.
-172.16.20.12/24
+Notre adresse ==> 172.16.20.12/24
 
 Etape 2 :
-`ip a` pour avoir les informations sur le réseau où on est, (adresse IP, DNS, idée de plage, passerelle)
+`ip a` pour avoir les informations sur le réseau où nous sommes, (adresse IP, DNS, idée de plage, passerelle)
 
 Etape 3 :
 Ouverture d'un conteneur Exegol
 
-commande nmap -sN 172.16.20.0/24 pour scanner les machines
+- commande nmap -sN 172.16.20.0/24 pour scanner les machines
+
+![](/S10/Ressources/Attaque/01_nmap_sN.png)  
+
+![](/S10/Ressources/Attaque/02_nmap_sN.png)  
+
+![](/S10/Ressources/Attaque/03_nmap_sN.png)  
+
 
 Récupération de plusieurs adresses IP de machines différentes. (WINDOWS ADDS-DHCP-DNS, SERVEUR ZABBIX, SRV RAID)
 
-Scan des top ports 100 avec nmap sur l'ADDS
+- Scan des top ports 100 avec nmap sur l'ADDS
 `nmap -sV --top-ports 100 172.16.20.3`
 
-Scan des versions des ports 
+![](/S10/Ressources/Attaque/01_nmap--top-ports_ADDS.png)
+
+
+
+- Scan des versions des ports 
 `nmap -sS -sV -p 22,53,80,88,135,139,389,445 <172.16.20.3>`
 
 Test des dossiers SMB et recherche d'identifiants
@@ -70,7 +81,11 @@ Le premier scan nmap nous a donné une machine avec un DNS DT-DSI-Admin qui semb
 
 Nous avons lancé un scan approfondi des ports `nmap -p- -sV -A 172.16.20.7` et il en ressort un port 22 ouvert avec 2 ssh-hotkey. Nous allons exploité cette information.
 
+![](/S10/Ressources/Attaque/01_scan_pc_admin.png)  
+
 Utilisation de script nmap pour récupérer plus d'informations.
+
+![](/S10/Ressources/Attaque/02_scriptssh.png)  
 
 Test de brute force sur le port 22 du pc admin.
 
