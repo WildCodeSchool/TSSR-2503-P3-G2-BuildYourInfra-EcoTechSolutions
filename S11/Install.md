@@ -22,4 +22,25 @@ systemctl status apache2
 ![apache2](Ressources/apache2.png)
 
 Nous avons à présent une page web fonctionnel. Pour y accéder il suffit d'aller sur une machine ayant une interface graphique connecter à notre réseau (ici nous allons utiliser une machine Windows). Puis de taper dans la barre de recherche d'un navigateur web l'adresse ip de notre serveur web. 
+
 ![serveur_web](Ressources/serveur_web.jpg)
+
+Maintenant nous allons modifier cette page web pour qu'elle corresponde a un site web d'une entreprise. 
+Pour cela nous allons retourner sur notre serveur web, et aller dans le repertoire : 
+```bash
+/var/www/html
+```
+Il devrait y avoir un fichier **index.html**. Nous allons le modifier completement. Une copie du code est disponible dans le dossier **Ressources**
+
+Nous allons également ajouter deux fichiers dans le repertoire : **scripts.js** et **styles.css**.
+Ces fichiers sont également disponible dans la partie **Ressources**. 
+
+Une fois ces fichiers présents dans le repertoire, notre page web est terminé. 
+
+![cat_html](Ressources/cat_html.png)
+
+![web_ecotech](Ressources/web_ecotech.png)
+
+
+
+
