@@ -82,15 +82,22 @@ Selon le tableau de PRA et les tests des techniciens, les machines ont été par
 
 Il manquait la documentation du serveur web qui a été rajouté par Sheldon. Tous les summary de Proxmox ont été revu et le GitHub a été actualisé.
 
+Pour les réparations physiques des machines :
+- SRV-WSUS - Erreur de boot ==> Reconnexion du disque SATA
+- DT-DSI-ADMIN - Pas de connexion internet ==> Changement de la carte réseau VMBR200
+- WINCORESRV-ADDS - Erreur de boot ==> Changement des barrettes de RAM
+- WINSRV-AD-DHCP-DNS - Pas de connexion internet ==> Changement de la carte réseau VMBR200
+- CONTENEUR GLPI - Pas de connexion internet ==> Changement de la carte réseau VMBR210
+
 1. Rapport de fin de crise avec les points d'amélioration :
 
 	1. Faiblesse découvertes
-	Les GPO et groupes de sécurité nous ont posés de véritables problèmes au début de la résolution du conteneur GLPI et de l'intégration du serveur WINSRVCORE2. 
-	Un audit complet avait été fait au sprint 10 augmentant drastiquement la sécurité de notre infrastructure. Par exemple, le groupe DSI faisait par de "Protected User" qui empêchait l'utilisation des crédentials de l'AD vers d'autre service (comme GLPI avec l'intégration LDAP). Cette même règle nous empêché d'ajouter le WINCORESERV2 au domaine.
+	Les GPO et groupes de sécurité nous ont posés de véritables problèmes au début de la  résolution du conteneur GLPI et de l'intégration du serveur WINSRVCORE2. 
+	Un audit complet avait été fait au sprint 10 augmentant drastiquement la sécurité de notre  infrastructure. Par exemple, le groupe DSI faisait par de "Protected User" qui empêchait l'utilisation des crédentials de l'AD vers d'autre service (comme GLPI avec l'intégration LDAP). Cette même règle nous empêché d'ajouter le WINCORESERV2 au domaine.
 	
 	2. Documentation non à jour
 	Dans l'ensemble la documentation était de qualité ce qui nous a permis d'être réactif. Quelques détails ont retenu notre attention avec des IP erroné par un changement de machine /DHCP. Et le serveur web qui n'était pas documenté.
 
 # 2. Conclusion
 
-Le réseau a été complètement réparé en 2 jours pleins avec une nette amélioration sur la documentation et la véracité des informations présentes sur Proxmox / Github. L'organisation et le suivi propre par tableau nous a beaucoup aidé dans la tâche. Cela a aussi permit à l'équipe de travailler des éléments du réseau qui avaient été fait pas d'autres membres.
+  Le réseau a été complètement réparé en 2 jours pleins avec une nette amélioration sur la documentation et la véracité des informations présentes sur Proxmox / Github. L'organisation et le suivi propre par tableau nous a beaucoup aidé dans la tâche. Cela a aussi permit à l'équipe de travailler des éléments du réseau qui avaient été fait pas d'autres membres.
