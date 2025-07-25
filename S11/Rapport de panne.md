@@ -1,8 +1,7 @@
 # 1. INFRASTRUCTURE RÉSEAU HS
 
-<p style='text-align: justify;'>
+<p style='text-align: justify;'>Suite à un problème électrique  dans les locaux de l'entreprise **EcoTech Solution**, certains éléments de l'infrastructure ne fonctionnaient plus.</p>
 
-Suite à un problème électrique  dans les locaux de l'entreprise **EcoTech Solution**, certains éléments de l'infrastructure ne fonctionnaient plus.
 
 Le MCO (*Maintient en Condition Opérationnelle*) n'était plus respecté et le PRA a été mis en place au sein des équipes du service Exploitation supervisé par la DSI.
 
