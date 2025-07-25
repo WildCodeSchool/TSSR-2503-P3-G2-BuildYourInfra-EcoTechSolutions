@@ -102,6 +102,4 @@ Pour les réparations physiques des machines :
 
 # 2. Conclusion
 
-  Le réseau a été complètement réparé en 2 jours pleins avec une nette amélioration sur la documentation et la véracité des informations présentes sur Proxmox / Github. L'organisation et le suivi propre par tableau nous a beaucoup aidé dans la tâche. Cela a aussi permit à l'équipe de travailler des éléments du réseau qui avaient été fait pas d'autres membres.
-
- </p>
+  Le réseau a été complètement réparé en 2 jours pleins avec une nette amélioration sur la documentation et la véracité des informations présentes sur Proxmox / Github. L'organisation et le suivi propre par tableau nous a beaucoup aidé dans la tâche. Cela a aussi permit à l'équipe de travailler des éléments du réseau qui avaient été fait pas d'autres membres.</p>
