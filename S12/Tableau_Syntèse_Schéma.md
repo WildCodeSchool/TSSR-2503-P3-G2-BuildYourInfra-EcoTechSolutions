@@ -6,9 +6,7 @@
 | 532 | SRV-PROXY | SRV-PROXY | CT | Debian 12 | Proxy web | 210 | 172.20.20.4/24 | 8 | 8 | 100 | 1 | 1.68 |
 | 533 | SRV-WEB | SRV-WEB | CT | Debian 12 | Serveur web | 210 | 172.20.20.3/24 | 16 | 15 | 93.75 | 2 | 2.54 |
 | 534 | SRV-GLPI | SRV-GLPI | CT | Debian 12 | Supervision | 210 | 172.20.20.2/24 | 10 | 6.2 | 62 | 0.512 | 50 |
-| | | | | | | | INTERFACE WAN : 192.168.3/24 (vmb2) | | | | | |
-| 572 | G2-pfsense | pfsense.home.arpa | VM | Debian 12 | Pare-feu | 2 : 200 ; 210 | INTERFACE LAN : 172.16.20.254/24 (vmb200) | 10 | 7.7 | 77 | 2 | 51 |
-| | | | | | | | INTERFACE DMZ : 172.20.20.254/24 (vmb210) | | | | | |
+| 572 | G2-pfsense | pfsense.home.arpa | VM | Debian 12 | Pare-feu | 2 : 200 ; 210 | INTERFACE WAN : 192.168.3/24 (vmb2)<br>INTERFACE LAN : 172.16.20.254/24 (vmb200)<br>INTERFACE DMZ : 172.20.20.254/24 (vmb210) | 10 | 7.7 | 77 | 2 | 51 |
 | 573 | G2-WINSRV-AD-DHCP-DNS | WINSRV-AD-DHCP-DNS | VM | Windows Server 2022 | Contrôleur de domaine | 200 | 172.16.20.3/24 | 32 | 6.95 | 21.7 | 4 | 74 |
 | 575 | G2-WINCORESRV-ADDS | WINCORESRV-ADDS | VM | Windows Server 2022 Core | Contrôleur de domaine | 200 | 172.16.20.5/24 | 20 | 19 | 50 | 1 | 48 |
 | 576 | G2-WINCORESRV-ADDS2 | WINCORESRV2 | VM | Windows Server 2022 Core | Contrôleur de domaine | 200 | 172.16.20.6/24 | 20 | 10.7 | 53.5 | 2 | 64 |
@@ -19,8 +17,7 @@
 | 582 | G2-DEBSRV-ZABBIX | debianserver | VM | Debian 12 | Supervision | 200 | 172.16.20.11/24 | 10 | 5 | 50 | 2 | 45 |
 | 583 | G2-FREEPBX | freepbx.sangoma.local | VM | | Téléphonie | 200 | 172.16.20.12/24 | 32 | 26.5 | 83 | 4 | 48 |
 | 584 | SRV-BASTION | SRV-BASTION | VM | Debian 12 | Serveur Bastion | 210 | 172.20.20.7/24 | 10 | 4.4 | 44 | 2 | 38 |
-| | | | | | | | INTERFACE SERVEUR : 172.16.20.253/24 (vmb200) | | | | | |
-| 585 | G2-ROUTEUR | vvos | VM | Vyos 1.5 | Routage | 200 ; 220 | INTERFACE LAN COM : 172.16.20.253/24 (vmb220) | 4 | 2.4 | 60 | 1 | 37 |
+| 585 | G2-ROUTEUR | vvos | VM | Vyos 1.5 | Routage | 200 ; 220 | INTERFACE SERVEUR : 172.16.20.253/24 (vmb200)<br>INTERFACE LAN COM : 172.16.20.253/24 (vmb220) | 4 | 2.4 | 60 | 1 | 37 |
 | 586 | G2-SRV-IREDMAIL | ecotechsolution.mail.lan | VM | Debian 12 | Serveur de messagerie | 210 | 172.20.20.7/24 | 10 | 3.5 | 35 | 2 | 25 |
 | 587 | G2-BOR-DSI-DT-Test | BOR-DSI-DT-Test | VM | Windows 10 Pro | Machine client DSI Test | 200 | 172.16.20.25/24 | 32 | 7 | 87.5 | 4 | 80 |
 | 588 | G2-SRV-WSUS | WIN-WSUS | VM | Windows Server 2022 | Serveur de mise à jour | 200 | 172.16.20.13/24 | 32(C) 25(E) | 7.4(C) 0(E) | 23(C) 0(E) | 4 | 76 |
