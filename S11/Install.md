@@ -22,4 +22,4 @@ systemctl status apache2
 ![apache2](Ressources/apache2.png)
 
 Nous avons à présent une page web fonctionnel. Pour y accéder il suffit d'aller sur une machine ayant une interface graphique connecter à notre réseau (ici nous allons utiliser une machine Windows). Puis de taper dans la barre de recherche d'un navigateur web l'adresse ip de notre serveur web. 
-![serveur_web](serveur_web.jpg)
+![serveur_web](Ressources/serveur_web.jpg)
