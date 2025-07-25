@@ -41,6 +41,47 @@ Une fois ces fichiers présents dans le repertoire, notre page web est terminé.
 
 ![web_ecotech](Ressources/web_ecotech.png)
 
+## Configuration Routeur Vyos
+
+``conf``
+``sh int``
+
+``set interfaces ethernet eth0 address 172.16.20.253/24``
+``set interfaces ethernet eth2 address 172.16.50.253/24``
+
+``commit``
+``save``
+``reboot``
+
+``conf``
+``set protocols static route 172.16.20.0/24 next-hop 172.16.20.253``
+``set protocols static route 172.16.50.0/24 next-hop 172.16.50.253``
+``commit``
+``save``
+
+``configure``
+``delete service dhcp-relay``
+``commit``
+``save``
+
+``configure``
+
+``set service dhcp-relay listen-interface eth2``
+``set service dhcp-relay upstream-interface eth0``
+``set service dhcp-relay server 172.16.20.3``
+
+``commit``
+``save``
+
+``show configuration commands | match dhcp-relay`` (pour voir la conf si bien appliquée)
+
+doit afficher:
+``set service dhcp-relay listen-interface eth2``
+``set service dhcp-relay upstream-interface eth0``
+``set service dhcp-relay server 172.16.20.3``
+
+redémarrer le service : ``systemctl restart dhcp-relay-agent``
+
 
 
 
