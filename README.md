@@ -200,22 +200,22 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 - Hyperviseur de Type 1 Proxmox 
  🖥️  Machines Virtuelles:
 
-| Nom complet                              | Adresse IP       | Masque              | Rôles | Priorité      |
-|------------------------------------------|------------------|---------------------|----------------|---------------|
-| G2-WINSRV-AD-DHCP-DNS                     | 172.16.20.5      | 255.255.255.0 (/24) | AD-DHCP-DNS / DC       | priority-high |
-| G2-WINCORESRV-ADDS-2                      | 172.16.20.21     | 255.255.255.0 (/24) | ADDS / DC / RID Master      | priority-high |
-| G2-WINCORESRV-ADDS                        | 172.16.20.19     | 255.255.255.0 (/24) | ADDS / DC / PDC Emulator     | priority-high |
-| G2-ROUTEUR                                | 172.16.20.10     | 255.255.255.0 (/24) | ROUTEUR      | priority-high |
-| G2-DT-DSI-Admin                           | 172.16.20.7      | 255.255.255.0 (/24) | Machine Test DSI/Admin       | priority-low  |
-| G2-SRVWIN-RAID                            | 172.16.20.13     | 255.255.255.0 (/24) | Serveur de stockage       | priority-high |
-| G2-BOR-COM-DT-Test                        | 172.16.20.17     | 255.255.255.0 (/24) | Machine Test Com/Client      | priority-low  |
-| G2-DEBSRV-ZABBIX                          |                  |                | Supervision      | priority-high |
-| G2-SRV-PROXY                              |                  |                    | Proxy       | priority-high |
-| G2-SRV-FreePBX                            | 172.16.20.16     | 255.255.255.0 (/24) | Serveur de VOiP       | priority-low  |
-| G2-SRV-iRedMail                           |                   |                   | Serveur de messagerie       | priority-high |
-| G2-BOR-DSI-DT-Test                        |                 |                  | Machine Sandbox Admin       | priority-low  |
-| G2-SRV-WSUS                               | 172.16.20.20     | 255.255.255.0 (/24) | Serveur de gestion de MAJ       | priority-low  |
-
+| Nom complet                              | Type | Adresse IP       | Masque              | Rôles | Priorité      |
+|------------------------------------------|------|------------------|---------------------|----------------|---------------|
+| G2-WINSRV-AD-DHCP-DNS                     | Machine virtuelle | 172.16.20.5      | 255.255.255.0 (/24) | AD-DHCP-DNS / DC       | priority-high |
+| G2-WINCORESRV-ADDS-2                      | Machine virtuelle | 172.16.20.21     | 255.255.255.0 (/24) | ADDS / DC / RID Master      | priority-high |
+| G2-WINCORESRV-ADDS                        | Machine virtuelle | 172.16.20.19     | 255.255.255.0 (/24) | ADDS / DC / PDC Emulator     | priority-high |
+| G2-ROUTEUR                                | Machine virtuelle | 172.16.20.10     | 255.255.255.0 (/24) | ROUTEUR      | priority-high |
+| G2-DT-DSI-Admin                           | Machine virtuelle | 172.16.20.7      | 255.255.255.0 (/24) | Machine Test DSI/Admin       | priority-low  |
+| G2-SRVWIN-RAID                            | Machine virtuelle | 172.16.20.13     | 255.255.255.0 (/24) | Serveur de stockage       | priority-high |
+| G2-BOR-COM-DT-Test                        | Machine virtuelle | 172.16.20.17    | 255.255.255.0 (/24)  | Machine Test Com/Client      | priority-low  |
+| G2-DEBSRV-ZABBIX                          | Machine virtuelle |                 |                      | Supervision      | priority-high |
+| SRV-WEB                                   | Conteneur LXC     | 172.20.20.3     |                      | Proxy       | priority-high |
+| G2-SRV-FreePBX                            | Machine virtuelle | 172.16.20.16    | 255.255.255.0 (/24)  | Serveur de VOiP       | priority-low  |
+| G2-SRV-iRedMail                           | Machine virtuelle |                 |                      | Serveur de messagerie       | priority-high |
+| G2-BOR-DSI-DT-Test                        | Machine virtuelle |                 |                       | Machine Sandbox Admin       | priority-low  |
+| G2-SRV-WSUS                               | Machine virtuelle | 172.16.20.20    | 255.255.255.0 (/24)  | Serveur de gestion de MAJ       | priority-low  |
+| SRV-GLPI                                  | Conteneur LXC     | 
 - 🌐 Toutes les machines sont sur le réseau :
   - Adresse IP de réseau : ``172.16.20.0/24`` 
   - Adresse de passerelle : ``172.16.20.254`` 
@@ -241,7 +241,7 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 <span id="Difficultés-rencontrées-et-solutions-trouvées"></span>
 
 
-|  [🧗Difficultés rencontrées](#difficultes-rencontrees)|[💡Solutions trouvées](#solutions-trouvees)|  
+|  [🧗Difficultées rencontrées](#difficultes-rencontrees)|[💡Solutions trouvées](#solutions-trouvees)|  
 | --------------------------------------- | --------------------------------------- |
 |   Découverte de l'entreprise EcoTechSolution   |         Recherche et Réflexion          |
 |   Besoin matériel                       |         Recherche et Réflexion          |
@@ -253,13 +253,13 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 ## 🚀 Améliorations possibles
 <span id="ameliorations-possibles"></span>
 
-- Plus de meeting synthétique pour la répartition des tâches
-- Répartition du travail en binôme maximum
-- Nomenclature plus précise
-- Règles de pare-feu plus strictes
-- Extension de notre infrastructure avec la mise en place des différentes départements/services sous différents VLANs
-- Mettre en place un serveur de gestion de mot de passe
-- Création d'un portail captif via un serveur **Radius**
-- Améliorer notre système de stockage avec la mise en place d'un LVM sur un serveur Debian
-- Automatisation plus importante en mettant en place différents scripts
-- Mise en place d'une gestion des logs centralisée et d'une journalisation des différents scripts PowerShell et Shell Bash
+- 🔜 Plus de meeting synthétique pour la répartition des tâches
+- 🔜 Répartition du travail en binôme maximum
+- 🔜 Nomenclature plus précise
+- 🔜 Règles de pare-feu plus strictes
+- 🔜 Extension de notre infrastructure avec la mise en place des différentes départements/services sous différents VLANs
+- 🔜 Mettre en place un serveur de gestion de mot de passe
+- 🔜 Création d'un portail captif via un serveur **Radius**
+- 🔜 Améliorer notre système de stockage avec la mise en place d'un LVM sur un serveur Debian
+- 🔜 Automatisation plus importante en mettant en place différents scripts
+- 🔜 Mise en place d'une gestion des logs centralisée et d'une journalisation des différents scripts PowerShell et Shell Bash
