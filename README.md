@@ -221,13 +221,21 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
   - Adresse de passerelle : ``172.16.20.254`` 
 
 - 📱 Les logiciels utilisés :
-  - **OpenSSH** => Serveur et client SSH
-  - **VirtualBox** => Lab avant migration finale sur Proxmox  
-  - **NetData** => Monitoring en temps réel
-  - **Trippy** => Diagnostique réseau
-  - **Wireshark** => Analyse réseau
-  - **3CX** ==> Logiciel type Softphone
-  - **RoundCude** ==> Webmail
+  - **OpenSSH** ➡️ _Serveur et client SSH_
+  - **Apache** ➡️ _Serveur WEB_
+  - **VirtualBox** ➡️ _Lab avant migration finale sur Proxmox_  
+  - **NetData** ➡️ _Monitoring en temps réel_
+  - **Trippy** ➡️ _Diagnostique réseau_
+  - **Wireshark** ➡️ _Analyse réseau_
+  - **3CX** ➡️ _Logiciel type Softphone_
+  - **RoundCude** ➡️ _Webmail_
+  - **PingCastle** ➡️ _Audit Active Directory_
+  - **Microsoft Security Compliance Toolkit** ➡️ _Audit Active Directory_
+  - **OpenScap** ➡️ _Audit Serveurs Linux_
+  - **Exegol** ➡️ _Environnement de pentest sur conteneur Docker_
+  - **Nmap** ➡️ _Scan de réseau et detection de vulnérabilité_
+  - **Metasploit** ➡️ _Exploitation des vulnérabilité détecter_
+  - **Snort** ➡️ _Détection d'intrusion_
 
 ## 🧗 Difficultés rencontrées et 💡 Solutions trouvées
 <span id="Difficultés-rencontrées-et-solutions-trouvées"></span>
@@ -235,9 +243,11 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 
 |  [🧗Difficultés rencontrées](#difficultes-rencontrees)|[💡Solutions trouvées](#solutions-trouvees)|  
 | --------------------------------------- | --------------------------------------- |
-|   Découverte de l'entreprise EcoTech'   |         Recherche et Réflexion          |
+|   Découverte de l'entreprise EcoTechSolution   |         Recherche et Réflexion          |
 |   Besoin matériel                       |         Recherche et Réflexion          |
 |   Compétences manquantes                | Recherche et gestion planning en fonction des cours |
+| Prise en  mains des différents outils | Documentation et recherche personnel - Utilisation du support pédagogique |
+
 
   
 ## 🚀 Améliorations possibles
@@ -247,3 +257,9 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 - Répartition du travail en binôme maximum
 - Nomenclature plus précise
 - Règles de pare-feu plus strictes
+- Extension de notre infrastructure avec la mise en place des différentes départements/services sous différents VLANs
+- Mettre en place un serveur de gestion de mot de passe
+- Création d'un portail captif via un serveur **Radius**
+- Améliorer notre système de stockage avec la mise en place d'un LVM sur un serveur Debian
+- Automatisation plus importante en mettant en place différents scripts
+- Mise en place d'une gestion des logs centralisée et d'une journalisation des différents scripts PowerShell et Shell Bash
