@@ -154,6 +154,44 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 |   John         | Technicien     |  HardenSysvol, Audit serveur Windows     |
 |   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
 
+
+ ### 📅 Sprint 10
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Technicien    | Pentesting : Défense de l'infrastructure via Snort   |
+|   Lloyd        | Product Owner    |  Pentesting : Défense de l'infrastructure via Snort   |
+|   Alan         | Technicien      | Pentesting : Attaque de l'infrastructure, vérification de vulnérabilité et exploitation potentiel via l'utilisation sur Kali Linux des outils : **Metasploit; Exegol; Hydra et Nmap**|
+|   Florian      | Scrum Master      |  Pentesting : Attaque de l'infrastructure, vérification de vulnérabilité et exploitation potentiel via l'utilisation sur Kali Linux des outils : **Metasploit; Exegol; Hydra et Nmap**   |
+|   John         | Technicien     |  Pentesting : Attaque de l'infrastructure, vérification de vulnérabilité et exploitation potentiel via l'utilisation sur Kali Linux des outils : **Metasploit; Exegol; Hydra et Nmap**   |
+|   Tous      |  - |  Documentation technique des missions de chacun sur GitHub  |
+
+
+
+ ### 📅 Sprint 11
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Scrum Master    | Réparation du Serveur RDS - Serveur AD-DS GUI |
+|   Lloyd        | Technicien    | Réparation du Serveur GLPI  |
+|   Alan         | Product Owner | Réparation Serveur AD-DS GUI - Serveur WSUS |
+|   Florian      | Technicien  | Réparation du serveur de messagerie iRedMail     |
+|   John         | Technicien  | Réparation et reconfiguration du routeur VYOS - PC client   |
+|   Tous      |  - |  Documentation technique des missions de chacun et rapport d'incidence  |
+
+
+ ### 📅 Sprint 12
+
+| Membre         | Rôle            |  Missions                               |
+| -------------- | --------------- | --------------------------------------- |
+|   Sheldon      | Product Owner    | Finalisation Documentation - Travail sur la présentation finale  |
+|   Lloyd        | Technicien    | Schéma réseau finale  |
+|   Alan         | Scrum Master      | Schéma réseau finale - Travail sur la présentation finale |
+|   Florian      | Technicien      |  Tableau de synthèse de la documentation complète du projet   |
+|   John         | Technicien     |  Tableau de synthèse des éléments du schéma réseau finale   |
+|   Tous      |  - | Vérification de tout les documentations du projets  |
+
+
 ------------------
  
 ## ⚙️ Prérequis
