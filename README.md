@@ -202,20 +202,22 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 
 | Nom complet                              | Type | Adresse IP       | Masque              | Rôles | Priorité      |
 |------------------------------------------|------|------------------|---------------------|----------------|---------------|
-| G2-WINSRV-AD-DHCP-DNS                     | Machine virtuelle | 172.16.20.5      | 255.255.255.0 (/24) | AD-DHCP-DNS / DC       | priority-high |
-| G2-WINCORESRV-ADDS-2                      | Machine virtuelle | 172.16.20.21     | 255.255.255.0 (/24) | ADDS / DC / RID Master      | priority-high |
-| G2-WINCORESRV-ADDS                        | Machine virtuelle | 172.16.20.19     | 255.255.255.0 (/24) | ADDS / DC / PDC Emulator     | priority-high |
-| G2-ROUTEUR                                | Machine virtuelle | 172.16.20.10     | 255.255.255.0 (/24) | ROUTEUR      | priority-high |
-| G2-DT-DSI-Admin                           | Machine virtuelle | 172.16.20.7      | 255.255.255.0 (/24) | Machine Test DSI/Admin       | priority-low  |
-| G2-SRVWIN-RAID                            | Machine virtuelle | 172.16.20.13     | 255.255.255.0 (/24) | Serveur de stockage       | priority-high |
-| G2-BOR-COM-DT-Test                        | Machine virtuelle | 172.16.20.17    | 255.255.255.0 (/24)  | Machine Test Com/Client      | priority-low  |
-| G2-DEBSRV-ZABBIX                          | Machine virtuelle |                 |                      | Supervision      | priority-high |
-| SRV-WEB                                   | Conteneur LXC     | 172.20.20.3     |                      | Proxy       | priority-high |
-| G2-SRV-FreePBX                            | Machine virtuelle | 172.16.20.16    | 255.255.255.0 (/24)  | Serveur de VOiP       | priority-low  |
-| G2-SRV-iRedMail                           | Machine virtuelle |                 |                      | Serveur de messagerie       | priority-high |
-| G2-BOR-DSI-DT-Test                        | Machine virtuelle |                 |                       | Machine Sandbox Admin       | priority-low  |
-| G2-SRV-WSUS                               | Machine virtuelle | 172.16.20.20    | 255.255.255.0 (/24)  | Serveur de gestion de MAJ       | priority-low  |
-| SRV-GLPI                                  | Conteneur LXC     | 
+| **G2-WINSRV-AD-DHCP-DNS**                    | Machine virtuelle | 172.16.20.5      | 255.255.255.0 (/24) | AD-DHCP-DNS / DC       | priority-high |
+| **G2-WINCORESRV-ADDS-2**                     | Machine virtuelle | 172.16.20.21     | 255.255.255.0 (/24) | ADDS / DC / RID Master      | priority-high |
+| **G2-WINCORESRV-ADDS**                       | Machine virtuelle | 172.16.20.19     | 255.255.255.0 (/24) | ADDS / DC / PDC Emulator     | priority-high |
+| **G2-ROUTEUR**                               | Machine virtuelle | 172.16.20.10     | 255.255.255.0 (/24) | ROUTEUR      | priority-high |
+| **G2-DT-DSI-Admin**                          | Machine virtuelle | 172.16.20.7      | 255.255.255.0 (/24) | Machine Client Test département DSI       | priority-low  |
+| **G2-SRVWIN-RAID**                           | Machine virtuelle | 172.16.20.13     | 255.255.255.0 (/24) | Serveur de fichiers       | priority-high |
+| **G2-BOR-COM-DT-Test**                       | Machine virtuelle | 172.16.20.17    | 255.255.255.0 (/24)  | Machine client Test département Communication | priority-low  |
+| **G2-DEBSRV-ZABBIX**                         | Machine virtuelle | 172.16.20.11    | 255.255.255.0 (/24)  | Supervision      | priority-high |
+| **SRV-WEB**                                  | Conteneur LXC     | 172.20.20.3     | 255.255.255.0 (/24)  | hébergeur du serveur intranet et du serveur vitrine | priority-high |
+| **G2-SRV-FreePBX**                            | Machine virtuelle | 172.16.20.16    | 255.255.255.0 (/24)  | Serveur de VOiP       | priority-low  |
+| **G2-SRV-iRedMail**                           | Machine virtuelle | 172.20.20.7     | 255.255.255.0 (/24)  | Serveur de messagerie       | priority-high |
+| **G2-BOR-DSI-DT-Test**                        | Machine virtuelle | 172.16.20.25    | 255.255.255.0 (/24)  | Machine Sandbox Admin       | priority-low  |
+| **G2-SRV-WSUS**                               | Machine virtuelle | 172.16.20.20    | 255.255.255.0 (/24)  | Serveur de gestion de mise à jour  | priority-low  |
+| **SRV-GLPI**                                  | Conteneur LXC     | 172.20.20.2     | 255.255.255.0 (/24)  | Serveur de gestion de système d'information | priority-high |
+| **G2-BOR-DIR-CLIENT**                         | Machine Virtuelle | 172.16.20.26    | 255.255.255.0 (/24)  | Machine Client du département Direction | priority-low |
+
 - 🌐 Toutes les machines sont sur le réseau :
   - Adresse IP de réseau : ``172.16.20.0/24`` 
   - Adresse de passerelle : ``172.16.20.254`` 
