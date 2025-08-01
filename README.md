@@ -212,7 +212,7 @@ Acteur engagé à l’échelle nationale, Wilderz place la fiabilité, la sécur
 | **G2-DEBSRV-ZABBIX**                         | Machine virtuelle | 172.16.20.11    | 255.255.255.0 (/24)  | Supervision      | priority-high |
 | **SRV-WEB**                                  | Conteneur LXC     | 172.20.20.3     | 255.255.255.0 (/24)  | hébergeur du serveur intranet et du serveur vitrine | priority-high |
 | **G2-SRV-FreePBX**                            | Machine virtuelle | 172.16.20.16    | 255.255.255.0 (/24)  | Serveur de VOiP       | priority-low  |
-| **G2-SRV-iRedMail**                           | Machine virtuelle | 172.20.20.7     | 255.255.255.0 (/24)  | Serveur de messagerie       | priority-high |
+| **G2-SRV-iRedMail**                           | Machine virtuelle | 172.20.20.10     | 255.255.255.0 (/24)  | Serveur de messagerie       | priority-high |
 | **G2-BOR-DSI-DT-Test**                        | Machine virtuelle | 172.16.20.25    | 255.255.255.0 (/24)  | Machine Sandbox Admin       | priority-low  |
 | **G2-SRV-WSUS**                               | Machine virtuelle | 172.16.20.20    | 255.255.255.0 (/24)  | Serveur de gestion de mise à jour  | priority-low  |
 | **SRV-GLPI**                                  | Conteneur LXC     | 172.20.20.2     | 255.255.255.0 (/24)  | Serveur de gestion de système d'information | priority-high |
